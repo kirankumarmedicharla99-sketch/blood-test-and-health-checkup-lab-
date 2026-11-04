@@ -1,0 +1,406 @@
+/* ==========================================================================
+   AARA CLINICAL LABORATORIES — 404 PAGE OR REPORT NOT FOUND (404.css)
+   Full viewport-centered clinical error state with top-right theme/RTL controls.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE BASE & VIEWPORT CENTERING
+   -------------------------------------------------------------------------- */
+body.error-page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+.err-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 35%, rgba(198, 40, 53, 0.10) 0%, transparent 65%),
+              radial-gradient(circle at 10% 85%, rgba(0, 143, 149, 0.08) 0%, transparent 50%),
+              var(--bg-primary);
+  transition: background var(--transition-smooth);
+}
+
+body.dark-theme .err-wrapper {
+  background: radial-gradient(circle at 50% 35%, rgba(198, 40, 53, 0.16) 0%, transparent 60%),
+              radial-gradient(circle at 85% 80%, rgba(0, 143, 149, 0.20) 0%, transparent 55%),
+              radial-gradient(circle at 15% 85%, rgba(16, 18, 20, 0.85) 0%, transparent 60%),
+              var(--bg-primary);
+}
+
+/* --------------------------------------------------------------------------
+   2. TOP-RIGHT FLOATING CONTROLS (Theme & RTL)
+   -------------------------------------------------------------------------- */
+.err-top-controls {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+[dir="rtl"] .err-top-controls {
+  right: auto;
+  left: 28px;
+}
+
+.err-control-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.err-control-btn:hover {
+  border-color: var(--color-accent-primary, #C62835);
+  color: var(--color-accent-primary, #C62835);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(198, 40, 53, 0.2);
+}
+
+body.dark-theme .err-control-btn {
+  background: rgba(23, 27, 31, 0.9);
+  border-color: var(--border-gold);
+  color: var(--color-accent-primary, #EF5350);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .err-control-btn:hover {
+  border-color: var(--color-accent-primary-hover, #FF6B68);
+  color: var(--color-accent-primary-hover, #FF6B68);
+  background: rgba(23, 27, 31, 0.98);
+  box-shadow: 0 6px 20px rgba(198, 40, 53, 0.28);
+}
+
+.err-control-btn i {
+  width: 15px;
+  height: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   3. AMBIENT GLOW ORBS
+   -------------------------------------------------------------------------- */
+.err-glow-orb {
+  position: absolute;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 1;
+}
+
+.err-glow-1 {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(198, 40, 53, 0.18) 0%, transparent 70%);
+}
+
+body.dark-theme .err-glow-1 {
+  background: radial-gradient(circle, rgba(198, 40, 53, 0.24) 0%, transparent 70%);
+}
+
+.err-glow-2 {
+  bottom: 12%;
+  left: 20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(0, 143, 149, 0.14) 0%, transparent 70%);
+}
+
+body.dark-theme .err-glow-2 {
+  background: radial-gradient(circle, rgba(0, 143, 149, 0.22) 0%, transparent 70%);
+}
+
+/* --------------------------------------------------------------------------
+   4. CENTERED CONTENT CONTAINER
+   -------------------------------------------------------------------------- */
+.err-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Brand Wordmark */
+.err-brand-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: transform var(--transition-fast);
+}
+
+.err-brand-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.err-brand-wrapper .brand-logo-leaf {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-gold);
+  box-shadow: 0 4px 12px rgba(198, 40, 53, 0.2);
+}
+
+.err-brand-wrapper .brand-official-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.err-brand-wrapper .brand-name-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+[dir="rtl"] .err-brand-wrapper .brand-name-group {
+  text-align: right;
+}
+
+.err-brand-wrapper .brand-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--text-heading);
+  line-height: 1.1;
+}
+
+.err-brand-wrapper .brand-tagline {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary, #C62835);
+}
+
+/* --------------------------------------------------------------------------
+   5. 404 NUMERAL & CLINICAL GRADIENT
+   -------------------------------------------------------------------------- */
+.err-numeral {
+  font-family: var(--font-sans);
+  font-size: clamp(6.5rem, 16vw, 11.5rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #C62835 0%, #EF5350 45%, #008F95 85%, #C62835 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 10px 30px rgba(198, 40, 53, 0.28));
+  user-select: none;
+  margin-bottom: 22px;
+  animation: errGoldShine 8s ease-in-out infinite;
+}
+
+@keyframes errGoldShine {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. HEADLINE & PARAGRAPH CONTENT
+   -------------------------------------------------------------------------- */
+.err-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.85rem, 3.6vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.err-desc {
+  font-size: clamp(0.96rem, 1.6vw, 1.08rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 0 36px;
+}
+
+/* --------------------------------------------------------------------------
+   7. QUICK NAVIGATION ACTIONS
+   -------------------------------------------------------------------------- */
+.err-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  width: 100%;
+}
+
+.err-action .btn-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: var(--radius-full);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.err-action .btn-primary-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(198, 40, 53, 0.35);
+}
+
+.err-action .btn-primary-cta:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .err-action .btn-primary-cta:hover .btn-arrow-icon {
+  transform: translateX(-4px);
+}
+
+.err-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-subtle);
+  color: var(--text-heading);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.err-secondary-link:hover {
+  border-color: var(--color-accent-secondary, #008F95);
+  color: var(--color-accent-secondary, #008F95);
+  transform: translateY(-2px);
+}
+
+/* Dark Mode Overrides for Action Button */
+body.dark-theme .err-action .btn-primary-cta {
+  background-color: var(--color-accent-primary, #EF5350);
+  color: #FFFFFF !important;
+  border: 1px solid var(--color-accent-primary, #EF5350);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-theme .err-action .btn-primary-cta span {
+  color: #FFFFFF !important;
+}
+
+body.dark-theme .err-action .btn-primary-cta .btn-arrow-icon {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+body.dark-theme .err-action .btn-primary-cta:hover {
+  background-color: var(--color-accent-primary-hover, #FF6B68);
+  border-color: var(--color-accent-primary-hover, #FF6B68);
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 22px rgba(198, 40, 53, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .err-top-controls {
+    top: 16px;
+    right: 18px;
+    gap: 8px;
+  }
+
+  [dir="rtl"] .err-top-controls {
+    left: 18px;
+    right: auto;
+  }
+
+  .err-control-btn {
+    padding: 7px 12px;
+    font-size: 0.74rem;
+  }
+
+  .err-title {
+    font-size: 1.65rem;
+  }
+
+  .err-desc {
+    font-size: 0.92rem;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .err-wrapper {
+    padding: 40px 18px;
+  }
+
+  .err-numeral {
+    font-size: 5.8rem;
+  }
+
+  .err-action {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .err-action .btn-primary-cta,
+  .err-secondary-link {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 0.82rem;
+    box-sizing: border-box;
+  }
+}

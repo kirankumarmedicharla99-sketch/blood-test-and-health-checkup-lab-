@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Health Guides &amp; Clinical Diagnostics Journal | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="Explore clinician-authored patient health guides, biomarker reference range explanations, fasting preparation protocols, and preventive pathology insights from AARA Clinical Laboratories.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="journal.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="journal-page">
+
+  <!-- =========================================================================
+       NAVIGATION HEADER (100% Consistent with Home 1 / index.html)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+
+      <!-- Left: Brand Logo & Wordmark matching medical laboratory identity -->
+      <a href="index.html" class="brand-wrapper" id="brandLogoLink">
+        <div class="brand-logo-leaf">
+          <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+        </div>
+        <div class="brand-name-group">
+          <span class="brand-title">AARA</span>
+          <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+        </div>
+      </a>
+
+      <!-- Middle: Desktop Navigation Links -->
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-item has-dropdown">
+          <a href="./index.html" class="nav-link" id="navHome">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="nav-chevron-icon"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="./index.html" class="dropdown-item">
+              <span>Home 1 (Diagnostic Hub)</span>
+              <span class="badge-tag">Active</span>
+            </a>
+            <a href="./home2.html" class="dropdown-item" id="btnOpenHome2">
+              <span>Home 2 (Preventive Care)</span>
+              <span class="badge-tag">New</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" id="navAbout">About Us</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="service.html" class="nav-link" id="navServices">Services</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="pricing.html" class="nav-link" id="navPricing">Pricing</a>
+        </div>
+        <div class="nav-item">
+          <a href="Journal.html" class="nav-link active" id="navJournal">Journal</a>
+        </div>
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link" id="navContact">Contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link" id="navDashboard">
+            <span>Dashboard</span>
+            <span class="nav-status-dot" aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right: Action Buttons (RTL, Theme Toggle, Login Button, Mobile Hamburger) -->
+      <div class="header-actions">
+        <!-- RTL Switcher -->
+        <button class="icon-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR" title="Toggle RTL / LTR">
+          <span class="rtl-label" id="rtlLabel">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="themeToggleBtn" aria-label="Toggle light/dark theme"
+          title="Toggle Light / Dark Mode">
+          <span id="themeIcon"><i data-lucide="moon"></i></span>
+        </button>
+
+        <!-- Primary CTA Login Button -->
+        <a href="login.html" class="btn-primary-cta" id="loginBtn">
+          <span>Login</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home 1 (Diagnostic Hub)</a></li>
+      <li><a href="home2.html" class="mobile-nav-link" id="mobileHome2Btn">Home 2 (Preventive Care)</a></li>
+      <li><a href="service.html" class="mobile-nav-link">Diagnostic Test Catalog</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Book Home Collection</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="Journal.html" class="mobile-nav-link" style="color:var(--color-accent-primary); font-weight:600;"
+          data-close-drawer>Journal &bull; Active</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link" id="mobileDashboardBtn">Dashboard</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn-primary-cta" id="mobileLoginBtn"
+        style="width: 100%; justify-content: center; text-decoration: none;">
+        <span>Patient Portal &bull; Login</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+      <p style="text-align: center; font-size: 0.76rem; color: var(--text-muted);">
+        AARA Clinical Laboratories • Accurate Diagnostics &amp; Patient Care
+      </p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: CLINICAL HEALTH GUIDES HERO BANNER
+         ========================================================================= -->
+    <section class="jnl-hero" id="journal-hero">
+      <div class="container jnl-hero-container">
+
+        <!-- Centered Hero Content -->
+        <div class="jnl-hero-content">
+          <div class="jnl-hero-badge">
+            <i data-lucide="book-open" style="width:14px; height:14px;"></i>
+            <span>Patient Health Education &amp; Clinical Dispatches</span>
+          </div>
+
+          <h1 class="jnl-hero-title">
+            Demystifying Blood Reports, <span class="gold-accent">Biomarkers</span> &amp; Preventive Care
+          </h1>
+
+          <p class="jnl-hero-desc">
+            Peer-reviewed patient health guides, pre-test fasting instructions, and reference range breakdowns authored
+            by
+            AARA’s board-certified pathologists and clinical biochemists. Understand your lab results with clarity and
+            confidence.
+          </p>
+
+          <div class="jnl-hero-actions">
+            <a href="#journal-catalog" class="btn-primary-cta">
+              <span>Explore 6 Health Guides</span>
+              <i data-lucide="arrow-down" class="btn-arrow-icon"></i>
+            </a>
+            <a href="#journal-faq" class="btn-secondary-clinical">
+              <i data-lucide="help-circle" style="width:14px; height:14px;"></i>
+              <span>Patient Testing FAQs</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: SIX CLINICAL PATIENT HEALTH GUIDES
+         ========================================================================= -->
+    <section class="journal-catalog-section" id="journal-catalog">
+      <div class="container">
+
+        <div class="section-header-center">
+          <span class="section-eyebrow">CLINICAL KNOWLEDGE BASE</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Six Essential Patient Health &amp; Blood Test Guides
+          </h2>
+          <p class="section-subtitle-text">
+            Each clinical guide equips patients, families, and referring physicians with clear explanations of
+            biological
+            reference intervals, test preparation protocols, and preventive screening milestones.
+          </p>
+        </div>
+
+        <!-- Filter Pill Bar Centered Above Grid -->
+        <div class="jnl-catalog-filter-bar">
+          <span class="jnl-filter-label">Filter Health Guide Category:</span>
+          <div class="jnl-filter-pills" id="journalFilterPills">
+            <button class="jnl-filter-pill active" data-filter="all">All Health Guides (6)</button>
+            <button class="jnl-filter-pill" data-filter="hematology">Hematology &amp; Quality</button>
+            <button class="jnl-filter-pill" data-filter="preparation">Fasting &amp; Prep</button>
+            <button class="jnl-filter-pill" data-filter="metabolic">Diabetes &amp; Thyroid</button>
+            <button class="jnl-filter-pill" data-filter="preventive">Vitamins &amp; Wellness</button>
+          </div>
+        </div>
+
+        <div class="journal-grid" id="journalCardsGrid">
+
+          <!-- Card 1: Understanding Your Complete Blood Count (CBC) Results -->
+          <article class="journal-card" data-category="hematology">
+            <div class="journal-card-media">
+              <img src="assets/images/h2-fluid-art.jpg" alt="Complete Blood Count CBC Results and Hematology Guide"
+                loading="lazy">
+              <span class="journal-card-cat-badge">Hematology &amp; Blood Panels</span>
+              <span class="journal-card-read-time">
+                <i data-lucide="clock" style="width:12px; height:12px;"></i> 6 Min Read
+              </span>
+            </div>
+
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="journal-card-date">October 14, 2026</span>
+                <span class="journal-card-divider">•</span>
+                <span class="journal-card-author">Dr. Alisha Khan, MD (Pathology)</span>
+              </div>
+
+              <h3 class="journal-card-title">
+                Understanding Your Complete Blood Count (CBC) Results: RBC, WBC, Hemoglobin &amp; Platelets
+              </h3>
+
+              <p class="journal-card-excerpt">
+                Learn how to read all 24 parameters of a Complete Blood Count report—including red cell indices (MCV,
+                MCH),
+                5-part differential leukocyte counts, hemoglobin thresholds for anemia, and platelet reference ranges.
+              </p>
+
+              <div class="journal-card-footer">
+                <a href="journaldetail.html?article=cbc-results-guide" class="btn-card-explore"
+                  aria-label="Read Health Guide: Understanding Your Complete Blood Count Results">
+                  <span>Read Health Guide</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Why 10-12 Hour Fasting Matters for Lipid & Glucose Tests -->
+          <article class="journal-card" data-category="preparation">
+            <div class="journal-card-media">
+              <img src="assets/images/service-river-table.jpg"
+                alt="Fasting Preparation for Lipid Profile and Blood Glucose Tests" loading="lazy">
+              <span class="journal-card-cat-badge">Fasting &amp; Test Prep</span>
+              <span class="journal-card-read-time">
+                <i data-lucide="clock" style="width:12px; height:12px;"></i> 7 Min Read
+              </span>
+            </div>
+
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="journal-card-date">Sept 28, 2026</span>
+                <span class="journal-card-divider">•</span>
+                <span class="journal-card-author">Dr. Vikramaditya Rao, MD</span>
+              </div>
+
+              <h3 class="journal-card-title">
+                Why 10–12 Hour Fasting Matters for Lipid Profile &amp; Blood Glucose Tests service
+              </h3>
+
+              <p class="journal-card-excerpt">
+                Discover how postprandial chylomicrons spike serum triglycerides and alter calculated LDL cholesterol,
+                why plain
+                water is encouraged during fasting, and how to time morning medications before your phlebotomy draw.
+              </p>
+
+              <div class="journal-card-footer">
+                <a href="journaldetail.html?article=fasting-lipid-glucose" class="btn-card-explore"
+                  aria-label="Read Health Guide: Why 10-12 Hour Fasting Matters">
+                  <span>Read Health Guide</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Decoding Thyroid Hormones: T3, T4 & TSH Reference Ranges -->
+          <article class="journal-card" data-category="metabolic">
+            <div class="journal-card-media">
+              <img src="assets/images/service-wall-art.jpg"
+                alt="Decoding Thyroid Hormones T3 T4 and TSH Reference Ranges" loading="lazy">
+              <span class="journal-card-cat-badge">Thyroid &amp; Hormones</span>
+              <span class="journal-card-read-time">
+                <i data-lucide="clock" style="width:12px; height:12px;"></i> 6 Min Read
+              </span>
+            </div>
+
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="journal-card-date">August 19, 2026</span>
+                <span class="journal-card-divider">•</span>
+                <span class="journal-card-author">Dr. Soraya Al-Mansoor, PhD</span>
+              </div>
+
+              <h3 class="journal-card-title">
+                Decoding Thyroid Hormones: T3, T4 &amp; Ultra-Sensitive TSH Reference Ranges
+              </h3>
+
+              <p class="journal-card-excerpt">
+                A clinical breakdown of the hypothalamic-pituitary-thyroid feedback loop, distinguishing subclinical
+                hypothyroidism
+                from overt thyroid dysfunction, and when to request Anti-TPO antibody screening.
+              </p>
+
+              <div class="journal-card-footer">
+                <a href="journaldetail.html?article=thyroid-t3-t4-tsh" class="btn-card-explore"
+                  aria-label="Read Health Guide: Decoding Thyroid Hormones">
+                  <span>Read Health Guide</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: HbA1c vs Fasting Blood Sugar: Complete Diabetes Guide -->
+          <article class="journal-card" data-category="metabolic">
+            <div class="journal-card-media">
+              <img src="assets/images/gallery-coaster-detail.jpg"
+                alt="HbA1c vs Fasting Blood Sugar Diabetes Monitoring Guide" loading="lazy">
+              <span class="journal-card-cat-badge">Diabetes &amp; Metabolic Care</span>
+              <span class="journal-card-read-time">
+                <i data-lucide="clock" style="width:12px; height:12px;"></i> 7 Min Read
+              </span>
+            </div>
+
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="journal-card-date">July 30, 2026</span>
+                <span class="journal-card-divider">•</span>
+                <span class="journal-card-author">Dr. Vikramaditya Rao, MD</span>
+              </div>
+
+              <h3 class="journal-card-title">
+                HbA1c vs. Fasting Blood Sugar: Complete Clinical Guide to Diabetes Monitoring
+              </h3>
+
+              <p class="journal-card-excerpt">
+                Understand how glycated hemoglobin (HbA1c) reflects your 90-day average blood glucose without fasting,
+                and why pairing
+                it with Fasting Plasma Glucose (FPG) and Postprandial (PPBS) testing catches early prediabetes.
+              </p>
+
+              <div class="journal-card-footer">
+                <a href="journaldetail.html?article=hba1c-vs-fasting-sugar" class="btn-card-explore"
+                  aria-label="Read Health Guide: HbA1c vs Fasting Blood Sugar">
+                  <span>Read Health Guide</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Signs of Vitamin D & B12 Deficiency and When to Test -->
+          <article class="journal-card" data-category="preventive">
+            <div class="journal-card-media">
+              <img src="assets/images/service-home-decor.jpg"
+                alt="Vitamin D 25-OH and Vitamin B12 Deficiency Symptoms and Testing" loading="lazy">
+              <span class="journal-card-cat-badge">Vitamins &amp; Wellness</span>
+              <span class="journal-card-read-time">
+                <i data-lucide="clock" style="width:12px; height:12px;"></i> 6 Min Read
+              </span>
+            </div>
+
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="journal-card-date">June 12, 2026</span>
+                <span class="journal-card-divider">•</span>
+                <span class="journal-card-author">Dr. Alisha Khan, MD (Pathology)</span>
+              </div>
+
+              <h3 class="journal-card-title">
+                Signs of Vitamin D &amp; B12 Deficiency: Symptoms, Reference Ranges &amp; When to Test
+              </h3>
+
+              <p class="journal-card-excerpt">
+                Why chronic fatigue, bone aches, brain fog, and peripheral tingling often trace back to low 25-Hydroxy
+                Vitamin D
+                or serum Cobalamin (B12)—and how targeted immunoassay testing guides safe supplementation.
+              </p>
+
+              <div class="journal-card-footer">
+                <a href="journaldetail.html?article=vitamin-d-b12-deficiency" class="btn-card-explore"
+                  aria-label="Read Health Guide: Signs of Vitamin D and B12 Deficiency">
+                  <span>Read Health Guide</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: How Automated Hematology & Cold-Chain Phlebotomy Ensure Accuracy -->
+          <article class="journal-card" data-category="hematology">
+            <div class="journal-card-media">
+              <img src="assets/images/gallery-ocean-clock.jpg"
+                alt="Automated Hematology and Cold Chain Phlebotomy Quality Assurance" loading="lazy">
+              <span class="journal-card-cat-badge">Lab Quality &amp; Tech</span>
+              <span class="journal-card-read-time">
+                <i data-lucide="clock" style="width:12px; height:12px;"></i> 8 Min Read
+              </span>
+            </div>
+
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="journal-card-date">May 04, 2026</span>
+                <span class="journal-card-divider">•</span>
+                <span class="journal-card-author">Dr. Julian Thorne, MD (Quality Director)</span>
+              </div>
+
+              <h3 class="journal-card-title">
+                How Automated Hematology &amp; Cold-Chain Phlebotomy Ensure Diagnostic Accuracy
+              </h3>
+
+              <p class="journal-card-excerpt">
+                Go inside AARA’s quality assurance workflow: 2D barcoded vacutainer tubes, 2°C–8°C digital cold-chain
+                home transport,
+                3-level daily internal quality controls (IQC), and dual-pathologist report sign-off.
+              </p>
+
+              <div class="journal-card-footer">
+                <a href="journaldetail.html?article=automated-hematology-cold-chain" class="btn-card-explore"
+                  aria-label="Read Health Guide: How Automated Hematology and Cold-Chain Phlebotomy Ensure Accuracy">
+                  <span>Read Health Guide</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: INTERACTIVE PATIENT TESTING & DIAGNOSTIC FAQS
+         ========================================================================= -->
+    <section class="faq-section" id="journal-faq">
+      <div class="container faq-container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">PATIENT PREPARATION &amp; REPORTS</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Frequently Asked Diagnostic Questions
+          </h2>
+          <p class="section-subtitle-text">
+            Clinician-verified answers regarding fasting rules, home sample collection hygiene, report turnaround times,
+            and reference intervals.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+
+          <!-- FAQ Item 1 -->
+          <div class="faq-item active">
+            <button class="faq-header" type="button" aria-expanded="true">
+              <span class="faq-question">Which blood tests require 10 to 12 hours of overnight fasting?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse" style="max-height: 200px;">
+              <div class="faq-body">
+                Overnight fasting (10–12 hours) is required for Fasting Blood Glucose (FBS), Complete Lipid Profile
+                (especially Triglycerides and LDL), Fasting Insulin, and Iron Studies. During the fasting window, do not
+                consume food, tea, coffee, milk, juice, or chewing gum. Plain drinking water in moderate amounts is
+                encouraged to keep your veins hydrated.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+              <span class="faq-question">How quickly will I receive my digital blood test reports after sample
+                collection?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse">
+              <div class="faq-body">
+                Routine hematology, biochemistry, lipid, thyroid, and diabetes panels (including CBC, LFT, KFT, HbA1c,
+                and TSH) are processed on automated analyzers and released within 6 to 12 hours on the same day. You
+                receive an encrypted link via WhatsApp and email, and can also view historical trends in the Patient
+                Portal.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+              <span class="faq-question">How does AARA maintain sample integrity during doorstep home blood
+                collection?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse">
+              <div class="faq-body">
+                Our certified phlebotomists use sterile, single-use vacuum needles and color-coded vacutainers (EDTA,
+                SST Gel, Fluoride) that are barcoded immediately at your bedside. Samples are placed inside calibrated
+                2°C–8°C insulated cold-chain carriers with digital temperature loggers and delivered directly to our
+                Jubilee Hills central laboratory.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+              <span class="faq-question">Should I stop taking my daily thyroid or blood pressure medication before a
+                morning blood test?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse">
+              <div class="faq-body">
+                Essential blood pressure or heart medications can usually be taken with a sip of plain water unless your
+                physician instructs otherwise. For thyroid hormone monitoring (T3, T4, TSH), clinicians typically
+                recommend having your blood drawn in the morning <em>before</em> taking your daily levothyroxine tablet
+                for consistent trough comparison.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+              <span class="faq-question">Can I speak with a pathologist if a biomarker on my report is flagged as
+                abnormal?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse">
+              <div class="faq-body">
+                Yes. Every comprehensive checkup package and critical result includes a complimentary tele-consultation
+                with our clinical pathology team to explain what your biomarker values mean in context and help you
+                prepare questions for your treating physician.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: HOME SAMPLE COLLECTION & PREVENTIVE CHECKUP CTA
+         ========================================================================= -->
+    <section class="svc-cta-section" id="journal-cta">
+      <div class="container">
+        <div class="svc-cta-box">
+          <div class="svc-cta-content">
+            <span class="svc-cta-badge">
+              <i data-lucide="stethoscope" style="width:12px; height:12px;"></i> Preventive Diagnostics &amp; Home
+              Phlebotomy
+            </span>
+            <h2 class="serif-font svc-cta-title">
+              Ready to Schedule Your Preventive Health Checkup or Home Blood Draw?
+            </h2>
+            <p class="svc-cta-text">
+              Book a convenient morning home sample collection anywhere in Hyderabad or walk into our Jubilee Hills
+              Diagnostic Hub. Same-day pathologist-verified digital reports delivered to your phone.
+            </p>
+          </div>
+
+          <div class="svc-cta-actions">
+            <a href="contact.html" class="btn-primary-cta" style="text-decoration:none;">
+              <span>Book Home Collection</span>
+              <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+            </a>
+            <div class="svc-cta-phone">
+              Lab Helpline: <a href="tel:+919849024000">+91 98490 24000</a> &bull; <a
+                href="mailto:reports@aara-diagnostics.com">reports@aara-diagnostics.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION 5: FOOTER (100% Home 1 Fidelity)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Col 1: Brand & Laboratory Mission -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-wrapper" title="AARA Clinical Laboratories">
+            <div class="brand-logo-leaf">
+              <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+            </div>
+            <div class="brand-name-group">
+              <span class="brand-title">AARA</span>
+              <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            AARA Clinical Laboratories provides reliable blood testing, comprehensive preventive health checkups, and
+            sterile home sample collection with verified same-day digital reports.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"
+              title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"
+              title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link" aria-label="YouTube"
+              title="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Diagnostic Services -->
+        <div class="footer-col">
+          <h4>Diagnostic Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="servicedetail.html?service=complete-blood-count">Complete Blood Count (CBC)</a></li>
+            <li><a href="servicedetail.html?service=lipid-profile">Comprehensive Lipid Profile</a></li>
+            <li><a href="servicedetail.html?service=thyroid-profile">Thyroid Function Profile</a></li>
+            <li><a href="servicedetail.html?service=diabetes-monitoring">HbA1c &amp; Diabetes Panel</a></li>
+            <li><a href="servicedetail.html?service=home-sample-collection">Home Sample Collection</a></li>
+            <li><a href="servicedetail.html?service=full-body-health-checkup">Full Body Health Checkup</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Additional Links -->
+        <div class="footer-col">
+          <h4>Additional Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="comingsoon.html">Coming Soon</a></li>
+            <li><a href="contact.html">Book Home Collection</a></li>
+            <li><a href="pricing.html#estimator-widget">Health Package Estimator</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact -->
+        <div class="footer-col footer-col-contact">
+          <h4>Laboratory Contact</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Main Diagnostic Lab</span>
+                <span class="footer-contact-value">Plot 428, Road No. 36, Jubilee Hills, Hyderabad</span>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="phone"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Home Visit Helpline</span>
+                <a href="tel:+919849024000" class="footer-contact-value footer-contact-link">+91 98490 24000</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="mail"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Report Inquiries</span>
+                <a href="mailto:reports@aara-diagnostics.com"
+                  class="footer-contact-value footer-contact-link">reports@aara-diagnostics.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="clock"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Collection Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Sat: 6:30 AM &ndash; 8:00 PM<br>Sun: 7:00 AM &ndash; 2:00
+                  PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright-text">
+          &copy; 2026 AARA Clinical Laboratories. All Rights Reserved. Diagnostic &amp; Preventive Health Services.
+        </div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Diagnostics</a>
+          <a href="#">Quality Assurance Standards</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: PATIENT PORTAL LOGIN & ACCOUNT REGISTRATION
+       ========================================================================= -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" id="tabBtnLogin">Patient Login</button>
+        <button class="modal-tab-btn" id="tabBtnRegister">New Registration</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Registered Mobile or Email</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password / Portal Access Code</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Access Patient Portal</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display: none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Patient Name</label>
+          <input type="text" id="regName" class="form-input" placeholder="Dr. / Mr. / Ms. Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPass">Create Secure Password</label>
+          <input type="password" id="regPass" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Register Patient Account</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: PATIENT PORTAL & LIVE SAMPLE TRACKER
+       ========================================================================= -->
+  <div class="modal-overlay" id="dashboardModal">
+    <div class="modal-window" style="max-width: 620px;">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div style="margin-bottom: 24px;">
+        <span class="section-eyebrow">PATIENT DIAGNOSTIC PORTAL</span>
+        <h3 style="font-size: 1.6rem; color: var(--text-heading);">Live Sample Status &amp; Reports</h3>
+        <p style="font-size: 0.86rem; color: var(--text-muted);">Patient Record #AARA-MED-8921</p>
+      </div>
+
+      <!-- Live Order Tracker -->
+      <div class="dashboard-order-status">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-size: 0.92rem; color: var(--text-heading);">Order #AARA-8921 • Comprehensive Health
+            Checkup</strong>
+          <span class="badge-tag">Phase 3 • Testing &amp; Analysis</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+          68 Parameters • CBC, Lipid Profile, LFT, KFT, Thyroid &amp; HbA1c
+        </p>
+
+        <div class="order-progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div
+          style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); margin-top: 10px;">
+          <span>Stage 1: Sample Collected ✓</span>
+          <span>Stage 2: Barcode Inwarded ✓</span>
+          <span style="color: var(--color-accent-primary); font-weight: 700;">Stage 3: Testing &amp; Analysis
+            (Active)</span>
+          <span>Stage 4: Verified Report</span>
+        </div>
+      </div>
+
+      <!-- Verified Reports -->
+      <h4 style="font-size: 1rem; margin: 20px 0 12px; color: var(--text-heading);">Recent Verified Diagnostic Reports
+      </h4>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background-color: var(--bg-primary);">
+          <div>
+            <strong style="font-size: 0.86rem; color: var(--text-heading);">Complete Blood Count (CBC) with ESR</strong>
+            <p style="font-size: 0.76rem; color: var(--text-muted);">Signed by Pathologist • Report #REP-804 (PDF)</p>
+          </div>
+          <span class="badge-tag"
+            style="background-color: rgba(0, 143, 149, 0.15); color: var(--color-accent-secondary);">Report Ready</span>
+        </div>
+      </div>
+
+      <a href="service.html" class="btn-primary-cta" id="btnRequestNewBespoke"
+        style="width: 100%; justify-content: center; margin-top: 24px; text-decoration: none;">
+        <span>Book Another Diagnostic Test</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Toast Notification Message Element -->
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite">
+    <span class="toast-icon"><i data-lucide="activity"></i></span>
+    <span class="toast-text" id="toastText">Welcome to AARA Clinical Health Guides.</span>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="journal.js"></script>
+</body>
+
+</html>

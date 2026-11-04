@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Checkup Packages &amp; Diagnostic Test Pricing | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="Explore transparent diagnostic blood test pricing, preventive Full Body Health Checkup packages, individual blood test price lists (CBC, Lipid, LFT, KFT, Thyroid, HbA1c, Vitamin D & B12), and corporate wellness screening plans at AARA Clinical Laboratories.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="pricing.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="pricing-page">
+
+  <!-- =========================================================================
+       NAVIGATION HEADER (100% Consistent with Home 1 / index.html)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+
+      <!-- Left: Brand Logo & Wordmark matching medical laboratory identity -->
+      <a href="index.html" class="brand-wrapper" id="brandLogoLink">
+        <div class="brand-logo-leaf">
+          <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+        </div>
+        <div class="brand-name-group">
+          <span class="brand-title">AARA</span>
+          <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+        </div>
+      </a>
+
+      <!-- Middle: Desktop Navigation Links -->
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-item has-dropdown">
+          <a href="./index.html" class="nav-link" id="navHome">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="nav-chevron-icon"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="./index.html" class="dropdown-item">
+              <span>Home 1 (Diagnostic Hub)</span>
+            </a>
+            <a href="./home2.html" class="dropdown-item" id="btnOpenHome2">
+              <span>Home 2 (Preventive Care)</span>
+              <span class="badge-tag">New</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" id="navAbout">About Us</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="service.html" class="nav-link" id="navServices">Services</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="pricing.html" class="nav-link active" id="navPricing">Pricing</a>
+        </div>
+        <div class="nav-item">
+          <a href="Journal.html" class="nav-link" id="navJournal">Journal</a>
+        </div>
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link" id="navContact">Contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link" id="navDashboard">
+            <span>Dashboard</span>
+            <span class="nav-status-dot" aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right: Action Buttons (RTL, Theme Toggle, Login Button, Mobile Hamburger) -->
+      <div class="header-actions">
+        <!-- RTL Switcher -->
+        <button class="icon-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR" title="Toggle RTL / LTR">
+          <span class="rtl-label" id="rtlLabel">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="themeToggleBtn" aria-label="Toggle light/dark theme"
+          title="Toggle Light / Dark Mode">
+          <span id="themeIcon"><i data-lucide="moon"></i></span>
+        </button>
+
+        <!-- Primary CTA Login Button -->
+        <a href="login.html" class="btn-primary-cta" id="loginBtn">
+          <span>Login</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home 1 (Diagnostic Hub)</a></li>
+      <li><a href="home2.html" class="mobile-nav-link" id="mobileHome2Btn">Home 2 (Preventive Care)</a></li>
+      <li><a href="service.html" class="mobile-nav-link">Diagnostic Test Catalog</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Book Home Collection</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link"
+          style="color:var(--color-accent-primary); font-weight:600;">Pricing &bull; Active</a></li>
+      <li><a href="Journal.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link" id="mobileDashboardBtn">Dashboard</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn-primary-cta" id="mobileLoginBtn"
+        style="width: 100%; justify-content: center; text-decoration: none;">
+        <span>Patient Portal &bull; Login</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+      <p style="text-align: center; font-size: 0.76rem; color: var(--text-muted);">
+        AARA Clinical Laboratories • Accurate Diagnostics &amp; Patient Care
+      </p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: CLINICAL PRICING HERO BANNER WITH FLOATING CARD IMAGE
+         ========================================================================= -->
+    <section class="prc-hero" id="pricing-hero">
+      <div class="container prc-hero-container">
+
+        <!-- Left: Hero Narrative & Guarantees -->
+        <div class="prc-hero-content">
+          <div class="prc-hero-badge">
+            <i data-lucide="activity" style="width:14px; height:14px;"></i>
+            <span>Transparent Clinical Laboratory Pricing</span>
+          </div>
+
+          <h1 class="prc-hero-title">
+            Preventive Health Checkups, <br>
+            <span class="gold-accent">Priced Clearly</span> for Every Family
+          </h1>
+
+          <p class="prc-hero-desc">
+            At AARA Clinical Laboratories, we believe proactive preventive healthcare begins with transparent pricing,
+            zero hidden specimen fees, and verified same-day digital reporting.
+          </p>
+
+          <div class="prc-hero-actions">
+            <a href="#pricing-tiers" class="btn-primary-cta">
+              <span>Compare 3 Health Packages</span>
+              <i data-lucide="arrow-down" class="btn-arrow-icon"></i>
+            </a>
+            <a href="#estimator-widget" class="btn-secondary-clinical">
+              <i data-lucide="calculator" style="width:14px; height:14px;"></i>
+              <span>Test Cost Estimator</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Row -->
+          <div class="prc-trust-badges">
+            <div class="prc-trust-item">
+              <i data-lucide="shield-check"></i>
+              <span>MD Pathologist Verified</span>
+            </div>
+            <div class="prc-trust-item">
+              <i data-lucide="home"></i>
+              <span>Free Home Visit on $85+ Packages</span>
+            </div>
+            <div class="prc-trust-item">
+              <i data-lucide="file-check"></i>
+              <span>Same-Day Encrypted PDF Reports</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3D Blood Symbol Hero Visual -->
+        <div class="prc-hero-visual">
+          <div class="prc-3d-blood-container">
+            <img src="assets/images/blood-symbol-3d.jpg" alt="AARA Clinical 3D Blood Symbol & Diagnostic Biomarkers"
+              class="prc-3d-blood-img" width="560" height="560">
+            <div class="prc-3d-badge">
+              <i data-lucide="activity" style="width:16px; height:16px;"></i>
+              <span>3D Blood Biomarker Diagnostics</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: THREE HEALTH CHECKUP PACKAGES (With Interactive Scope Switcher)
+         ========================================================================= -->
+    <section class="pricing-section" id="pricing-tiers">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header-center">
+          <span class="section-eyebrow">PREVENTIVE HEALTH PACKAGES</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Choose Your Preventive Screening Package
+          </h2>
+          <p class="section-subtitle-text">
+            Select the diagnostic health package aligned with your preventive wellness goals. Every package includes
+            sterile vacutainer collection, automated assay processing, and pathologist sign-off.
+          </p>
+        </div>
+
+        <!-- Interactive Scope Switcher -->
+        <div class="pricing-switcher-wrap">
+          <div class="pricing-switcher">
+            <button class="pricing-scope-btn active" id="btnScopeRes">
+              <i data-lucide="user-check" style="width:14px; height:14px; margin-right:4px;"></i>
+              <span>Individual &amp; Family Packages</span>
+            </button>
+            <button class="pricing-scope-btn" id="btnScopeCom">
+              <i data-lucide="building-2" style="width:14px; height:14px; margin-right:4px;"></i>
+              <span>Corporate &amp; Annual Wellness</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Pricing Cards Grid -->
+        <div class="pricing-grid">
+
+          <!-- Card 1: Essential Vitality Screening -->
+          <article class="pricing-card" id="cardTier1">
+            <div class="pricing-card-header">
+              <h3 class="pricing-tier-name" id="tier1Name">Essential Vitality Screening</h3>
+              <p class="pricing-tier-desc" id="tier1Desc">
+                Foundational 38-parameter routine blood and urine checkup for baseline hematology, blood sugar,
+                cholesterol, and kidney-liver health.
+              </p>
+            </div>
+
+            <div class="pricing-price-wrap">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount" id="tier1Price">45</span>
+              <span class="pricing-period" id="tier1Period">USD / Person</span>
+            </div>
+
+            <div class="pricing-deposit-note" id="tier1Deposit">
+              <i data-lucide="info"></i>
+              <span>38 Biomarkers • 8–10 Hr Fasting Required</span>
+            </div>
+
+            <ul class="pricing-features">
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Complete Blood Count (CBC) with ESR (24 parameters)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Fasting Plasma Glucose (FPG) diabetes screen</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Complete Lipid Profile (Cholesterol, HDL, LDL, TG)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Core Liver Enzymes (SGOT, SGPT &amp; Total Bilirubin)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Renal Function Screen (Serum Creatinine, BUN, Uric Acid)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Complete Urine Examination &amp; Same-Day Digital Report</span>
+              </li>
+            </ul>
+
+            <button class="btn-secondary-clinical pricing-card-btn"
+              data-open-commission="Essential Vitality Screening ($45)">
+              <span>Book Essential Screening</span>
+              <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+            </button>
+          </article>
+
+          <!-- Card 2: Comprehensive Full Body Checkup (FEATURED) -->
+          <article class="pricing-card featured" id="cardTier2">
+            <span class="pricing-badge-featured">
+              <i data-lucide="shield-check" style="width:12px; height:12px; margin-right:4px;"></i>
+              Most Recommended Annual Checkup
+            </span>
+
+            <div class="pricing-card-header">
+              <h3 class="pricing-tier-name" id="tier2Name">Comprehensive Full Body Checkup</h3>
+              <p class="pricing-tier-desc" id="tier2Desc">
+                Complete 68-parameter multi-organ wellness assessment including Thyroid, HbA1c, Liver, Kidney, Lipids,
+                and Vitamin D &amp; B12.
+              </p>
+            </div>
+
+            <div class="pricing-price-wrap">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount" id="tier2Price">85</span>
+              <span class="pricing-period" id="tier2Period">USD / All-Inclusive</span>
+            </div>
+
+            <div class="pricing-deposit-note" id="tier2Deposit">
+              <i data-lucide="info"></i>
+              <span>68 Biomarkers • Includes Free Doorstep Collection</span>
+            </div>
+
+            <ul class="pricing-features">
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Complete Blood Count (CBC) with 5-Part Diff &amp; ESR (24)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Comprehensive Lipid &amp; Cardiac Risk Ratio Profile (8)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Complete Liver Function Test (LFT - 11 parameters)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Kidney Function Test &amp; Serum Electrolytes (KFT - 9)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Thyroid Function Profile (Total T3, Total T4, Ultra-TSH)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>HPLC HbA1c (90-Day Glucose Avg) &amp; Fasting Blood Sugar</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Vitamin D (25-OH), Vitamin B12 &amp; Free Home Collection</span>
+              </li>
+            </ul>
+
+            <button class="btn-primary-cta pricing-card-btn"
+              data-open-commission="Comprehensive Full Body Checkup ($85)">
+              <span>Book Comprehensive Package</span>
+              <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+            </button>
+          </article>
+
+          <!-- Card 3: Executive Cardiac & Metabolic Master Panel -->
+          <article class="pricing-card" id="cardTier3">
+            <div class="pricing-card-header">
+              <h3 class="pricing-tier-name" id="tier3Name">Executive Cardiac &amp; Metabolic Master</h3>
+              <p class="pricing-tier-desc" id="tier3Desc">
+                Advanced 92-parameter longevity, cardiovascular inflammation, hormone, and micronutrient screening for
+                comprehensive preventive care.
+              </p>
+            </div>
+
+            <div class="pricing-price-wrap">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount" id="tier3Price">145</span>
+              <span class="pricing-period" id="tier3Period">USD / Executive</span>
+            </div>
+
+            <div class="pricing-deposit-note" id="tier3Deposit">
+              <i data-lucide="info"></i>
+              <span>92 Biomarkers • Free Home Visit + Priority Report</span>
+            </div>
+
+            <ul class="pricing-features">
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>All 68 Biomarkers in Comprehensive Full Body Checkup</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Advanced Cardiac Risk: hs-CRP, Homocysteine, Apo-A1 &amp; Apo-B</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Free Thyroid Panel (FT3, FT4, Ultra-Sensitive TSH)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Complete Iron Studies (Serum Iron, TIBC, Transferrin &amp; Ferritin)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Fasting Insulin, HOMA-IR Index &amp; Serum Magnesium/Calcium</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Urine Microalbumin-to-Creatinine Ratio (ACR)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <span class="pricing-feature-icon"><i data-lucide="check"></i></span>
+                <span>Priority Same-Day Reporting &amp; Complimentary Home Visit</span>
+              </li>
+            </ul>
+
+            <button class="btn-secondary-clinical pricing-card-btn"
+              data-open-commission="Executive Cardiac & Metabolic Master ($145)">
+              <span>Book Executive Master Panel</span>
+              <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+            </button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: INDIVIDUAL BLOOD TEST PRICE TABLE
+         ========================================================================= -->
+    <section class="individual-tests-section" id="individual-test-prices">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">TRANSPARENT SINGLE-TEST DIRECTORY</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Individual Blood Test Price Table
+          </h2>
+          <p class="section-subtitle-text">
+            Need a specific standalone diagnostic blood test prescribed by your doctor? Browse our standardized
+            laboratory fee schedule below.
+          </p>
+        </div>
+
+        <div class="test-price-table-wrap">
+          <table class="test-price-table">
+            <thead>
+              <tr>
+                <th>Diagnostic Test / Panel Name</th>
+                <th>Biomarkers Included</th>
+                <th>Fasting Prep</th>
+                <th>Report Time</th>
+                <th>Standard Fee</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Complete Blood Count (CBC) with ESR</strong>
+                  <span class="table-sub-text">Hematology • EDTA Whole Blood</span>
+                </td>
+                <td>24 Parameters (Hb, RBC, 5-Part WBC, Platelets, ESR)</td>
+                <td><span class="prep-badge non-fasting">Non-Fasting</span></td>
+                <td>6 – 12 Hours</td>
+                <td class="table-price-cell">$25 USD</td>
+                <td>
+                  <a href="servicedetail.html?service=complete-blood-count" class="table-action-link">Details &rarr;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Comprehensive Lipid Profile</strong>
+                  <span class="table-sub-text">Cardiovascular Biochemistry • SST Serum</span>
+                </td>
+                <td>8 Parameters (Total Chol, HDL, Direct LDL, VLDL, TG, Ratios)</td>
+                <td><span class="prep-badge fasting">10–12 Hr Fast</span></td>
+                <td>8 – 12 Hours</td>
+                <td class="table-price-cell">$35 USD</td>
+                <td>
+                  <a href="servicedetail.html?service=lipid-profile" class="table-action-link">Details &rarr;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Liver Function Test (LFT Complete)</strong>
+                  <span class="table-sub-text">Hepatic Biochemistry • SST Serum</span>
+                </td>
+                <td>11 Parameters (Bilirubin Total/Direct/Indirect, SGOT, SGPT, ALP, GGT, Proteins)</td>
+                <td><span class="prep-badge fasting">8–10 Hr Fast</span></td>
+                <td>8 – 12 Hours</td>
+                <td class="table-price-cell">$30 USD</td>
+                <td>
+                  <a href="servicedetail.html?service=full-body-health-checkup" class="table-action-link">Details
+                    &rarr;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Kidney Function Test (KFT) &amp; Electrolytes</strong>
+                  <span class="table-sub-text">Renal Biochemistry • SST Serum</span>
+                </td>
+                <td>9 Parameters (Creatinine, eGFR, BUN, Urea, Uric Acid, Na+, K+, Cl-)</td>
+                <td><span class="prep-badge non-fasting">Non-Fasting</span></td>
+                <td>8 – 12 Hours</td>
+                <td class="table-price-cell">$32 USD</td>
+                <td>
+                  <a href="servicedetail.html?service=full-body-health-checkup" class="table-action-link">Details
+                    &rarr;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Thyroid Function Profile (T3, T4, Ultra-TSH)</strong>
+                  <span class="table-sub-text">Endocrine CLIA Immunoassay • SST Serum</span>
+                </td>
+                <td>3 Parameters (Total T3, Total T4, 3rd-Gen Ultra-Sensitive TSH)</td>
+                <td><span class="prep-badge non-fasting">Morning Draw</span></td>
+                <td>8 – 12 Hours</td>
+                <td class="table-price-cell">$40 USD</td>
+                <td>
+                  <a href="servicedetail.html?service=thyroid-profile" class="table-action-link">Details &rarr;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>HbA1c &amp; Fasting Blood Glucose Panel</strong>
+                  <span class="table-sub-text">Diabetes HPLC &amp; Hexokinase • EDTA + Fluoride</span>
+                </td>
+                <td>3 Parameters (HPLC HbA1c %, Estimated Avg Glucose eAG, Fasting Glucose)</td>
+                <td><span class="prep-badge fasting">8–10 Hr Fast</span></td>
+                <td>6 – 10 Hours</td>
+                <td class="table-price-cell">$30 USD</td>
+                <td>
+                  <a href="servicedetail.html?service=diabetes-monitoring" class="table-action-link">Details &rarr;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Vitamin D (25-OH) &amp; Vitamin B12 Combo</strong>
+                  <span class="table-sub-text">Micronutrient Immunoassay • SST Serum</span>
+                </td>
+                <td>2 Parameters (25-Hydroxy Calciferol Total &amp; Serum Cobalamin B12)</td>
+                <td><span class="prep-badge non-fasting">Non-Fasting</span></td>
+                <td>12 Hours</td>
+                <td class="table-price-cell">$45 USD</td>
+                <td>
+                  <a href="servicedetail.html?service=full-body-health-checkup" class="table-action-link">Details
+                    &rarr;</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: INSTANT HEALTH PACKAGE & TEST COST ESTIMATOR WIDGET
+         ========================================================================= -->
+    <section class="estimator-section" id="estimator-widget">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">INSTANT DIAGNOSTIC CALCULATOR</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Configure Your Diagnostic Test Estimate
+          </h2>
+          <p class="section-subtitle-text">
+            Select your primary diagnostic panel, number of family members or collection mode, and optional
+            vitamin/hormone add-ons to calculate your exact fee in real time.
+          </p>
+        </div>
+
+        <div class="estimator-box">
+          <div class="estimator-grid">
+
+            <!-- Field 1: Primary Diagnostic Package -->
+            <div class="estimator-form-group">
+              <label class="estimator-label" for="calcDiscipline">Primary Diagnostic Panel</label>
+              <select id="calcDiscipline" class="estimator-select" aria-label="Primary Diagnostic Panel">
+                <option value="85" selected>Comprehensive Full Body Checkup ($85)</option>
+                <option value="45">Essential Vitality Screening ($45)</option>
+                <option value="145">Executive Cardiac &amp; Metabolic Master ($145)</option>
+                <option value="35">Comprehensive Lipid Profile ($35)</option>
+                <option value="40">Thyroid Function Profile T3/T4/TSH ($40)</option>
+                <option value="25">Complete Blood Count CBC + ESR ($25)</option>
+              </select>
+            </div>
+
+            <!-- Field 2: Patients / Collection Scale -->
+            <div class="estimator-form-group">
+              <label class="estimator-label" for="calcSize">Patients &amp; Collection Mode</label>
+              <select id="calcSize" class="estimator-select" aria-label="Patients and Collection Mode">
+                <option value="1.0" selected>1 Patient • Walk-In or Free Home ($85+)</option>
+                <option value="1.9">Couple Package • 2 Adults (5% Family Discount)</option>
+                <option value="2.7">Family of 3 Adults (10% Family Discount)</option>
+                <option value="3.4">Family of 4 Adults (15% Family Discount)</option>
+              </select>
+            </div>
+
+            <!-- Field 3: Optional Diagnostic Add-On -->
+            <div class="estimator-form-group">
+              <label class="estimator-label" for="calcMineral">Optional Biomarker Add-On</label>
+              <select id="calcMineral" class="estimator-select" aria-label="Optional Biomarker Add-On">
+                <option value="0" selected>No Additional Add-On ($0)</option>
+                <option value="30">HbA1c + Fasting Insulin Add-On (+$30)</option>
+                <option value="45">Vitamin D (25-OH) &amp; B12 Pack (+$45)</option>
+                <option value="35">hs-CRP &amp; Homocysteine Cardiac Pack (+$35)</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div class="estimator-result-card">
+            <div class="estimator-result-label">Estimated Total Diagnostic Fee</div>
+            <div class="estimator-result-price" id="estimatorResultPrice">$85 USD</div>
+            <div class="estimator-result-sub" id="estimatorResultSub">
+              Includes sterile vacutainer draw, MD Pathologist verification &amp; digital PDF report • Turnaround: 12 –
+              24 Hours
+            </div>
+          </div>
+
+          <button class="btn-primary-cta estimator-submit-btn" data-open-commission="Custom Diagnostic Estimate">
+            <span>Book Appointment for This Estimate</span>
+            <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: CLINICAL QUALITY GUARANTEES (4 Core Pillars)
+         ========================================================================= -->
+    <section class="guarantees-section" id="guarantees">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">THE AARA PATIENT PROMISE</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Clinical Accuracy &amp; Billing Transparency
+          </h2>
+          <p class="section-subtitle-text">
+            Every diagnostic test and preventive package is backed by strict laboratory quality controls and
+            patient-first policies.
+          </p>
+        </div>
+
+        <div class="guarantees-grid">
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i data-lucide="shield-check"></i></div>
+            <h3 class="guarantee-title">Zero Hidden Lab Charges</h3>
+            <p class="guarantee-desc">Our listed prices include sterile vacutainer consumables, phlebotomy draw, and
+              digital report delivery.</p>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i data-lucide="home"></i></div>
+            <h3 class="guarantee-title">Free Doorstep Visit ($85+)</h3>
+            <p class="guarantee-desc">Enjoy complimentary morning home sample collection when booking any Full Body
+              Package or order above $85.</p>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i data-lucide="activity"></i></div>
+            <h3 class="guarantee-title">Free Critical Re-Verification</h3>
+            <p class="guarantee-desc">Any abnormal or critical biomarker value is automatically re-run on a secondary
+              analyzer at zero extra cost.</p>
+          </div>
+
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i data-lucide="file-text"></i></div>
+            <h3 class="guarantee-title">Insurance &amp; Tax Invoices</h3>
+            <p class="guarantee-desc">Receive itemized diagnostic receipts valid for preventive health checkup tax
+              deductions and HSA/insurance claims.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: ORGAN SYSTEM BIOMARKER COVERAGE & PREVENTIVE GUIDE
+         ========================================================================= -->
+    <section class="prc-coverage-section" id="biomarker-coverage">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">WHAT YOUR PACKAGE TESTS</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Organ-System Biomarker Coverage Breakdown
+          </h2>
+          <p class="section-subtitle-text">
+            Explore the clinical biomarkers and organ systems evaluated across our preventive health checkup packages,
+            engineered for early risk detection and longitudinal health tracking.
+          </p>
+        </div>
+
+        <div class="prc-coverage-grid">
+          <!-- Coverage Card 1 -->
+          <div class="prc-coverage-card">
+            <div class="prc-cov-top">
+              <div class="prc-cov-icon"><i data-lucide="activity"></i></div>
+              <span class="prc-cov-tag">All 3 Packages</span>
+            </div>
+            <h3 class="prc-cov-title">Hematology, Glycemic &amp; Organ Function</h3>
+            <p class="prc-cov-desc">
+              Foundational metabolic and cellular screening to evaluate oxygen transport, immune response, glycemic
+              control, and hepatorenal filtration.
+            </p>
+            <ul class="prc-cov-list">
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Complete Hemogram (28 Params):</strong> Hb, RBC,
+                  WBC Differential, Platelets &amp; Automated ESR</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Diabetes &amp; Glycemic Control:</strong> Fasting
+                  Plasma Glucose &amp; HPLC HbA1c (3-Month Average)</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Liver Function Panel (12 Params):</strong>
+                  Bilirubin, SGOT, SGPT, ALP, GGT, Albumin &amp; A:G Ratio</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Renal &amp; Electrolyte Profile:</strong> Serum
+                  Creatinine, eGFR, Blood Urea, Uric Acid, Na+, K+ &amp; Cl-</span></li>
+            </ul>
+            <div class="prc-cov-footer">
+              <span class="prc-cov-count">38 Core Biomarkers</span>
+              <span class="prc-cov-freq"><i data-lucide="clock"></i> Recommended Every 6 Months</span>
+            </div>
+          </div>
+
+          <!-- Coverage Card 2 -->
+          <div class="prc-coverage-card featured">
+            <div class="prc-cov-top">
+              <div class="prc-cov-icon"><i data-lucide="heart-pulse"></i></div>
+              <span class="prc-cov-tag">Comprehensive &amp; Executive</span>
+            </div>
+            <h3 class="prc-cov-title">Cardiac Risk, Lipid &amp; Thyroid Endocrinology</h3>
+            <p class="prc-cov-desc">
+              In-depth cardiovascular atherogenic profiling paired with high-sensitivity chemiluminescence thyroid
+              hormone assays for metabolic regulation.
+            </p>
+            <ul class="prc-cov-list">
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Complete Lipid Fractions:</strong> Total
+                  Cholesterol, HDL, Direct LDL, VLDL, Triglycerides &amp; Ratios</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Advanced Vascular Markers:</strong>
+                  High-Sensitivity CRP (hs-CRP), Apo-A1, Apo-B &amp; Homocysteine</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Thyroid Hormone Assay (CLIA):</strong> Free T3,
+                  Free T4 &amp; Ultra-Sensitive TSH</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Cardiometabolic Risk Index:</strong> Non-HDL
+                  Cholesterol &amp; Atherogenic Index of Plasma</span></li>
+            </ul>
+            <div class="prc-cov-footer">
+              <span class="prc-cov-count">24 Specialized Biomarkers</span>
+              <span class="prc-cov-freq"><i data-lucide="clock"></i> Every 6–12 Months</span>
+            </div>
+          </div>
+
+          <!-- Coverage Card 3 -->
+          <div class="prc-coverage-card">
+            <div class="prc-cov-top">
+              <div class="prc-cov-icon"><i data-lucide="shield-plus"></i></div>
+              <span class="prc-cov-tag">Comprehensive &amp; Executive</span>
+            </div>
+            <h3 class="prc-cov-title">Vitamins, Iron Studies &amp; Preventive Markers</h3>
+            <p class="prc-cov-desc">
+              Essential micronutrient, bone mineral, and cellular iron storage diagnostics to uncover hidden causes of
+              chronic fatigue and immunity gaps.
+            </p>
+            <ul class="prc-cov-list">
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Essential Vitamins (CLIA):</strong> 25-Hydroxy
+                  Vitamin D Total &amp; Active Serum Vitamin B12</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Complete Iron Studies:</strong> Serum Iron, TIBC,
+                  Transferrin Saturation &amp; Serum Ferritin</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Bone &amp; Mineral Metabolism:</strong> Serum
+                  Calcium, Phosphorus &amp; Magnesium</span></li>
+              <li><i data-lucide="check-circle-2"></i> <span><strong>Preventive Urinalysis:</strong> 18-Parameter
+                  Automated Urine Routine &amp; Microscopy</span></li>
+            </ul>
+            <div class="prc-cov-footer">
+              <span class="prc-cov-count">30+ Preventive Biomarkers</span>
+              <span class="prc-cov-freq"><i data-lucide="clock"></i> Recommended Annually</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Billing, Insurance & Payment Strip -->
+        <div class="prc-billing-strip">
+          <div class="prc-billing-item">
+            <div class="prc-billing-icon"><i data-lucide="receipt"></i></div>
+            <div>
+              <h4>Itemized Insurance &amp; Tax Invoices</h4>
+              <p>Official GST/clinical invoices with test codes accepted for outpatient insurance claims, HSA cards, and
+                preventive health tax deductions.</p>
+            </div>
+          </div>
+          <div class="prc-billing-item">
+            <div class="prc-billing-icon"><i data-lucide="credit-card"></i></div>
+            <div>
+              <h4>Pay Online or After Home Sample Draw</h4>
+              <p>Zero advance payment required for home bookings—pay conveniently via UPI, Credit/Debit Card, Net
+                Banking, or Cash upon sample collection.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 7: CORPORATE & FAMILY HEALTH CONSULTATION CTA SECTION
+         ========================================================================= -->
+    <section class="svc-cta-section" id="pricing-cta">
+      <div class="container">
+        <div class="svc-cta-box">
+          <div class="svc-cta-content">
+            <span class="svc-cta-badge">
+              <i data-lucide="building-2" style="width:12px; height:12px;"></i> Corporate &amp; Family Health Desk
+            </span>
+            <h2 class="serif-font svc-cta-title">
+              Planning an Annual Family or Corporate Health Screening?
+            </h2>
+            <p class="svc-cta-text">
+              Need a customized biomarker panel based on a doctor’s prescription or organizing an employee wellness camp
+              for your company? Speak directly with our clinical coordinator today.
+            </p>
+          </div>
+
+          <div class="svc-cta-actions">
+            <button class="btn-primary-cta" data-open-commission="Custom Health Package Inquiry">
+              <span>Book Package or Request Quote</span>
+              <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+            </button>
+            <div class="svc-cta-phone">
+              Laboratory Helpline: <a href="mailto:reports@aara-diagnostics.com">reports@aara-diagnostics.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION 8: PREMIUM FOOTER (Exact Match with Home 1 / index.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Col 1: Brand & Laboratory Mission -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-wrapper" title="AARA Clinical Laboratories">
+            <div class="brand-logo-leaf">
+              <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+            </div>
+            <div class="brand-name-group">
+              <span class="brand-title">AARA</span>
+              <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            AARA Clinical Laboratories provides reliable blood testing, comprehensive preventive health checkups, and
+            sterile home sample collection with verified same-day digital reports.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"
+              title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"
+              title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link" aria-label="YouTube"
+              title="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Diagnostic Services -->
+        <div class="footer-col">
+          <h4>Diagnostic Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="servicedetail.html?service=complete-blood-count">Complete Blood Count (CBC)</a></li>
+            <li><a href="servicedetail.html?service=lipid-profile">Comprehensive Lipid Profile</a></li>
+            <li><a href="servicedetail.html?service=thyroid-profile">Thyroid Function Profile</a></li>
+            <li><a href="servicedetail.html?service=diabetes-monitoring">HbA1c &amp; Diabetes Panel</a></li>
+            <li><a href="servicedetail.html?service=home-sample-collection">Home Sample Collection</a></li>
+            <li><a href="servicedetail.html?service=full-body-health-checkup">Full Body Health Checkup</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Additional Links -->
+        <div class="footer-col">
+          <h4>Additional Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="comingsoon.html">Coming Soon</a></li>
+            <li><a href="contact.html">Book Home Collection</a></li>
+            <li><a href="pricing.html#estimator-widget">Health Package Estimator</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact -->
+        <div class="footer-col footer-col-contact">
+          <h4>Laboratory Contact</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Main Diagnostic Lab</span>
+                <span class="footer-contact-value">Plot 428, Road No. 36, Jubilee Hills, Hyderabad</span>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="phone"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Home Visit Helpline</span>
+                <a href="tel:+919849024000" class="footer-contact-value footer-contact-link">+91 98490 24000</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="mail"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Report Inquiries</span>
+                <a href="mailto:reports@aara-diagnostics.com"
+                  class="footer-contact-value footer-contact-link">reports@aara-diagnostics.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="clock"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Collection Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Sat: 6:30 AM &ndash; 8:00 PM<br>Sun: 7:00 AM &ndash; 2:00
+                  PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright-text">
+          &copy; 2026 AARA Clinical Laboratories. All Rights Reserved. Diagnostic &amp; Preventive Health Services.
+        </div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Diagnostics</a>
+          <a href="#">Quality Assurance Standards</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: PATIENT PORTAL LOGIN & ACCOUNT REGISTRATION
+       ========================================================================= -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" id="tabBtnLogin">Patient Login</button>
+        <button class="modal-tab-btn" id="tabBtnRegister">New Registration</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Registered Mobile or Email</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password / Portal Access Code</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Access Patient Portal</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display: none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Patient Name</label>
+          <input type="text" id="regName" class="form-input" placeholder="Dr. / Mr. / Ms. Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPass">Create Secure Password</label>
+          <input type="password" id="regPass" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Register Patient Account</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: HEALTH PACKAGE BOOKING & LIVE SAMPLE TRACKER
+       ========================================================================= -->
+  <div class="modal-overlay" id="dashboardModal">
+    <div class="modal-window" style="max-width: 620px;">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div style="margin-bottom: 24px;">
+        <span class="section-eyebrow">PATIENT DIAGNOSTIC PORTAL</span>
+        <h3 style="font-size: 1.6rem; color: var(--text-heading);">Live Sample Status &amp; Package Booking</h3>
+        <p style="font-size: 0.86rem; color: var(--text-muted);">Patient Record #AARA-MED-8921</p>
+      </div>
+
+      <!-- Live Order Tracker -->
+      <div class="dashboard-order-status">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-size: 0.92rem; color: var(--text-heading);">Order #AARA-8921 • Comprehensive Health
+            Checkup</strong>
+          <span class="badge-tag">Phase 3 • Testing &amp; Analysis</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+          68 Parameters • CBC, Lipid Profile, LFT, KFT, Thyroid &amp; HbA1c
+        </p>
+
+        <div class="order-progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div
+          style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); margin-top: 10px;">
+          <span>Stage 1: Sample Collected ✓</span>
+          <span>Stage 2: Barcode Inwarded ✓</span>
+          <span style="color: var(--color-accent-primary); font-weight: 700;">Stage 3: Testing &amp; Analysis
+            (Active)</span>
+          <span>Stage 4: Verified Report</span>
+        </div>
+      </div>
+
+      <!-- Verified Reports -->
+      <h4 style="font-size: 1rem; margin: 20px 0 12px; color: var(--text-heading);">Recent Verified Diagnostic Reports
+      </h4>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background-color: var(--bg-primary);">
+          <div>
+            <strong style="font-size: 0.86rem; color: var(--text-heading);">Complete Blood Count (CBC) with ESR</strong>
+            <p style="font-size: 0.76rem; color: var(--text-muted);">Signed by Pathologist • Report #REP-804 (PDF)</p>
+          </div>
+          <span class="badge-tag"
+            style="background-color: rgba(0, 143, 149, 0.15); color: var(--color-accent-secondary);">Report Ready</span>
+        </div>
+      </div>
+
+      <a href="contact.html" class="btn-primary-cta" id="btnRequestNewBespoke"
+        style="width: 100%; justify-content: center; margin-top: 24px; text-decoration: none;">
+        <span>Schedule Home Sample Collection</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Toast Notification Message Element -->
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite">
+    <span class="toast-icon"><i data-lucide="activity"></i></span>
+    <span class="toast-text" id="toastText">Welcome to AARA Health Packages &amp; Diagnostic Pricing.</span>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="pricing.js"></script>
+</body>
+
+</html>

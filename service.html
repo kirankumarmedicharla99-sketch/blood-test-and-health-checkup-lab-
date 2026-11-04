@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic Tests &amp; Clinical Laboratory Services | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="Explore AARA Clinical Laboratories' six core diagnostic testing services: Complete Blood Count (CBC), Lipid & Cardiac Profile, Thyroid Function Panel, HbA1c Diabetes Monitoring, Sterile Home Sample Collection, and Comprehensive Full Body Health Checkups.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="services-page">
+
+  <!-- =========================================================================
+       NAVIGATION HEADER (100% Consistent with Home 1 / index.html)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+
+      <!-- Left: Brand Logo & Wordmark matching medical laboratory identity -->
+      <a href="index.html" class="brand-wrapper" id="brandLogoLink">
+        <div class="brand-logo-leaf">
+          <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+        </div>
+        <div class="brand-name-group">
+          <span class="brand-title">AARA</span>
+          <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+        </div>
+      </a>
+
+      <!-- Middle: Desktop Navigation Links -->
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-item has-dropdown">
+          <a href="./index.html" class="nav-link" id="navHome">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="nav-chevron-icon"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="./index.html" class="dropdown-item">
+              <span>Home 1 (Diagnostic Hub)</span>
+            </a>
+            <a href="./home2.html" class="dropdown-item" id="btnOpenHome2">
+              <span>Home 2 (Preventive Care)</span>
+              <span class="badge-tag">New</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" id="navAbout">About Us</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="service.html" class="nav-link active" id="navServices">Services</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="pricing.html" class="nav-link" id="navPricing">Pricing</a>
+        </div>
+        <div class="nav-item">
+          <a href="Journal.html" class="nav-link" id="navJournal">Journal</a>
+        </div>
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link" id="navContact">Contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link" id="navDashboard">
+            <span>Dashboard</span>
+            <span class="nav-status-dot" aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right: Action Buttons (RTL, Theme Toggle, Login Button, Mobile Hamburger) -->
+      <div class="header-actions">
+        <!-- RTL Switcher -->
+        <button class="icon-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR" title="Toggle RTL / LTR">
+          <span class="rtl-label" id="rtlLabel">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="themeToggleBtn" aria-label="Toggle light/dark theme"
+          title="Toggle Light / Dark Mode">
+          <span id="themeIcon"><i data-lucide="moon"></i></span>
+        </button>
+
+        <!-- Primary CTA Login Button -->
+        <a href="login.html" class="btn-primary-cta" id="loginBtn">
+          <span>Login</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home 1 (Diagnostic Hub)</a></li>
+      <li><a href="home2.html" class="mobile-nav-link" id="mobileHome2Btn">Home 2 (Preventive Care)</a></li>
+      <li><a href="#services-catalog" class="mobile-nav-link" data-close-drawer>Diagnostic Test Catalog</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Book Home Collection</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="service.html" class="mobile-nav-link"
+          style="color:var(--color-accent-primary); font-weight:600;">Services &bull; Active</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="Journal.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link" id="mobileDashboardBtn">Dashboard</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn-primary-cta" id="mobileLoginBtn"
+        style="width: 100%; justify-content: center; text-decoration: none;">
+        <span>Patient Portal &bull; Login</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+      <p style="text-align: center; font-size: 0.76rem; color: var(--text-muted);">
+        AARA Clinical Laboratories • Accurate Diagnostics &amp; Patient Care
+      </p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: CLINICAL DIAGNOSTIC HERO BANNER
+         ========================================================================= -->
+    <section class="svc-hero" id="service-hero">
+      <div class="container svc-hero-container">
+
+        <!-- Left: Hero Visual Frame -->
+        <div class="svc-hero-visual">
+          <div class="svc-hero-image-frame">
+            <img src="assets/images/service-wall-art.jpg"
+              alt="AARA Clinical Laboratory Automated Hematology & Biochemistry Testing" width="560" height="340">
+          </div>
+
+          <div class="svc-hero-floating-card">
+            <div class="svc-floating-icon">
+              <i data-lucide="shield-check" style="width:20px; height:20px;"></i>
+            </div>
+            <div>
+              <div class="svc-floating-title">Pathologist Verified</div>
+              <div class="svc-floating-sub">Calibrated Quality Control &amp; Same-Day PDF</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Hero Content -->
+        <div class="svc-hero-content">
+          <div class="svc-hero-badge">
+            <i data-lucide="activity" style="width:14px; height:14px;"></i>
+            <span>Clinical Pathology &amp; Diagnostic Services</span>
+          </div>
+
+          <h1 class="svc-hero-title">
+            Precision Blood Testing &amp; <span class="gold-accent">Preventive</span> Diagnostics
+          </h1>
+
+          <p class="svc-hero-desc">
+            Certified clinical hematology, biochemistry, and hormone testing powered by automated multi-channel
+            analyzers, positive barcode specimen tracking, and same-day verified digital reports.
+          </p>
+
+          <div class="svc-hero-actions">
+            <a href="#services-catalog" class="btn-primary-cta">
+              <span>Explore 6 Core Panels</span>
+              <i data-lucide="arrow-down" class="btn-arrow-icon"></i>
+            </a>
+            <a href="#service-cta" class="btn-secondary-clinical">
+              <i data-lucide="calendar" style="width:14px; height:14px;"></i>
+              <span>Book Home Collection</span>
+            </a>
+          </div>
+
+          <!-- Quick Statistics -->
+          <div class="svc-hero-stats">
+            <div class="svc-stat-item">
+              <span class="svc-stat-num">99.8%</span>
+              <span class="svc-stat-label">Analytical Accuracy</span>
+            </div>
+            <div class="svc-stat-item">
+              <span class="svc-stat-num">12–24h</span>
+              <span class="svc-stat-label">Report Turnaround</span>
+            </div>
+            <div class="svc-stat-item">
+              <span class="svc-stat-num">500k+</span>
+              <span class="svc-stat-label">Tests Completed</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: SIX DIAGNOSTIC SERVICES CARDS (With links to Service Detail)
+         ========================================================================= -->
+    <section class="services-catalog-section" id="services-catalog">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header-center">
+          <span class="section-eyebrow">OUR CLINICAL TEST CATALOG</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Six Core Diagnostic Testing Services
+          </h2>
+          <p class="section-subtitle-text">
+            Every diagnostic assay is performed in-house by certified medical laboratory technologists under
+            board-certified pathologist supervision. Select any test below to view biomarkers, fasting preparation
+            guidelines, and turnaround times.
+          </p>
+        </div>
+
+        <!-- 6 Service Cards Grid -->
+        <div class="services-grid-six">
+
+          <!-- Card 1: Complete Blood Count (CBC) & Hematology -->
+          <article class="svc-catalog-card" id="card-complete-blood-count">
+            <div class="svc-card-media">
+              <img src="assets/images/service-wall-art.jpg" alt="Complete Blood Count (CBC) & Hematology Analysis"
+                loading="lazy">
+              <span class="svc-card-tag">Routine Hematology</span>
+              <span class="svc-card-number">01</span>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">
+                <a href="servicedetail.html?service=complete-blood-count">Complete Blood Count &amp; Hematology</a>
+              </h3>
+              <p class="svc-card-text">
+                24-parameter automated cellular blood analysis measuring Hemoglobin, RBC, 5-part differential WBC count,
+                Platelets, Hematocrit, and ESR to screen for anemia, infection, and immune status.
+              </p>
+              <div class="svc-features-pills">
+                <span class="svc-feature-pill"><i data-lucide="droplet"></i> 24 Biomarkers service</span>
+                <span class="svc-feature-pill"><i data-lucide="check-circle"></i> Non-Fasting </span>
+                <span class="svc-feature-pill"><i data-lucide="clock"></i> 6–12 Hrs Report</span>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-meta">
+                  <span class="svc-meta-label">Standard Fee</span>
+                  <span class="svc-meta-value">$25 USD</span>
+                </div>
+                <a href="servicedetail.html?service=complete-blood-count" class="btn-card-explore"
+                  aria-label="Explore Complete Blood Count (CBC)">
+                  <span>Test Specs</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Comprehensive Lipid & Cardiac Risk Profile -->
+          <article class="svc-catalog-card" id="card-lipid-profile">
+            <div class="svc-card-media">
+              <img src="assets/images/hero-banner.jpg" alt="Comprehensive Lipid & Cardiac Risk Profile" loading="lazy">
+              <span class="svc-card-tag">Cardiac &amp; Lipid Panel</span>
+              <span class="svc-card-number">02</span>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">
+                <a href="servicedetail.html?service=lipid-profile">Comprehensive Lipid &amp; Cardiac Risk Profile</a>
+              </h3>
+              <p class="svc-card-text">
+                Complete cardiovascular lipid panel quantifying Total Cholesterol, Direct HDL, Direct LDL, VLDL,
+                Triglycerides, Non-HDL Cholesterol, and atherogenic cardiac risk ratios.
+              </p>
+              <div class="svc-features-pills">
+                <span class="svc-feature-pill"><i data-lucide="heart-pulse"></i> 8 Cardiac Markers</span>
+                <span class="svc-feature-pill"><i data-lucide="clock"></i> 10–12 Hr Fasting</span>
+                <span class="svc-feature-pill"><i data-lucide="file-check"></i> Same-Day PDF</span>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-meta">
+                  <span class="svc-meta-label">Standard Fee</span>
+                  <span class="svc-meta-value">$35 USD</span>
+                </div>
+                <a href="servicedetail.html?service=lipid-profile" class="btn-card-explore"
+                  aria-label="Explore Comprehensive Lipid Profile">
+                  <span>Test Specs</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Thyroid Function Profile (T3, T4, TSH) -->
+          <article class="svc-catalog-card" id="card-thyroid-profile">
+            <div class="svc-card-media">
+              <img src="assets/images/gallery-ocean-clock.jpg" alt="Thyroid Function Profile (T3, T4, TSH)"
+                loading="lazy">
+              <span class="svc-card-tag">Endocrine &amp; Hormones</span>
+              <span class="svc-card-number">03</span>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">
+                <a href="servicedetail.html?service=thyroid-profile">Thyroid Function Profile (T3, T4, TSH)</a>
+              </h3>
+              <p class="svc-card-text">
+                High-sensitivity Chemiluminescence Immunoassay (CLIA) evaluating Triiodothyronine (T3), Thyroxine (T4),
+                and Ultra-Sensitive TSH for metabolism and thyroid regulation.
+              </p>
+              <div class="svc-features-pills">
+                <span class="svc-feature-pill"><i data-lucide="activity"></i> T3, T4 &amp; Ultra-TSH</span>
+                <span class="svc-feature-pill"><i data-lucide="shield-check"></i> High-Spec CLIA</span>
+                <span class="svc-feature-pill"><i data-lucide="clock"></i> 12 Hrs Report</span>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-meta">
+                  <span class="svc-meta-label">Standard Fee</span>
+                  <span class="svc-meta-value">$40 USD</span>
+                </div>
+                <a href="servicedetail.html?service=thyroid-profile" class="btn-card-explore"
+                  aria-label="Explore Thyroid Function Profile">
+                  <span>Test Specs</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: HbA1c & Diabetes Glycemic Monitoring -->
+          <article class="svc-catalog-card" id="card-diabetes-monitoring">
+            <div class="svc-card-media">
+              <img src="assets/images/gallery-coaster-detail.jpg" alt="HbA1c & Diabetes Glycemic Monitoring"
+                loading="lazy">
+              <span class="svc-card-tag">Diabetes &amp; Glycemic</span>
+              <span class="svc-card-number">04</span>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">
+                <a href="servicedetail.html?service=diabetes-monitoring">HbA1c &amp; Diabetes Glycemic Monitoring</a>
+              </h3>
+              <p class="svc-card-text">
+                NGSP-certified HPLC Glycated Hemoglobin (HbA1c), Estimated Average Glucose (eAG), and Fasting Plasma
+                Glucose panel to assess 90-day blood sugar control and pre-diabetes risk.
+              </p>
+              <div class="svc-features-pills">
+                <span class="svc-feature-pill"><i data-lucide="bar-chart-2"></i> 3-Month Avg Glucose</span>
+                <span class="svc-feature-pill"><i data-lucide="award"></i> HPLC Gold Standard</span>
+                <span class="svc-feature-pill"><i data-lucide="clock"></i> Same-Day Report</span>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-meta">
+                  <span class="svc-meta-label">Standard Fee</span>
+                  <span class="svc-meta-value">$30 USD</span>
+                </div>
+                <a href="servicedetail.html?service=diabetes-monitoring" class="btn-card-explore"
+                  aria-label="Explore HbA1c & Diabetes Glycemic Monitoring">
+                  <span>Test Specs</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Sterile Doorstep Home Sample Collection -->
+          <article class="svc-catalog-card" id="card-home-sample-collection">
+            <div class="svc-card-media">
+              <img src="assets/images/service-home-decor.jpg" alt="Sterile Doorstep Home Sample Collection"
+                loading="lazy">
+              <span class="svc-card-tag">Doorstep Phlebotomy</span>
+              <span class="svc-card-number">05</span>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">
+                <a href="servicedetail.html?service=home-sample-collection">Sterile Doorstep Home Sample Collection</a>
+              </h3>
+              <p class="svc-card-text">
+                Book a certified phlebotomist to collect blood samples at your home or office. Uses single-use sterile
+                vacutainer kits, instant 2D barcoding, and temperature-monitored cold-chain transport.
+              </p>
+              <div class="svc-features-pills">
+                <span class="svc-feature-pill"><i data-lucide="home"></i> 6:30 AM – 11 AM Slots</span>
+                <span class="svc-feature-pill"><i data-lucide="thermometer"></i> 2–8°C Cold Chain</span>
+                <span class="svc-feature-pill"><i data-lucide="shield"></i> Single-Use Sterile</span>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-meta">
+                  <span class="svc-meta-label">Home Visit Fee</span>
+                  <span class="svc-meta-value">$15 USD</span>
+                </div>
+                <a href="servicedetail.html?service=home-sample-collection" class="btn-card-explore"
+                  aria-label="Explore Home Sample Collection">
+                  <span>Service Specs</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Comprehensive Full Body Health Checkup -->
+          <article class="svc-catalog-card" id="card-full-body-health-checkup">
+            <div class="svc-card-media">
+              <img src="assets/images/service-river-table.jpg" alt="Comprehensive Full Body Health Checkup"
+                loading="lazy">
+              <span class="svc-card-tag">Master Preventive Panel</span>
+              <span class="svc-card-number">06</span>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">
+                <a href="servicedetail.html?service=full-body-health-checkup">Comprehensive Full Body Health Checkup</a>
+              </h3>
+              <p class="svc-card-text">
+                Complete 68-parameter preventive wellness screening covering CBC, Lipid Profile, Liver Function (LFT),
+                Kidney Function (KFT), Thyroid Panel, HbA1c, and Vitamin D &amp; B12 levels.
+              </p>
+              <div class="svc-features-pills">
+                <span class="svc-feature-pill"><i data-lucide="layers"></i> 68 Parameters</span>
+                <span class="svc-feature-pill"><i data-lucide="truck"></i> Free Home Visit</span>
+                <span class="svc-feature-pill"><i data-lucide="user-check"></i> Pathologist Review</span>
+              </div>
+              <div class="svc-card-footer">
+                <div class="svc-card-meta">
+                  <span class="svc-meta-label">All-Inclusive Package</span>
+                  <span class="svc-meta-value">$85 USD</span>
+                </div>
+                <a href="servicedetail.html?service=full-body-health-checkup" class="btn-card-explore"
+                  aria-label="Explore Full Body Health Checkup">
+                  <span>Package Specs</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: CLINICAL STANDARDS OF AARA (6 Pillars of Diagnostic Quality)
+         ========================================================================= -->
+    <section class="benefits-section" id="benefits">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header-center">
+          <span class="section-eyebrow">THE AARA CLINICAL STANDARD</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Why Physicians &amp; Patients Trust AARA Diagnostics
+          </h2>
+          <p class="section-subtitle-text">
+            Our laboratory combines automated multi-channel instrumentation with rigorous multi-level quality control
+            protocols to deliver dependable diagnostic insights.
+          </p>
+        </div>
+
+        <!-- 6 Benefits Grid -->
+        <div class="benefits-grid">
+
+          <!-- Benefit 1 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <i data-lucide="shield-check" style="width:20px; height:20px;"></i>
+            </div>
+            <h3 class="benefit-title">3-Level Daily Quality Control</h3>
+            <p class="benefit-desc">
+              Every automated hematology, biochemistry, and immunoassay analyzer undergoes mandatory tri-level internal
+              quality control (IQC) calibration before processing patient specimens.
+            </p>
+            <span class="benefit-card-highlight">
+              <i data-lucide="check" style="width:14px; height:14px;"></i> 99.8% Analytical Precision
+            </span>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <i data-lucide="qr-code" style="width:20px; height:20px;"></i>
+            </div>
+            <h3 class="benefit-title">2D Barcoded Specimen Tracking</h3>
+            <p class="benefit-desc">
+              Vacuum blood collection tubes are labeled at the bedside or phlebotomy chair with unique 2D barcodes
+              linked directly to our Laboratory Information System (LIS) for zero mix-ups.
+            </p>
+            <span class="benefit-card-highlight">
+              <i data-lucide="check" style="width:14px; height:14px;"></i> Positive Patient Identification
+            </span>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <i data-lucide="user-check" style="width:20px; height:20px;"></i>
+            </div>
+            <h3 class="benefit-title">MD Pathologist Verification</h3>
+            <p class="benefit-desc">
+              Every diagnostic report is reviewed and digitally co-signed by board-certified clinical pathologists.
+              Out-of-range critical values are automatically re-verified prior to release.
+            </p>
+            <span class="benefit-card-highlight">
+              <i data-lucide="check" style="width:14px; height:14px;"></i> Dual Clinical Sign-Off
+            </span>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <i data-lucide="syringe" style="width:20px; height:20px;"></i>
+            </div>
+            <h3 class="benefit-title">100% Sterile Single-Use Kits</h3>
+            <p class="benefit-desc">
+              We use individually sealed, single-use BD Vacutainer safety needles and evacuated collection tubes opened
+              in front of the patient to guarantee complete aseptic safety.
+            </p>
+            <span class="benefit-card-highlight">
+              <i data-lucide="check" style="width:14px; height:14px;"></i> WHO Phlebotomy Compliant
+            </span>
+          </div>
+
+          <!-- Benefit 5 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <i data-lucide="thermometer" style="width:20px; height:20px;"></i>
+            </div>
+            <h3 class="benefit-title">Monitored Cold-Chain Logistics</h3>
+            <p class="benefit-desc">
+              Home-collected blood samples travel in insulated 2°C–8°C digital data-logged specimen carriers, preserving
+              enzyme, hormone, and cellular integrity until laboratory arrival.
+            </p>
+            <span class="benefit-card-highlight">
+              <i data-lucide="check" style="width:14px; height:14px;"></i> Temperature-Verified Transit
+            </span>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <i data-lucide="file-text" style="width:20px; height:20px;"></i>
+            </div>
+            <h3 class="benefit-title">Same-Day Digital Smart Reports</h3>
+            <p class="benefit-desc">
+              Receive encrypted PDF reports via email, SMS, and our online Patient Portal within 12 to 24 hours,
+              complete with biological reference intervals and historical biomarker trends.
+            </p>
+            <span class="benefit-card-highlight">
+              <i data-lucide="check" style="width:14px; height:14px;"></i> 256-Bit Encrypted Access
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: INTERACTIVE FAQ ACCORDION SECTION
+         ========================================================================= -->
+    <section class="faq-section" id="faq">
+      <div class="container faq-container">
+
+        <!-- Section Header -->
+        <div class="section-header-center">
+          <span class="section-eyebrow">PATIENT PREPARATION &amp; LAB FAQS</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Frequently Asked Diagnostic Questions
+          </h2>
+          <p class="section-subtitle-text">
+            Everything you need to know regarding fasting requirements, home blood sample collection, report turnaround
+            times, and online portal access.
+          </p>
+        </div>
+
+        <!-- Accordion Container -->
+        <div class="faq-accordion" id="faqAccordion">
+
+          <!-- FAQ Item 1 -->
+          <div class="faq-item active">
+            <button class="faq-header" type="button" aria-expanded="true">
+              <span class="faq-question">Which blood tests require overnight fasting, and can I drink water?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse" style="max-height: 200px;">
+              <div class="faq-body">
+                Fasting Blood Glucose, Comprehensive Lipid Profiles, and Full Body Health Checkup packages require 8 to
+                12 hours of overnight fasting. During the fasting period, you should avoid all food, tea, coffee, juice,
+                or caloric beverages. Drinking plain water is strongly encouraged, as proper hydration keeps veins full
+                and makes blood collection smoother. Tests such as CBC, HbA1c, and Thyroid Profile can be performed
+                without fasting.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+              <span class="faq-question">How quickly will I receive my verified laboratory test reports?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse">
+              <div class="faq-body">
+                Routine hematology tests like Complete Blood Count (CBC) and Fasting Blood Sugar are delivered within 6
+                to 12 hours on the same day. Comprehensive Lipid Profiles, Thyroid Function Panels, HbA1c, and Full Body
+                Health Checkup packages are verified by our pathologists and released within 12 to 24 hours via secure
+                email link and your online Patient Portal.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+              <span class="faq-question">How does doorstep home sample collection work, and is it hygienic?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse">
+              <div class="faq-body">
+                When you book a home collection slot (available daily from 6:30 AM to 11:30 AM), our certified
+                phlebotomist arrives at your doorstep wearing PPE and carrying a sterile single-use BD Vacutainer draw
+                kit. All needle seals are broken in your presence, tubes are barcoded immediately, and samples are
+                transported to our main diagnostic lab inside temperature-monitored 2°C–8°C cold-chain boxes.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+              <span class="faq-question">Should I stop taking my regular morning medications before a blood test?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse">
+              <div class="faq-body">
+                Do not discontinue prescribed blood pressure, cardiac, or chronic medications unless explicitly advised
+                by your ordering physician. For thyroid hormone monitoring (TSH, T3, T4), clinicians often recommend
+                having your blood drawn in the morning just before taking your daily levothyroxine dose. Always inform
+                our phlebotomist of any supplements (such as Biotin) you are taking.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+              <span class="faq-question">Can I download past reports and share results directly with my doctor?</span>
+              <span class="faq-icon-indicator"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content-collapse">
+              <div class="faq-body">
+                Yes. All diagnostic reports are archived securely in your AARA Patient Portal. You can log in at any
+                time to download high-resolution signed PDF reports, compare biomarker trends across previous checkups,
+                or forward your results directly to your consulting physician.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: CLINICAL APPOINTMENT & HOME COLLECTION CTA CARD
+         ========================================================================= -->
+    <section class="svc-cta-section" id="service-cta">
+      <div class="container">
+        <div class="svc-cta-box">
+          <div class="svc-cta-content">
+            <span class="svc-cta-badge">
+              <i data-lucide="home" style="width:12px; height:12px;"></i> Doorstep &amp; Walk-In Appointments
+            </span>
+            <h2 class="serif-font svc-cta-title">
+              Schedule Your Diagnostic Test or Home Visit Today
+            </h2>
+            <p class="svc-cta-text">
+              Need help choosing the right blood test panel or scheduling an early-morning fasting home sample
+              collection for your family? Connect with our clinical patient care desk.
+            </p>
+          </div>
+
+          <div class="svc-cta-actions">
+            <button class="btn-primary-cta" id="btnOpenCommissionModal">
+              <span>Book Diagnostic Appointment</span>
+              <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+            </button>
+            <div class="svc-cta-phone">
+              Or email our laboratory desk: <a
+                href="mailto:reports@aara-diagnostics.com">reports@aara-diagnostics.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION 8: PREMIUM FOOTER (Exact Match with Home 1 / index.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Col 1: Brand & Laboratory Mission -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-wrapper" title="AARA Clinical Laboratories">
+            <div class="brand-logo-leaf">
+              <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+            </div>
+            <div class="brand-name-group">
+              <span class="brand-title">AARA</span>
+              <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            AARA Clinical Laboratories provides reliable blood testing, comprehensive preventive health checkups, and
+            sterile home sample collection with verified same-day digital reports.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"
+              title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"
+              title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link" aria-label="YouTube"
+              title="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Diagnostic Services -->
+        <div class="footer-col">
+          <h4>Diagnostic Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="servicedetail.html?service=complete-blood-count">Complete Blood Count (CBC)</a></li>
+            <li><a href="servicedetail.html?service=lipid-profile">Comprehensive Lipid Profile</a></li>
+            <li><a href="servicedetail.html?service=thyroid-profile">Thyroid Function Profile</a></li>
+            <li><a href="servicedetail.html?service=diabetes-monitoring">HbA1c &amp; Diabetes Panel</a></li>
+            <li><a href="servicedetail.html?service=home-sample-collection">Home Sample Collection</a></li>
+            <li><a href="servicedetail.html?service=full-body-health-checkup">Full Body Health Checkup</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Additional Links -->
+        <div class="footer-col">
+          <h4>Additional Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="comingsoon.html">Coming Soon</a></li>
+            <li><a href="contact.html">Book Home Collection</a></li>
+            <li><a href="pricing.html#estimator-widget">Health Package Estimator</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact -->
+        <div class="footer-col footer-col-contact">
+          <h4>Laboratory Contact</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Main Diagnostic Lab</span>
+                <span class="footer-contact-value">Plot 428, Road No. 36, Jubilee Hills, Hyderabad</span>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="phone"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Home Visit Helpline</span>
+                <a href="tel:+919849024000" class="footer-contact-value footer-contact-link">+91 98490 24000</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="mail"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Report Inquiries</span>
+                <a href="mailto:reports@aara-diagnostics.com"
+                  class="footer-contact-value footer-contact-link">reports@aara-diagnostics.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="clock"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Collection Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Sat: 6:30 AM &ndash; 8:00 PM<br>Sun: 7:00 AM &ndash; 2:00
+                  PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright-text">
+          &copy; 2026 AARA Clinical Laboratories. All Rights Reserved. Diagnostic &amp; Preventive Health Services.
+        </div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Diagnostics</a>
+          <a href="#">Quality Assurance Standards</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: PATIENT PORTAL LOGIN & ACCOUNT REGISTRATION
+       ========================================================================= -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" id="tabBtnLogin">Patient Login</button>
+        <button class="modal-tab-btn" id="tabBtnRegister">New Registration</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Registered Mobile or Email</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password / Portal Access Code</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Access Patient Portal</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display: none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Patient Name</label>
+          <input type="text" id="regName" class="form-input" placeholder="Dr. / Mr. / Ms. Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPass">Create Secure Password</label>
+          <input type="password" id="regPass" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Register Patient Account</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: PATIENT PORTAL & LIVE SAMPLE TRACKER
+       ========================================================================= -->
+  <div class="modal-overlay" id="dashboardModal">
+    <div class="modal-window" style="max-width: 620px;">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div style="margin-bottom: 24px;">
+        <span class="section-eyebrow">PATIENT DIAGNOSTIC PORTAL</span>
+        <h3 style="font-size: 1.6rem; color: var(--text-heading);">Live Sample Status &amp; Reports</h3>
+        <p style="font-size: 0.86rem; color: var(--text-muted);">Patient Record #AARA-MED-8921</p>
+      </div>
+
+      <!-- Live Order Tracker -->
+      <div class="dashboard-order-status">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-size: 0.92rem; color: var(--text-heading);">Order #AARA-8921 • Comprehensive Health
+            Checkup</strong>
+          <span class="badge-tag">Phase 3 • Testing &amp; Analysis</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+          68 Parameters • CBC, Lipid Profile, LFT, KFT, Thyroid &amp; HbA1c
+        </p>
+
+        <div class="order-progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div
+          style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); margin-top: 10px;">
+          <span>Stage 1: Sample Collected ✓</span>
+          <span>Stage 2: Barcode Inwarded ✓</span>
+          <span style="color: var(--color-accent-primary); font-weight: 700;">Stage 3: Testing &amp; Analysis
+            (Active)</span>
+          <span>Stage 4: Verified Report</span>
+        </div>
+      </div>
+
+      <!-- Verified Reports -->
+      <h4 style="font-size: 1rem; margin: 20px 0 12px; color: var(--text-heading);">Recent Verified Diagnostic Reports
+      </h4>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background-color: var(--bg-primary);">
+          <div>
+            <strong style="font-size: 0.86rem; color: var(--text-heading);">Complete Blood Count (CBC) with ESR</strong>
+            <p style="font-size: 0.76rem; color: var(--text-muted);">Signed by Pathologist • Report #REP-804 (PDF)</p>
+          </div>
+          <span class="badge-tag"
+            style="background-color: rgba(0, 143, 149, 0.15); color: var(--color-accent-secondary);">Report Ready</span>
+        </div>
+      </div>
+
+      <a href="contact.html" class="btn-primary-cta" id="btnRequestNewBespoke"
+        style="width: 100%; justify-content: center; margin-top: 24px; text-decoration: none;">
+        <span>Book Home Sample Collection</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Toast Notification Message Element -->
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite">
+    <span class="toast-icon"><i data-lucide="activity"></i></span>
+    <span class="toast-text" id="toastText">Welcome to AARA Clinical Laboratories.</span>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="service.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,820 @@
+/* ==========================================================================
+   AARA CLINICAL LABORATORIES (AARA DIAGNOSTICS & LAB) — HEALTH GUIDES STYLESHEET (journal.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. JOURNAL HERO SECTION
+   -------------------------------------------------------------------------- */
+.jnl-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50% 30%, rgba(198, 40, 53, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 50% 85%, rgba(0, 143, 149, 0.06) 0%, transparent 55%),
+              var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-smooth);
+}
+
+/* Desktop Viewport Containment: fits 100vh screen size cleanly */
+@media (min-width: 1025px) and (min-height: 600px) {
+  .jnl-hero {
+    height: 100vh;
+    min-height: 600px;
+    max-height: 100vh;
+    padding-top: clamp(66px, 9vh, 88px);
+    padding-bottom: clamp(14px, 2.8vh, 28px);
+  }
+
+  .jnl-hero-container {
+    height: 100%;
+  }
+
+  .jnl-hero-badge {
+    margin-bottom: clamp(8px, 1.6vh, 16px);
+  }
+
+  .jnl-hero-title {
+    margin-bottom: clamp(10px, 1.8vh, 18px);
+  }
+
+  .jnl-hero-desc {
+    margin-bottom: clamp(14px, 2.4vh, 26px);
+  }
+}
+
+@media (max-width: 1024px) or (max-height: 599px) {
+  .jnl-hero {
+    min-height: 100vh;
+    height: auto;
+    padding: 100px 0 50px;
+  }
+}
+
+body.dark-theme .jnl-hero {
+  background: radial-gradient(circle at 50% 30%, rgba(239, 83, 80, 0.12) 0%, transparent 60%),
+              radial-gradient(circle at 50% 85%, rgba(0, 143, 149, 0.08) 0%, transparent 55%),
+              var(--bg-primary);
+}
+
+.jnl-hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.jnl-hero-content {
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.jnl-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background-color: rgba(198, 40, 53, 0.1);
+  border: 1px solid rgba(198, 40, 53, 0.35);
+  border-radius: var(--radius-full);
+  color: var(--color-accent-primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.jnl-hero-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--text-heading);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  max-width: 780px;
+}
+
+.jnl-hero-title .gold-accent {
+  font-family: var(--font-sans);
+  color: var(--color-accent-primary);
+}
+
+.jnl-hero-desc {
+  font-size: clamp(0.96rem, 1.15vw, 1.06rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 680px;
+  text-align: center;
+}
+
+.jnl-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   4-IMAGE UNIQUE ALIGNMENT COMPOSITION (.jnl-hero-quad-visual)
+   -------------------------------------------------------------------------- */
+.jnl-hero-quad-visual {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  height: 430px;
+  margin: 0 auto;
+}
+
+/* Ambient Radial Glow Behind Images */
+.jnl-quad-glow {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(198, 40, 53, 0.18) 0%, rgba(0, 143, 149, 0.08) 50%, transparent 70%);
+  filter: blur(36px);
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+body.dark-theme .jnl-quad-glow {
+  background: radial-gradient(circle, rgba(198, 40, 53, 0.28) 0%, rgba(0, 143, 149, 0.12) 50%, transparent 70%);
+}
+
+/* Universal Quad Card Frame */
+.jnl-quad-card {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 18px;
+  background-color: var(--bg-card);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+  cursor: pointer;
+}
+
+.jnl-quad-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jnl-quad-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Image 1: Top-Left Anchor (Automated Hematology) */
+.jnl-quad-1 {
+  top: 0;
+  left: 0;
+  width: 53%;
+  height: 220px;
+  z-index: 2;
+  border: 1.5px solid rgba(198, 40, 53, 0.35);
+  box-shadow: 0 16px 36px rgba(23, 25, 29, 0.14), 0 0 20px rgba(198, 40, 53, 0.12);
+}
+
+.jnl-quad-1:hover {
+  transform: translateY(-6px) scale(1.02);
+  z-index: 8;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 22px 48px rgba(23, 25, 29, 0.22), 0 0 30px rgba(198, 40, 53, 0.3);
+}
+
+/* Image 2: Top-Right Offset (Pathology Review) */
+.jnl-quad-2 {
+  top: 26px;
+  right: 0;
+  width: 48%;
+  height: 190px;
+  z-index: 1;
+  border: 1.5px solid rgba(0, 143, 149, 0.4);
+  box-shadow: 0 12px 30px rgba(23, 25, 29, 0.14);
+}
+
+.jnl-quad-2:hover {
+  transform: translateY(-6px) scale(1.02);
+  z-index: 8;
+  border-color: var(--color-accent-secondary);
+  box-shadow: 0 22px 48px rgba(23, 25, 29, 0.22), 0 0 30px rgba(0, 143, 149, 0.3);
+}
+
+/* Image 3: Bottom-Left Offset (Preventive Panels) */
+.jnl-quad-3 {
+  bottom: 0;
+  left: 14px;
+  width: 48%;
+  height: 185px;
+  z-index: 3;
+  border: 1.5px solid rgba(0, 143, 149, 0.4);
+  box-shadow: 0 16px 36px rgba(23, 25, 29, 0.16), 0 0 20px rgba(0, 143, 149, 0.12);
+}
+
+.jnl-quad-3:hover {
+  transform: translateY(-6px) scale(1.02);
+  z-index: 8;
+  border-color: var(--color-accent-secondary);
+  box-shadow: 0 22px 48px rgba(23, 25, 29, 0.22), 0 0 30px rgba(0, 143, 149, 0.3);
+}
+
+/* Image 4: Bottom-Right Anchor (Immunoassays) */
+.jnl-quad-4 {
+  bottom: 18px;
+  right: 6px;
+  width: 51%;
+  height: 200px;
+  z-index: 2;
+  border: 1.5px solid rgba(198, 40, 53, 0.45);
+  box-shadow: 0 16px 36px rgba(23, 25, 29, 0.16), 0 0 22px rgba(198, 40, 53, 0.14);
+}
+
+.jnl-quad-4:hover {
+  transform: translateY(-6px) scale(1.02);
+  z-index: 8;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 22px 48px rgba(23, 25, 29, 0.22), 0 0 30px rgba(198, 40, 53, 0.3);
+}
+
+/* Tag Pill on Each Image */
+.jnl-quad-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(23, 25, 29, 0.86);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(198, 40, 53, 0.5);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  z-index: 4;
+}
+
+body.dark-theme .jnl-quad-tag {
+  background: rgba(16, 18, 20, 0.9);
+  border-color: rgba(198, 40, 53, 0.5);
+  color: var(--color-accent-primary);
+}
+
+/* Central Floating Glassmorphic Badge */
+.jnl-quad-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--color-accent-primary);
+  border-radius: var(--radius-full);
+  padding: 9px 20px;
+  box-shadow: 0 12px 32px rgba(23, 25, 29, 0.22), 0 0 24px rgba(198, 40, 53, 0.26);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  pointer-events: auto;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease;
+}
+
+.jnl-quad-badge:hover {
+  transform: translate(-50%, -54%) scale(1.03);
+  box-shadow: 0 16px 40px rgba(23, 25, 29, 0.28), 0 0 32px rgba(198, 40, 53, 0.38);
+}
+
+.jnl-quad-badge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(198, 40, 53, 0.22), rgba(0, 143, 149, 0.14));
+  border: 1px solid var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.jnl-quad-badge-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.jnl-quad-badge-title {
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.2;
+}
+
+.jnl-quad-badge-subtitle {
+  font-size: 0.7rem;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------------------------------------
+   CATALOG FILTER BAR (Relocated above the 6 cards grid)
+   -------------------------------------------------------------------------- */
+.jnl-catalog-filter-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0 44px;
+}
+
+.jnl-catalog-filter-bar .jnl-filter-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent-primary);
+}
+
+.jnl-catalog-filter-bar .jnl-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.jnl-filter-pill {
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.jnl-filter-pill:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+.jnl-filter-pill.active {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-border);
+  box-shadow: 0 4px 14px rgba(198, 40, 53, 0.22);
+}
+
+body.dark-theme .jnl-filter-pill.active {
+  background-color: var(--color-accent-primary);
+  color: #FFFFFF;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 4px 16px rgba(198, 40, 53, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   2. SIX EDITORIAL JOURNAL CARDS GRID
+   -------------------------------------------------------------------------- */
+.journal-catalog-section {
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.journal-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.journal-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(198, 40, 53, 0.45);
+  box-shadow: var(--shadow-lg);
+}
+
+.journal-card.hidden {
+  display: none !important;
+}
+
+/* Media Thumbnail */
+.journal-card-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.journal-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journal-card:hover .journal-card-media img {
+  transform: scale(1.06);
+}
+
+.journal-card-cat-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(198, 40, 53, 0.4);
+  border-radius: var(--radius-full);
+  color: var(--color-accent-primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+}
+
+[dir="rtl"] .journal-card-cat-badge {
+  left: auto;
+  right: 14px;
+}
+
+.journal-card-read-time {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(23, 25, 29, 0.84);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+[dir="rtl"] .journal-card-read-time {
+  right: auto;
+  left: 14px;
+}
+
+/* Card Body */
+.journal-card-body {
+  padding: 26px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.journal-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.journal-card-author {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+.journal-card-title {
+  font-family: var(--font-sans);
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: 1.35;
+  min-height: 2.7em;
+  margin-bottom: 12px;
+  transition: color var(--transition-fast);
+}
+
+.journal-card:hover .journal-card-title {
+  color: var(--color-accent-primary);
+}
+
+.journal-card-excerpt {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.journal-card-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Read Health Guide Card Button - Light & Dark Mode parity */
+.btn-card-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--color-accent-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-card-explore span {
+  display: inline-block;
+  line-height: 1;
+  color: inherit;
+}
+
+.btn-card-explore .btn-arrow-icon {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.2px;
+  stroke: currentColor;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: transform var(--transition-fast);
+}
+
+.btn-card-explore:hover {
+  background-color: var(--color-accent-primary-hover);
+  color: #FFFFFF;
+  border-color: var(--color-accent-primary-hover);
+  box-shadow: 0 4px 14px rgba(198, 40, 53, 0.28);
+  transform: translateY(-2px);
+}
+
+.btn-card-explore:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .btn-card-explore:hover .btn-arrow-icon {
+  transform: translateX(-4px);
+}
+
+/* Dark Mode Overrides */
+body.dark-theme .btn-card-explore {
+  background-color: var(--color-accent-primary);
+  color: #FFFFFF !important;
+  border: 1px solid var(--color-accent-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .btn-card-explore span {
+  color: #FFFFFF !important;
+}
+
+body.dark-theme .btn-card-explore .btn-arrow-icon {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+body.dark-theme .btn-card-explore:hover {
+  background-color: var(--color-accent-primary-hover);
+  border-color: var(--color-accent-primary-hover);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 18px rgba(198, 40, 53, 0.45);
+  transform: translateY(-2px);
+}
+
+body.dark-theme .btn-card-explore:hover span {
+  color: #FFFFFF !important;
+}
+
+body.dark-theme .btn-card-explore:hover .btn-arrow-icon {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  transform: translateX(4px);
+}
+
+[dir="rtl"] body.dark-theme .btn-card-explore:hover .btn-arrow-icon {
+  transform: translateX(-4px);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECTION HEADER UTILITIES
+   -------------------------------------------------------------------------- */
+.section-header-center {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 56px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: 10px;
+}
+
+.section-subtitle-text {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE MEDIA QUERIES (360px TO 1024px)
+   -------------------------------------------------------------------------- */
+
+/* Tablet Landscape / Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .jnl-hero {
+    min-height: auto;
+    height: auto;
+    padding: 100px 0 50px;
+  }
+
+  .jnl-hero-container {
+    text-align: center;
+  }
+
+  .jnl-hero-content {
+    margin: 0 auto;
+  }
+
+  .jnl-hero-actions {
+    justify-content: center;
+  }
+
+  .journal-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .jnl-hero {
+    padding: 95px 0 40px;
+    min-height: auto;
+  }
+
+  .jnl-hero-title {
+    font-size: 2rem;
+  }
+
+  .jnl-hero-desc {
+    font-size: 0.94rem;
+    margin-bottom: 22px;
+  }
+
+  .journal-catalog-section {
+    padding: 70px 0;
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .journal-card-media {
+    height: 200px;
+  }
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  .jnl-hero {
+    padding: 90px 0 35px;
+  }
+
+  .jnl-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .jnl-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .jnl-hero-actions .btn-primary-cta,
+  .jnl-hero-actions .btn-secondary-clinical {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .jnl-catalog-filter-bar .jnl-filter-pills {
+    gap: 6px;
+  }
+
+  .jnl-filter-pill {
+    padding: 6px 14px;
+    font-size: 0.76rem;
+  }
+
+  .journal-card-body {
+    padding: 20px 18px 18px;
+  }
+
+  .journal-card-title {
+    font-size: 1.12rem;
+  }
+
+  .journal-card-excerpt {
+    font-size: 0.84rem;
+  }
+
+  .journal-card-footer {
+    padding-top: 14px;
+  }
+
+  .journal-card-footer .btn-card-explore {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Very Compact Mobile (360px) */
+@media (max-width: 360px) {
+  .jnl-hero-title {
+    font-size: 1.62rem;
+  }
+
+  .jnl-hero-desc {
+    font-size: 0.84rem;
+  }
+
+  .journal-card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .journal-card-divider {
+    display: none;
+  }
+}

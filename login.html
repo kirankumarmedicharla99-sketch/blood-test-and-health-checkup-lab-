@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Portal Login | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="Sign in to your AARA Patient Diagnostic Portal to download verified digital blood test reports, track home sample collection visits, and manage preventive health checkups.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="login.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="auth-page login-page">
+
+  <!-- =========================================================================
+       TOP-RIGHT FLOATING UTILITY CONTROLS (RTL & Theme Toggle)
+       ========================================================================= -->
+  <aside class="auth-top-controls" aria-label="Theme and Language Controls">
+    <!-- RTL / LTR Toggle -->
+    <button class="auth-control-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR"
+      title="Toggle RTL / LTR">
+      <span id="rtlLabel">RTL</span>
+    </button>
+
+    <!-- Theme Toggle -->
+    <button class="auth-control-btn" id="themeToggleBtn" aria-label="Toggle Light / Dark Theme" title="Toggle Theme">
+      <span id="themeIcon"><i data-lucide="moon"></i></span>
+    </button>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN 85vh VIEWPORT-FITTED SPLIT AUTH CARD
+       ========================================================================= -->
+  <main class="auth-page-wrapper">
+    <div class="auth-card" id="authCard">
+
+      <!-- Left Column: Clinical Diagnostic Visual Panel (Desktop Only) -->
+      <div class="auth-image-panel" aria-hidden="true">
+        <div class="auth-image-bg">
+          <img src="assets/images/service-wall-art.jpg" alt="AARA Clinical Laboratories Automated Diagnostic Analyzers"
+            loading="eager">
+          <div class="auth-image-overlay"></div>
+        </div>
+
+        <!-- Top Badge in Image -->
+        <div class="auth-image-top">
+          <div class="auth-panel-badge">
+            <i data-lucide="shield-check" style="width:13px;height:13px;"></i>
+            <span>VERIFIED PATIENT PORTAL &bull; ISO 15189</span>
+          </div>
+        </div>
+
+        <!-- Bottom Testimonial & Clinical Seal in Image -->
+        <div class="auth-image-bottom">
+          <blockquote class="auth-image-quote">
+            &ldquo;Same-day pathologist-signed digital reports, sterile home phlebotomy, and longitudinal biomarker
+            tracking in one secure portal.&rdquo;
+          </blockquote>
+          <div class="auth-image-author">
+            <div class="auth-author-avatar">
+              <img src="assets/images/team-elena-vance.jpg" alt="AARA Chief Pathologist Seal">
+            </div>
+            <div class="auth-author-meta">
+              <span class="auth-author-name">AARA Clinical Reference Lab</span>
+              <span class="auth-author-desc">Jubilee Hills, Hyderabad &bull; Same-Day Digital Reports</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Form Card with Brand, Inputs & Social Auth -->
+      <div class="auth-form-panel">
+
+        <!-- Brand Header with Clinical Logo -->
+        <header class="auth-form-header">
+          <a href="index.html" class="auth-brand-group" title="AARA Clinical Laboratories Homepage">
+            <div class="brand-logo-leaf">
+              <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+            </div>
+            <div class="brand-name-group">
+              <span class="brand-title">AARA</span>
+              <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+            </div>
+          </a>
+
+          <h1 class="auth-title">Patient Portal Login</h1>
+          <p class="auth-subtitle">Sign in to download verified lab reports &amp; track home sample visits.</p>
+        </header>
+
+        <!-- Login Form with 2 Inputs -->
+        <form class="auth-form" id="loginForm" novalidate>
+
+          <!-- Input 1: Patient Email / Patient ID -->
+          <div class="form-group">
+            <label for="loginEmail" class="form-label">
+              <span>Patient Email or ID</span>
+              <span class="label-req">*</span>
+            </label>
+            <div class="input-wrap">
+              <i data-lucide="mail" class="input-icon"></i>
+              <input type="email" id="loginEmail" name="email" class="form-input"
+                placeholder="patient@clinicalhealth.org" required autocomplete="email">
+            </div>
+            <span class="field-error-msg" id="loginEmailError">Please enter a valid patient email address</span>
+          </div>
+
+          <!-- Input 2: Portal Password -->
+          <div class="form-group">
+            <label for="loginPassword" class="form-label">
+              <span>Portal Password</span>
+              <span class="label-req">*</span>
+            </label>
+            <div class="input-wrap">
+              <i data-lucide="lock" class="input-icon"></i>
+              <input type="password" id="loginPassword" name="password" class="form-input"
+                placeholder="Enter your secure password" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" id="togglePasswordBtn"
+                aria-label="Toggle password visibility">
+                <i data-lucide="eye" id="passwordToggleIcon"></i>
+              </button>
+            </div>
+            <span class="field-error-msg" id="loginPasswordError">Please enter your portal password</span>
+          </div>
+
+          <!-- Remember Me & Forgot Password -->
+          <div class="auth-row-between">
+            <label class="remember-checkbox-label">
+              <input type="checkbox" id="rememberMe" name="remember" class="remember-input">
+              <span class="custom-checkbox">
+                <i data-lucide="check" class="check-icon"></i>
+              </span>
+              <span class="remember-text">Remember Device</span>
+            </label>
+
+            <a href="javascript:void(0)" class="forgot-pass-link" id="forgotPassBtn">Forgot Password?</a>
+          </div>
+
+          <!-- Primary Submit Button -->
+          <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">
+            <span>Access Patient Portal</span>
+            <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="auth-divider">
+          <span class="divider-line"></span>
+          <span class="divider-text">OR CONTINUE WITH</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <!-- Social Sign-in (Google & Apple Icons) -->
+        <div class="social-auth-grid">
+          <button type="button" class="social-auth-btn" id="googleLoginBtn" aria-label="Sign in with Google">
+            <svg class="social-svg-icon" viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                fill="#EA4335" />
+            </svg>
+            <span>Google</span>
+          </button>
+
+          <button type="button" class="social-auth-btn" id="appleLoginBtn" aria-label="Sign in with Apple">
+            <svg class="social-svg-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.87c.6-1.12.98-2.68.8-4.22-1.4.08-2.98.92-3.79 1.88-.58.68-1.08 2.26-.89 3.75 1.55.12 3.28-.69 3.88-1.41z" />
+            </svg>
+            <span>Apple</span>
+          </button>
+        </div>
+
+        <!-- Switch to Signup Link -->
+        <footer class="auth-switch-footer">
+          <p>
+            New to AARA Clinical Lab?
+            <a href="signup.html" class="auth-switch-link" id="newToSignupLink"> Sign Up</a>
+          </p>
+        </footer>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Notification Toast -->
+  <div class="auth-toast" id="authToast" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" class="toast-icon"></i>
+    <span id="toastText">Welcome back to AARA Patient Diagnostic Portal.</span>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+
+</html>

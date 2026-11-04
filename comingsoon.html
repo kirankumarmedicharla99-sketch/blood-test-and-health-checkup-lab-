@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launching Soon — Preventive Genomics &amp; Molecular Diagnostics | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="AARA Clinical Laboratories is launching our Next-Generation Preventive Genomics, Whole-Exome Sequencing, and Molecular Diagnostics Portal. Register for early patient access.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="comingsoon.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="comingsoon-page">
+
+  <!-- Floating Utility Controls (RTL & Theme Toggle) -->
+  <aside class="cs-top-controls" aria-label="Theme and Direction Controls">
+    <button class="cs-control-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR"
+      title="Toggle RTL / LTR">
+      <span id="rtlLabel">RTL</span>
+    </button>
+    <button class="cs-control-btn" id="themeToggleBtn" aria-label="Toggle Light / Dark Theme"
+      title="Toggle Light / Dark Mode">
+      <span id="themeIcon"><i data-lucide="moon"></i></span>
+    </button>
+  </aside>
+
+  <!-- Centered Clinical Launch Content -->
+  <main class="cs-wrapper">
+    <div class="cs-glow-orb cs-glow-1"></div>
+    <div class="cs-glow-orb cs-glow-2"></div>
+
+    <div class="cs-content">
+      <!-- Brand Crest & Wordmark -->
+      <a href="index.html" class="cs-brand-wrapper" title="AARA Clinical Laboratories">
+        <div class="brand-logo-leaf">
+          <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+        </div>
+        <div class="brand-name-group">
+          <span class="brand-title">AARA</span>
+          <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+        </div>
+      </a>
+
+      <div class="cs-eyebrow">
+        <i data-lucide="dna"></i>
+        <span>Molecular &amp; Genomic Wing Validation In Progress</span>
+      </div>
+
+      <h1 class="cs-title">Next-Generation <span class="cs-gold-gradient">Preventive Genomics</span> &amp; Molecular Diagnostics</h1>
+
+      <p class="cs-desc">
+        Our clinical geneticists and molecular pathologists are calibrating high-throughput sequencing analyzers for hereditary cardiac screening, pharmacogenomics, and liquid biopsy panels in Hyderabad.
+      </p>
+
+      <!-- Live Countdown Timer -->
+      <div class="cs-countdown-grid" id="csCountdown" aria-label="Launch Countdown Timer">
+        <div class="cs-countdown-item">
+          <span class="cs-countdown-num" id="cdDays">18</span>
+          <span class="cs-countdown-label">Days</span>
+        </div>
+        <div class="cs-countdown-item">
+          <span class="cs-countdown-num" id="cdHours">09</span>
+          <span class="cs-countdown-label">Hours</span>
+        </div>
+        <div class="cs-countdown-item">
+          <span class="cs-countdown-num" id="cdMins">42</span>
+          <span class="cs-countdown-label">Minutes</span>
+        </div>
+        <div class="cs-countdown-item">
+          <span class="cs-countdown-num" id="cdSecs">15</span>
+          <span class="cs-countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <!-- Patient Notification Form -->
+      <div class="cs-notify-wrapper">
+        <form class="cs-notify-form" id="csNotifyForm">
+          <input type="email" class="cs-notify-input" placeholder="Enter your patient or physician email address..." required>
+          <button type="submit" class="cs-notify-btn">
+            <span>Notify Me</span>
+            <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+          </button>
+        </form>
+        <div class="cs-toast" id="csToast"></div>
+      </div>
+
+      <!-- Action -->
+      <div class="cs-actions">
+        <a href="index.html" class="btn-primary-cta">
+          <span>Return to Diagnostic Hub</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </a>
+        <a href="service.html" class="cs-secondary-link">
+          <span>Browse Routine Blood Tests</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="comingsoon.js"></script>
+</body>
+
+</html>

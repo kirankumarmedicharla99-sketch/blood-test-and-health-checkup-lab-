@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Diagnostic Portal &amp; Lab Operations Dashboard | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="AARA Clinical Laboratories Patient Diagnostic Portal. Track live blood samples, download pathologist-verified digital lab reports, monitor biomarker trends, and manage home sample collection appointments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="dashboard-body">
+
+  <!-- Mobile Sidebar Backdrop Overlay -->
+  <div class="dash-sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="dash-layout-container">
+
+    <!-- =========================================================================
+         LEFT SIDE PANEL (SIDEBAR)
+         ========================================================================= -->
+    <aside class="dash-sidebar" id="dashSidebar">
+
+      <!-- Top Header: Brand Logo & Wordmark (Redirects to Home 1 index.html) -->
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="dash-brand-link" title="Return to AARA Diagnostic Hub (Home 1)">
+          <div class="brand-logo-leaf">
+            <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+          </div>
+          <div class="dash-brand-info">
+            <span class="brand-title">AARA</span>
+            <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+          </div>
+        </a>
+        <button class="dash-sidebar-close" id="sidebarCloseBtn" aria-label="Close sidebar">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <!-- Verified Patient Portal Tag -->
+      <div class="dash-patron-badge">
+        <span class="patron-dot"></span>
+        <span class="patron-text">VERIFIED PATIENT PORTAL</span>
+      </div>
+
+      <!-- Navigation Menu with 5 Dashboard Views + Settings -->
+      <nav class="dash-nav" id="dashNav">
+        <div class="dash-nav-section-title">DIAGNOSTIC PORTAL</div>
+
+        <!-- 1. Overview -->
+        <button class="dash-nav-item active" data-tab="overview">
+          <span class="nav-item-left">
+            <i data-lucide="layout-dashboard" class="nav-item-icon"></i>
+            <span class="nav-item-label">Patient Health </span>
+          </span>
+          <span class="nav-pill-tag">Live</span>
+        </button>
+
+        <!-- 2. Billing & Health Receipts -->
+        <button class="dash-nav-item" data-tab="revenue">
+          <span class="nav-item-left">
+            <i data-lucide="receipt" class="nav-item-icon"></i>
+            <span class="nav-item-label">Billing &amp; Health Receipts</span>
+          </span>
+        </button>
+
+        <!-- 3. Biomarker Trends & Analytics -->
+        <button class="dash-nav-item" data-tab="analytics">
+          <span class="nav-item-left">
+            <i data-lucide="activity" class="nav-item-icon"></i>
+            <span class="nav-item-label">Biomark &amp;Analytics</span>
+          </span>
+        </button>
+
+        <!-- 4. Appointments & Sample Pipeline -->
+        <button class="dash-nav-item" data-tab="orders">
+          <span class="nav-item-left">
+            <i data-lucide="test-tube-2" class="nav-item-icon"></i>
+            <span class="nav-item-label">Appointments </span>
+          </span>
+          <span class="nav-badge-count">4</span>
+        </button>
+
+        <!-- 5. Report Archive & Family Profiles -->
+        <button class="dash-nav-item" data-tab="vault">
+          <span class="nav-item-left">
+            <i data-lucide="folder-heart" class="nav-item-icon"></i>
+            <span class="nav-item-label">Report Archive &amp; Lab QC</span>
+          </span>
+        </button>
+
+        <div class="dash-nav-section-title" style="margin-top: 24px;">PREFERENCES</div>
+
+        <!-- 6. Patient Profile & Preferences -->
+        <button class="dash-nav-item" data-tab="settings">
+          <span class="nav-item-left">
+            <i data-lucide="settings" class="nav-item-icon"></i>
+            <span class="nav-item-label">Patient Profile &amp; Settings</span>
+          </span>
+        </button>
+      </nav>
+
+      <!-- Sidebar Bottom: Logout Action -->
+      <div class="dash-sidebar-footer">
+        <a href="login.html" class="dash-logout-btn" id="sidebarLogoutBtn">
+          <i data-lucide="log-out"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- =========================================================================
+         RIGHT SIDE PANEL (MAIN CONTENT)
+         ========================================================================= -->
+    <main class="dash-main-panel" id="dashMain">
+
+      <!-- Top Header Line in Right Panel -->
+      <header class="dash-top-header" id="dashHeader">
+
+        <!-- Left Side: Mobile Hamburger & Welcome Note -->
+        <div class="dash-header-left">
+          <button class="dash-hamburger-btn" id="sidebarToggleBtn" aria-label="Toggle Navigation Sidebar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="dash-welcome-note">
+            <h1 class="welcome-title">
+              Welcome back, <span class="gold-gradient-text">Dr. Eleanor Vance</span>
+            </h1>
+            <p class="welcome-subtitle">
+              Patient ID #AARA-PAT-0428 &bull; Central Reference Lab &bull; Jubilee Hills, Hyderabad
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side: RTL Toggle, Theme Toggle, Notification Bell, Profile Avatar -->
+        <div class="dash-header-right">
+
+          <!-- RTL Direction Switcher -->
+          <button class="icon-btn dash-icon-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR"
+            title="Toggle RTL / LTR Direction">
+            <span class="rtl-label" id="rtlLabel">RTL</span>
+          </button>
+
+          <!-- Theme Light / Dark Mode Toggle -->
+          <button class="icon-btn dash-icon-btn" id="themeToggleBtn" aria-label="Toggle Light/Dark Theme"
+            title="Toggle Light / Dark Mode">
+            <span id="themeIcon"><i data-lucide="moon"></i></span>
+          </button>
+
+          <!-- Notification Bell with Unread Badge & Dropdown Panel -->
+          <div class="dash-dropdown-container">
+            <button class="icon-btn dash-icon-btn" id="notifBtn" aria-label="Notifications"
+              title="Diagnostic Report Alerts">
+              <i data-lucide="bell"></i>
+              <span class="notif-badge" id="notifBadge">3</span>
+            </button>
+
+            <!-- Notifications Dropdown Panel -->
+            <div class="dash-dropdown-panel notif-dropdown" id="notifDropdown">
+              <div class="dropdown-header">
+                <span class="dropdown-header-title">Laboratory Alerts</span>
+                <button type="button" class="btn-text-action" id="markAllReadBtn">Mark All as Read</button>
+              </div>
+              <div class="notif-list" id="notifList">
+                <div class="notif-item unread">
+                  <div class="notif-icon-circle gold">
+                    <i data-lucide="activity"></i>
+                  </div>
+                  <div class="notif-text-wrap">
+                    <strong class="notif-item-title">Stage 3: Automated Analysis Active</strong>
+                    <p class="notif-item-desc">Sample #AARA-8921 (Comprehensive Health Checkup) is running on our
+                      automated biochemistry analyzer.</p>
+                    <span class="notif-time">18 mins ago</span>
+                  </div>
+                </div>
+
+                <div class="notif-item unread">
+                  <div class="notif-icon-circle blue">
+                    <i data-lucide="file-check-2"></i>
+                  </div>
+                  <div class="notif-text-wrap">
+                    <strong class="notif-item-title">Digital Report Verified &amp; Signed</strong>
+                    <p class="notif-item-desc">Complete Blood Count (CBC) report #RPT-2026-804 has been verified by
+                      Chief Pathologist.</p>
+                    <span class="notif-time">2 hours ago</span>
+                  </div>
+                </div>
+
+                <div class="notif-item unread">
+                  <div class="notif-icon-circle green">
+                    <i data-lucide="home"></i>
+                  </div>
+                  <div class="notif-text-wrap">
+                    <strong class="notif-item-title">Home Phlebotomist Assigned</strong>
+                    <p class="notif-item-desc">Certified phlebotomist Ramesh K. is scheduled for your 7:00 AM fasting
+                      blood draw tomorrow.</p>
+                    <span class="notif-time">1 day ago</span>
+                  </div>
+                </div>
+
+                <div class="notif-item">
+                  <div class="notif-icon-circle purple">
+                    <i data-lucide="calendar-check"></i>
+                  </div>
+                  <div class="notif-text-wrap">
+                    <strong class="notif-item-title">6-Month Preventive Checkup Due</strong>
+                    <p class="notif-item-desc">Your biannual HbA1c &amp; Lipid Panel follow-up is recommended for
+                      October 2026.</p>
+                    <span class="notif-time">3 days ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Avatar with Status Dot & Dropdown Menu -->
+          <div class="dash-dropdown-container">
+            <button class="dash-profile-btn" id="profileBtn" aria-label="Profile and account menu">
+              <div class="profile-avatar-frame">
+                <img src="assets/images/team-elena-vance.jpg" alt="Dr. Eleanor Vance Profile Avatar"
+                  class="profile-avatar-img">
+                <span class="profile-status-dot"></span>
+              </div>
+              <div class="profile-meta-text">
+                <span class="profile-name">Dr. Eleanor</span>
+                <span class="profile-role">Verified Patient</span>
+              </div>
+              <i data-lucide="chevron-down" class="profile-chevron"></i>
+            </button>
+
+            <!-- Profile Dropdown Menu -->
+            <div class="dash-dropdown-panel profile-dropdown" id="profileDropdown">
+              <div class="profile-dropdown-header">
+                <div class="avatar-lg">
+                  <img src="assets/images/team-elena-vance.jpg" alt="Avatar">
+                </div>
+                <div>
+                  <strong>Dr. Eleanor Vance</strong>
+                  <span class="dropdown-user-email">eleanor.vance@clinicalhealth.org</span>
+                  <span class="patron-tag">Preventive Care Member</span>
+                </div>
+              </div>
+
+              <div class="dropdown-divider"></div>
+
+              <a href="javascript:void(0)" class="dropdown-link-item" data-switch-tab="settings">
+                <i data-lucide="user"></i>
+                <span>Patient Profile &amp; Preferences</span>
+              </a>
+              <a href="javascript:void(0)" class="dropdown-link-item" data-switch-tab="orders">
+                <i data-lucide="test-tube-2"></i>
+                <span>Live Sample Tracker</span>
+              </a>
+              <a href="javascript:void(0)" class="dropdown-link-item" data-switch-tab="revenue">
+                <i data-lucide="receipt"></i>
+                <span>Medical Invoices &amp; Receipts</span>
+              </a>
+
+              <div class="dropdown-divider"></div>
+
+              <a href="login.html" class="dropdown-link-item sign-out-link">
+                <i data-lucide="log-out"></i>
+                <span>Sign Out &bull; Return to Login</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- Content Views Container -->
+      <div class="dash-content-body">
+
+        <!-- =====================================================================
+             TAB 1: PATIENT HEALTH OVERVIEW (DEFAULT ACTIVE)
+             ===================================================================== -->
+        <section class="dash-tab-pane active" id="tab-overview">
+
+          <!-- Executive KPI Cards Grid -->
+          <div class="kpi-grid">
+            <!-- KPI 1 -->
+            <div class="kpi-card">
+              <div class="kpi-card-top">
+                <span class="kpi-label">Total Diagnostic Tests Completed</span>
+                <div class="kpi-icon-badge gold">
+                  <i data-lucide="microscope"></i>
+                </div>
+              </div>
+              <div class="kpi-value">24 Panels</div>
+              <div class="kpi-trend positive">
+                <i data-lucide="trending-up"></i>
+                <span>+4 Preventive Panels this year</span>
+              </div>
+              <div class="kpi-sparkline">
+                <svg viewBox="0 0 120 28" class="sparkline-svg">
+                  <path d="M0,24 Q20,18 40,20 T80,10 T120,4" fill="none" stroke="#C62835" stroke-width="2" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- KPI 2 -->
+            <div class="kpi-card">
+              <div class="kpi-card-top">
+                <span class="kpi-label">Active Sample In-Lab</span>
+                <div class="kpi-icon-badge blue">
+                  <i data-lucide="test-tube-2"></i>
+                </div>
+              </div>
+              <div class="kpi-value">2 Samples</div>
+              <div class="kpi-trend neutral">
+                <i data-lucide="clock"></i>
+                <span>Stage 3: Automated Assay Active</span>
+              </div>
+              <div class="kpi-sparkline">
+                <svg viewBox="0 0 120 28" class="sparkline-svg">
+                  <path d="M0,18 Q30,12 60,16 T120,8" fill="none" stroke="#008F95" stroke-width="2" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- KPI 3 -->
+            <div class="kpi-card">
+              <div class="kpi-card-top">
+                <span class="kpi-label">Health Biomarkers in Normal Range</span>
+                <div class="kpi-icon-badge amber">
+                  <i data-lucide="heart-pulse"></i>
+                </div>
+              </div>
+              <div class="kpi-value">94.2%</div>
+              <div class="kpi-trend positive">
+                <i data-lucide="check-circle-2"></i>
+                <span>58 of 62 Parameters Optimal</span>
+              </div>
+              <div class="kpi-sparkline">
+                <svg viewBox="0 0 120 28" class="sparkline-svg">
+                  <path d="M0,22 Q30,20 60,10 T120,6" fill="none" stroke="#008F95" stroke-width="2" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- KPI 4 -->
+            <div class="kpi-card">
+              <div class="kpi-card-top">
+                <span class="kpi-label">Verified Digital Reports</span>
+                <div class="kpi-icon-badge green">
+                  <i data-lucide="shield-check"></i>
+                </div>
+              </div>
+              <div class="kpi-value">18 Reports</div>
+              <div class="kpi-trend positive">
+                <i data-lucide="file-check"></i>
+                <span>100% Pathologist Signed PDF</span>
+              </div>
+              <div class="kpi-sparkline">
+                <svg viewBox="0 0 120 28" class="sparkline-svg">
+                  <path d="M0,26 Q40,14 80,18 T120,4" fill="none" stroke="#2ECC71" stroke-width="2" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mid Section: Main Chart & Category Distribution -->
+          <div class="dash-grid-two-col">
+
+            <!-- Chart Box: Biomarker & Test Activity Trajectory -->
+            <div class="dash-card chart-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Biomarker &amp; Test Activity Trajectory</h3>
+                  <p class="dash-card-subtitle"> Wellness Stability Index vs Fasting Glucose &amp; Lipid Control</p>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-item"><span class="legend-dot gold"></span> Wellness Score (%)</span>
+                  <span class="legend-item"><span class="legend-dot navy"></span> Fasting Glucose (mg/dL)</span>
+                </div>
+              </div>
+
+              <!-- SVG Dual-Series Visual Chart -->
+              <div class="chart-container">
+                <svg viewBox="0 0 540 220" class="main-chart-svg">
+                  <defs>
+                    <linearGradient id="goldAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#C62835" stop-opacity="0.32" />
+                      <stop offset="100%" stop-color="#C62835" stop-opacity="0.0" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Horizontal Gridlines -->
+                  <line x1="30" y1="30" x2="520" y2="30" stroke="var(--border-subtle)" stroke-dasharray="3,3" />
+                  <line x1="30" y1="80" x2="520" y2="80" stroke="var(--border-subtle)" stroke-dasharray="3,3" />
+                  <line x1="30" y1="130" x2="520" y2="130" stroke="var(--border-subtle)" stroke-dasharray="3,3" />
+                  <line x1="30" y1="180" x2="520" y2="180" stroke="var(--border-subtle)" stroke-width="1.5" />
+
+                  <!-- Area Path -->
+                  <path d="M40,165 Q115,140 190,110 T340,65 T490,38 L490,180 L40,180 Z" fill="url(#goldAreaGrad)" />
+
+                  <!-- Clinical Red Line Graph -->
+                  <path d="M40,165 Q115,140 190,110 T340,65 T490,38" fill="none" stroke="#C62835" stroke-width="3.2"
+                    stroke-linecap="round" />
+
+                  <!-- Data Point Nodes -->
+                  <circle cx="40" cy="165" r="4.5" fill="var(--bg-primary)" stroke="#C62835" stroke-width="2.5" />
+                  <circle cx="152" cy="128" r="4.5" fill="var(--bg-primary)" stroke="#C62835" stroke-width="2.5" />
+                  <circle cx="265" cy="92" r="4.5" fill="var(--bg-primary)" stroke="#C62835" stroke-width="2.5" />
+                  <circle cx="378" cy="55" r="4.5" fill="var(--bg-primary)" stroke="#C62835" stroke-width="2.5" />
+                  <circle cx="490" cy="38" r="5.5" fill="#C62835" stroke="#FFF" stroke-width="2" />
+
+                  <!-- Secondary Teal Metric Line -->
+                  <path d="M40,175 Q115,160 190,145 T340,115 T490,95" fill="none" stroke="#008F95" stroke-width="2"
+                    stroke-dasharray="4,4" />
+
+                  <!-- X-Axis Labels -->
+                  <text x="40" y="202" fill="var(--text-muted)" font-size="11" text-anchor="middle">May</text>
+                  <text x="152" y="202" fill="var(--text-muted)" font-size="11" text-anchor="middle">Jun</text>
+                  <text x="265" y="202" fill="var(--text-muted)" font-size="11" text-anchor="middle">Jul</text>
+                  <text x="378" y="202" fill="var(--text-muted)" font-size="11" text-anchor="middle">Aug</text>
+                  <text x="490" y="202" fill="#C62835" font-weight="600" font-size="11" text-anchor="middle">Sep
+                    (Latest)</text>
+                </svg>
+              </div>
+
+              <!-- Quick Metric Strip Under Chart -->
+              <div class="chart-summary-strip">
+                <div class="summary-col">
+                  <span class="summary-lbl">Fasting Glucose</span>
+                  <strong class="summary-val">88 mg/dL (Optimal)</strong>
+                </div>
+                <div class="summary-col">
+                  <span class="summary-lbl">HbA1c Level</span>
+                  <strong class="summary-val">5.2% (Normal)</strong>
+                </div>
+                <div class="summary-col">
+                  <span class="summary-lbl">Avg Report TAT</span>
+                  <strong class="summary-val">6.4 Hours</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category Distribution Card -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Test Category Breakdown</h3>
+                <span class="badge-tag">Panel Distribution</span>
+              </div>
+
+              <div class="distribution-list">
+                <!-- Item 1 -->
+                <div class="dist-row">
+                  <div class="dist-info">
+                    <span class="dist-name">Hematology &amp; Complete Blood Count (CBC)</span>
+                    <span class="dist-pct">38%</span>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill gold" style="width: 38%;"></div>
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="dist-row">
+                  <div class="dist-info">
+                    <span class="dist-name">Lipid Profile &amp; Cardiac Risk Markers</span>
+                    <span class="dist-pct">28%</span>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill blue" style="width: 28%;"></div>
+                  </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="dist-row">
+                  <div class="dist-info">
+                    <span class="dist-name">Thyroid (TSH, Free T3/T4) &amp; Hormones</span>
+                    <span class="dist-pct">20%</span>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill amber" style="width: 20%;"></div>
+                  </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="dist-row">
+                  <div class="dist-info">
+                    <span class="dist-name">HbA1c, Vitamin D/B12 &amp; Metabolic</span>
+                    <span class="dist-pct">14%</span>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill green" style="width: 14%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Home Collection Action Box -->
+              <div class="concierge-action-card">
+                <div class="concierge-icon">
+                  <i data-lucide="syringe"></i>
+                </div>
+                <div class="concierge-text">
+                  <strong>Morning Fasting Home Sample Slot Open</strong>
+                  <p>Certified phlebotomist available tomorrow between 6:30 AM – 8:30 AM in Jubilee Hills.</p>
+                </div>
+                <a href="contact.html" class="btn-primary-cta"
+                  style="font-size:0.82rem; padding:8px 14px; margin-top:8px;">
+                  <span>Book Home Visit</span>
+                  <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Active Sample Tracker Stream -->
+          <div class="dash-card" style="margin-top: 24px;">
+            <div class="dash-card-header">
+              <div>
+                <h3 class="dash-card-title">Active Sample Tracker</h3>
+                <p class="dash-card-subtitle">Real-time barcoded vacutainer tracking at Hyderabad Reference Lab</p>
+              </div>
+              <button class="btn-secondary-outline" data-switch-tab="orders"
+                style="font-size:0.84rem; padding:8px 16px;">
+                <span>View All Samples</span>
+                <i data-lucide="external-link" style="width:14px; height:14px; margin-left:4px;"></i>
+              </button>
+            </div>
+
+            <div class="pipeline-grid">
+              <!-- Active Sample 1 -->
+              <div class="pipeline-card">
+                <div class="pipeline-card-top">
+                  <span class="order-id">#AARA-8921</span>
+                  <span class="pipeline-badge phase3">Stage 3: Automated Analysis Active</span>
+                </div>
+                <h4 class="work-title">Comprehensive Full Body Checkup (65 Tests)</h4>
+                <p class="work-specs">EDTA + Serum Gel Vacutainers &bull; Cold-Chain Verified</p>
+                <div class="pipeline-progress-wrap">
+                  <div class="pipeline-bar">
+                    <div class="pipeline-fill" style="width: 75%;"></div>
+                  </div>
+                  <span class="pipeline-pct">75% Assay Complete</span>
+                </div>
+                <div class="pipeline-footer">
+                  <span class="specialist-lead">Pathologist: Dr. R. Nair</span>
+                  <span class="est-completion">Report: Today, 5:30 PM</span>
+                </div>
+              </div>
+
+              <!-- Active Sample 2 -->
+              <div class="pipeline-card">
+                <div class="pipeline-card-top">
+                  <span class="order-id">#AARA-9042</span>
+                  <span class="pipeline-badge phase2">Stage 2: Cold-Chain Inwarded</span>
+                </div>
+                <h4 class="work-title">Advanced Thyroid &amp; Vitamin D3/B12 Panel</h4>
+                <p class="work-specs">Chemiluminescence Immunoassay (CLIA) &bull; Fasting</p>
+                <div class="pipeline-progress-wrap">
+                  <div class="pipeline-bar">
+                    <div class="pipeline-fill" style="width: 45%;"></div>
+                  </div>
+                  <span class="pipeline-pct">45% Centrifuged</span>
+                </div>
+                <div class="pipeline-footer">
+                  <span class="specialist-lead">Biochemist: Dr. S. Verma</span>
+                  <span class="est-completion">Report: Today, 7:00 PM</span>
+                </div>
+              </div>
+
+              <!-- Active Sample 3 -->
+              <div class="pipeline-card">
+                <div class="pipeline-card-top">
+                  <span class="order-id">#AARA-9108</span>
+                  <span class="pipeline-badge phase1">Stage 1: Home Draw Scheduled</span>
+                </div>
+                <h4 class="work-title">HbA1c &amp; Cardiac Lipid Risk Profile</h4>
+                <p class="work-specs">10-12 Hr Fasting Required &bull; Home Phlebotomy</p>
+                <div class="pipeline-progress-wrap">
+                  <div class="pipeline-bar">
+                    <div class="pipeline-fill" style="width: 20%;"></div>
+                  </div>
+                  <span class="pipeline-pct">Scheduled 7:00 AM</span>
+                </div>
+                <div class="pipeline-footer">
+                  <span class="specialist-lead">Phlebotomist: Ramesh K.</span>
+                  <span class="est-completion">Slot: Tomorrow, 7:00 AM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Verified Reports Table -->
+          <div class="dash-card" style="margin-top: 24px;">
+            <div class="dash-card-header">
+              <div>
+                <h3 class="dash-card-title">Recent Verified Digital Reports</h3>
+                <p class="dash-card-subtitle">Pathologist-signed diagnostic reports ready for instant PDF download</p>
+              </div>
+              <button class="btn-secondary-outline" data-switch-tab="vault"
+                style="font-size:0.82rem; padding:8px 14px;">
+                <i data-lucide="folder-open" style="width:14px; height:14px; margin-right:4px;"></i>
+                <span>Open Full Archive</span>
+              </button>
+            </div>
+
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Report ID</th>
+                    <th>Diagnostic Test / Package</th>
+                    <th>Department</th>
+                    <th>Collection Date</th>
+                    <th>Clinical Summary</th>
+                    <th>Status</th>
+                    <th>Report PDF</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>#RPT-2026-804</code></td>
+                    <td>Complete Blood Count (CBC) with ESR</td>
+                    <td>Hematology</td>
+                    <td>Sep 14, 2026</td>
+                    <td>Hb 13.8 g/dL &bull; WBC 6,400 /µL (Normal)</td>
+                    <td><span class="table-badge settled">Verified ✓</span></td>
+                    <td><button class="table-action-btn download-report-btn" data-report="#RPT-2026-804"><i
+                          data-lucide="download"></i> PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>#RPT-2026-791</code></td>
+                    <td>Comprehensive Lipid &amp; Cardiac Profile</td>
+                    <td>Biochemistry</td>
+                    <td>Aug 28, 2026</td>
+                    <td>Total Chol 174 mg/dL &bull; HDL 58 mg/dL</td>
+                    <td><span class="table-badge settled">Verified ✓</span></td>
+                    <td><button class="table-action-btn download-report-btn" data-report="#RPT-2026-791"><i
+                          data-lucide="download"></i> PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>#RPT-2026-762</code></td>
+                    <td>HbA1c &amp; Fasting Blood Glucose</td>
+                    <td>Clinical Pathology</td>
+                    <td>Aug 10, 2026</td>
+                    <td>HbA1c 5.2% &bull; FBS 88 mg/dL (Optimal)</td>
+                    <td><span class="table-badge settled">Verified ✓</span></td>
+                    <td><button class="table-action-btn download-report-btn" data-report="#RPT-2026-762"><i
+                          data-lucide="download"></i> PDF</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- =====================================================================
+             TAB 2: BILLING & HEALTH RECEIPTS
+             ===================================================================== -->
+        <section class="dash-tab-pane" id="tab-revenue">
+
+          <div class="tab-header-toolbar">
+            <div>
+              <h2 class="section-title" style="font-size: 1.8rem; margin:0;">Billing &amp; Health Receipts</h2>
+              <p class="section-subtitle" style="margin: 4px 0 0;">Medical test invoices, insurance/HSA claim receipts,
+                and preventive package savings</p>
+            </div>
+            <!-- Timeframe Filter Toggle -->
+            <div class="timeframe-toggle" id="revenueTimeframeToggle">
+              <button class="timeframe-btn" data-time="weekly">Quarterly</button>
+              <button class="timeframe-btn active" data-time="monthly">Annual (2026)</button>
+              <button class="timeframe-btn" data-time="yearly">All-Time</button>
+            </div>
+          </div>
+
+          <!-- Financial KPI Cards -->
+          <div class="kpi-grid" style="margin-top: 24px;">
+            <div class="kpi-card">
+              <span class="kpi-label">Total Diagnostic Spend (YTD)</span>
+              <div class="kpi-value" id="grossRevenueVal">₹14,850</div>
+              <div class="kpi-trend positive"><i data-lucide="check-circle"></i> 100% GST &amp; Sec 80D Eligible</div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Insurance / Corporate Claimed</span>
+              <div class="kpi-value">₹9,500</div>
+              <div class="kpi-trend positive"><i data-lucide="shield-check"></i> 3 Claims Reimbursed</div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Preventive Package Savings</span>
+              <div class="kpi-value">₹4,620</div>
+              <div class="kpi-trend neutral"><i data-lucide="tag"></i> 32% Bundled Panel Discount</div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Tax Deduction Limit (Sec 80D)</span>
+              <div class="kpi-value">₹5,000</div>
+              <div class="kpi-trend positive"><i data-lucide="file-check-2"></i> Preventive Checkup Certificate Ready
+              </div>
+            </div>
+          </div>
+
+          <!-- Billing Breakdown Visuals -->
+          <div class="dash-grid-two-col" style="margin-top: 24px;">
+
+            <!-- Bar Chart: Monthly Diagnostic Spend -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Preventive &amp; Routine Test Billing</h3>
+                  <p class="dash-card-subtitle">Monthly Family Health Expenditure (INR)</p>
+                </div>
+                <span class="badge-tag">2026 Fiscal</span>
+              </div>
+
+              <div class="bar-chart-container">
+                <div class="bar-chart-bars">
+                  <div class="bar-col">
+                    <span class="bar-val">₹1.8k</span>
+                    <div class="bar-pill">
+                      <div class="bar-fill" style="height: 48%;"></div>
+                    </div>
+                    <span class="bar-lbl">Apr</span>
+                  </div>
+                  <div class="bar-col">
+                    <span class="bar-val">₹2.4k</span>
+                    <div class="bar-pill">
+                      <div class="bar-fill" style="height: 64%;"></div>
+                    </div>
+                    <span class="bar-lbl">May</span>
+                  </div>
+                  <div class="bar-col">
+                    <span class="bar-val">₹1.5k</span>
+                    <div class="bar-pill">
+                      <div class="bar-fill" style="height: 56%;"></div>
+                    </div>
+                    <span class="bar-lbl">Jun</span>
+                  </div>
+                  <div class="bar-col">
+                    <span class="bar-val">₹3.2k</span>
+                    <div class="bar-pill">
+                      <div class="bar-fill" style="height: 78%;"></div>
+                    </div>
+                    <span class="bar-lbl">Jul</span>
+                  </div>
+                  <div class="bar-col">
+                    <span class="bar-val">₹3.5k</span>
+                    <div class="bar-pill">
+                      <div class="bar-fill gold" style="height: 94%;"></div>
+                    </div>
+                    <span class="bar-lbl">Aug</span>
+                  </div>
+                  <div class="bar-col">
+                    <span class="bar-val">₹2.4k</span>
+                    <div class="bar-pill">
+                      <div class="bar-fill" style="height: 84%;"></div>
+                    </div>
+                    <span class="bar-lbl">Sep</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Billing Share by Test Category -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Expenditure by Diagnostic Category</h3>
+                <span class="badge-tag">Family Coverage</span>
+              </div>
+
+              <div class="revenue-stream-table">
+                <div class="stream-item">
+                  <div class="stream-info">
+                    <strong>Comprehensive Full Body Checkups</strong>
+                    <span>₹6,998 &bull; 2 Annual Packages</span>
+                  </div>
+                  <span class="stream-badge">47% of Spend</span>
+                </div>
+
+                <div class="stream-item">
+                  <div class="stream-info">
+                    <strong>Cardiac, Lipid &amp; Diabetes Monitoring</strong>
+                    <span>₹3,850 &bull; 4 Quarterly Panels</span>
+                  </div>
+                  <span class="stream-badge">26% of Spend</span>
+                </div>
+
+                <div class="stream-item">
+                  <div class="stream-info">
+                    <strong>Thyroid &amp; Hormone Assays (CLIA)</strong>
+                    <span>₹2,400 &bull; 3 Specialized Tests</span>
+                  </div>
+                  <span class="stream-badge">16% of Spend</span>
+                </div>
+
+                <div class="stream-item">
+                  <div class="stream-info">
+                    <strong>Hematology, CBC &amp; Home Collection</strong>
+                    <span>₹1,602 &bull; Free Home Visits Included</span>
+                  </div>
+                  <span class="stream-badge">11% of Spend</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Medical Test Invoices & Payment History Table -->
+          <div class="dash-card" style="margin-top: 24px;">
+            <div class="dash-card-header">
+              <div>
+                <h3 class="dash-card-title">Payment History &amp; Insurance Claim Receipts</h3>
+                <p class="dash-card-subtitle">Official itemized medical receipts for TPA insurance &amp; tax
+                  reimbursement</p>
+              </div>
+              <button class="btn-secondary-outline" id="exportInvoicesCsvBtn"
+                style="font-size:0.82rem; padding:8px 14px;">
+                <i data-lucide="download" style="width:14px; height:14px; margin-right:4px;"></i>
+                <span>Export Health Receipts (CSV)</span>
+              </button>
+            </div>
+
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Receipt ID</th>
+                    <th>Patient Name</th>
+                    <th>Diagnostic Package / Test</th>
+                    <th>Date</th>
+                    <th>Amount (INR)</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>#INV-2026-892</code></td>
+                    <td>Dr. Eleanor Vance</td>
+                    <td>Comprehensive Full Body Checkup (65 Tests)</td>
+                    <td>Sep 14, 2026</td>
+                    <td>₹3,499.00</td>
+                    <td><span class="table-badge settled">Paid &bull; UPI ✓</span></td>
+                    <td><button class="table-action-btn download-invoice-btn" data-invoice="#INV-2026-892"><i
+                          data-lucide="file-text"></i> Receipt</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>#INV-2026-874</code></td>
+                    <td>Dr. Eleanor Vance</td>
+                    <td>Advanced Thyroid &amp; Vitamin D3/B12 Panel</td>
+                    <td>Aug 24, 2026</td>
+                    <td>₹2,199.00</td>
+                    <td><span class="table-badge escrow">Insurance Claimed</span></td>
+                    <td><button class="table-action-btn download-invoice-btn" data-invoice="#INV-2026-874"><i
+                          data-lucide="file-text"></i> Receipt</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>#INV-2026-851</code></td>
+                    <td>Arthur Vance (Family)</td>
+                    <td>Senior Citizen Cardiac &amp; Diabetes Package</td>
+                    <td>Aug 15, 2026</td>
+                    <td>₹3,999.00</td>
+                    <td><span class="table-badge settled">Paid &bull; Card ✓</span></td>
+                    <td><button class="table-action-btn download-invoice-btn" data-invoice="#INV-2026-851"><i
+                          data-lucide="file-text"></i> Receipt</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>#INV-2026-830</code></td>
+                    <td>Dr. Eleanor Vance</td>
+                    <td>Complete Blood Count (CBC) &amp; HbA1c</td>
+                    <td>Aug 04, 2026</td>
+                    <td>₹1,150.00</td>
+                    <td><span class="table-badge settled">Reimbursed ✓</span></td>
+                    <td><button class="table-action-btn download-invoice-btn" data-invoice="#INV-2026-830"><i
+                          data-lucide="file-text"></i> Receipt</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- =====================================================================
+             TAB 3: BIOMARKER TRENDS & ANALYTICS
+             ===================================================================== -->
+        <section class="dash-tab-pane" id="tab-analytics">
+
+          <div class="tab-header-toolbar">
+            <div>
+              <h2 class="section-title" style="font-size: 1.8rem; margin:0;">Biomarker Trends &amp; Clinical Analytics
+              </h2>
+              <p class="section-subtitle" style="margin: 4px 0 0;">Historical health biomarker tracking, turnaround time
+                metrics, and laboratory quality control</p>
+            </div>
+          </div>
+
+          <!-- Biomarker KPI Strip -->
+          <div class="kpi-grid" style="margin-top: 24px;">
+            <div class="kpi-card">
+              <span class="kpi-label">Fasting Blood Glucose</span>
+              <div class="kpi-value">88 mg/dL</div>
+              <div class="kpi-trend positive"><i data-lucide="check-circle"></i> Ref: 70–99 mg/dL (Normal)</div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Glycated Hemoglobin (HbA1c)</span>
+              <div class="kpi-value">5.2%</div>
+              <div class="kpi-trend positive"><i data-lucide="trending-down"></i> -0.3% improvement vs Q1</div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Total Serum Cholesterol</span>
+              <div class="kpi-value">174 mg/dL</div>
+              <div class="kpi-trend positive"><i data-lucide="heart-pulse"></i> Ref: &lt; 200 mg/dL (Optimal)</div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">25-OH Vitamin D Total</span>
+              <div class="kpi-value">42.6 ng/mL</div>
+              <div class="kpi-trend positive"><i data-lucide="sun"></i> Ref: 30–100 ng/mL (Sufficient)</div>
+            </div>
+          </div>
+
+          <!-- Charts Grid -->
+          <div class="dash-grid-two-col" style="margin-top: 24px;">
+
+            <!-- Historical Biomarker Readings Chart -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3 class="dash-card-title">Fasting Glucose Stability (Last 7 Screenings)</h3>
+                  <p class="dash-card-subtitle">Consistent normoglycemic control within 70–99 mg/dL reference window</p>
+                </div>
+                <span class="badge-tag">Biochemistry</span>
+              </div>
+
+              <div class="weekly-traffic-chart">
+                <div class="day-bar-col">
+                  <div class="day-bar-fill" style="height: 78%;"></div>
+                  <span class="day-label">Mar (96)</span>
+                </div>
+                <div class="day-bar-col">
+                  <div class="day-bar-fill" style="height: 75%;"></div>
+                  <span class="day-label">Apr (94)</span>
+                </div>
+                <div class="day-bar-col">
+                  <div class="day-bar-fill" style="height: 72%;"></div>
+                  <span class="day-label">May (91)</span>
+                </div>
+                <div class="day-bar-col">
+                  <div class="day-bar-fill" style="height: 74%;"></div>
+                  <span class="day-label">Jun (92)</span>
+                </div>
+                <div class="day-bar-col">
+                  <div class="day-bar-fill" style="height: 70%;"></div>
+                  <span class="day-label">Jul (89)</span>
+                </div>
+                <div class="day-bar-col">
+                  <div class="day-bar-fill" style="height: 69%;"></div>
+                  <span class="day-label">Aug (88)</span>
+                </div>
+                <div class="day-bar-col">
+                  <div class="day-bar-fill gold" style="height: 68%;"></div>
+                  <span class="day-label">Sep (88)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Organ System Health Index -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Organ System Parameter Index</h3>
+                <span class="badge-tag">Reference Range Fit</span>
+              </div>
+
+              <div class="geo-demand-list">
+                <div class="geo-item">
+                  <div class="geo-header">
+                    <span>Hematology &amp; Red Cell Indices (Hb, PCV, MCV)</span>
+                    <strong>98%</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill gold" style="width: 98%;"></div>
+                  </div>
+                </div>
+
+                <div class="geo-item">
+                  <div class="geo-header">
+                    <span>Hepatic Function (SGOT, SGPT, Bilirubin)</span>
+                    <strong>96%</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill blue" style="width: 96%;"></div>
+                  </div>
+                </div>
+
+                <div class="geo-item">
+                  <div class="geo-header">
+                    <span>Renal &amp; Electrolyte Balance (Creatinine, eGFR)</span>
+                    <strong>95%</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill green" style="width: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="geo-item">
+                  <div class="geo-header">
+                    <span>Thyroid Axis (Ultra-Sensitive TSH, Free T3/T4)</span>
+                    <strong>92%</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill purple" style="width: 92%;"></div>
+                  </div>
+                </div>
+
+                <div class="geo-item">
+                  <div class="geo-header">
+                    <span>Micronutrients (Vitamin D3, Vitamin B12, Iron)</span>
+                    <strong>89%</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill amber" style="width: 89%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Turnaround Time & Quality Control Verification Metrics -->
+          <div class="dash-card" style="margin-top: 24px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Laboratory Turnaround Time &amp; Quality Control Verification</h3>
+              <span class="badge-tag">Jubilee Hills Reference Lab QC</span>
+            </div>
+
+            <div class="kpi-grid">
+              <div class="sensor-card">
+                <span class="sensor-title">Internal QC Concordance</span>
+                <strong class="sensor-value">99.94%</strong>
+                <span class="sensor-sub">Bi-level Westgard multi-rule calibration passed</span>
+              </div>
+
+              <div class="sensor-card">
+                <span class="sensor-title">Routine Hematology TAT</span>
+                <strong class="sensor-value">3.8 Hours</strong>
+                <span class="sensor-sub">Sample inwarding to pathologist sign-off</span>
+              </div>
+
+              <div class="sensor-card">
+                <span class="sensor-title">Cold-Chain Transit Integrity</span>
+                <strong class="sensor-value">4.2°C Avg</strong>
+                <span class="sensor-sub">Digital temperature logger verified per box</span>
+              </div>
+
+              <div class="sensor-card">
+                <span class="sensor-title">Double-Pathologist Review</span>
+                <strong class="sensor-value">100%</strong>
+                <span class="sensor-sub">Every critical or borderline value re-verified</span>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- =====================================================================
+             TAB 4: APPOINTMENTS & SAMPLE PIPELINE
+             ===================================================================== -->
+        <section class="dash-tab-pane" id="tab-orders">
+
+          <div class="tab-header-toolbar">
+            <div>
+              <h2 class="section-title" style="font-size: 1.8rem; margin:0;">Appointments &amp; Live Sample Pipeline
+              </h2>
+              <p class="section-subtitle" style="margin: 4px 0 0;">Track every stage of your blood sample from home
+                phlebotomy draw to pathologist-signed report</p>
+            </div>
+            <a href="contact.html" class="btn-primary-cta" style="font-size:0.86rem; padding:10px 18px;">
+              <i data-lucide="plus" style="width:16px; height:16px; margin-right:4px;"></i>
+              <span>Book Home Collection</span>
+            </a>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="orders-filter-bar" id="ordersFilterBar" style="margin-top: 24px;">
+            <button class="order-filter-pill active" data-filter="all">All Samples (5)</button>
+            <button class="order-filter-pill" data-filter="formulation">Stage 1: Home Draw Scheduled (1)</button>
+            <button class="order-filter-pill" data-filter="pouring">Stage 2: Barcoded &amp; Cold-Chain Inwarded
+              (1)</button>
+            <button class="order-filter-pill" data-filter="gilding">Stage 3: Analyzer Assay Active (1)</button>
+            <button class="order-filter-pill" data-filter="archival">Stage 4: Pathologist Review (1)</button>
+            <button class="order-filter-pill" data-filter="delivered">Report Ready &amp; Signed (1)</button>
+          </div>
+
+          <!-- Comprehensive Sample Pipeline Table -->
+          <div class="dash-card" style="margin-top: 18px;">
+            <div class="dash-table-wrapper">
+              <table class="dash-table" id="ordersTable">
+                <thead>
+                  <tr>
+                    <th>Sample Barcode</th>
+                    <th>Diagnostic Test / Package</th>
+                    <th>Department</th>
+                    <th>Assigned Specialist</th>
+                    <th>Pipeline Stage</th>
+                    <th>Assay Progress</th>
+                    <th>Est. Report Time</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Sample 1 -->
+                  <tr data-category="gilding">
+                    <td><code>#AARA-8921</code></td>
+                    <td>
+                      <div class="order-artwork-cell">
+                        <img src="assets/images/service-wall-art.jpg" alt="Comprehensive Health Checkup"
+                          class="order-thumb">
+                        <div>
+                          <strong>Comprehensive Full Body Checkup (65 Tests)</strong>
+                          <span class="order-subtext">EDTA + Serum Gel &bull; Fasting Sample</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Biochemistry &amp; Hematology</td>
+                    <td>Dr. R. Nair, MD</td>
+                    <td><span class="table-badge phase3">Stage 3: Analyzer Assay Active</span></td>
+                    <td>
+                      <div class="table-progress">
+                        <div class="table-progress-fill" style="width: 75%;"></div>
+                        <span>75%</span>
+                      </div>
+                    </td>
+                    <td>Today, 5:30 PM</td>
+                    <td><button class="table-action-btn view-order-btn">Track Sample</button></td>
+                  </tr>
+
+                  <!-- Sample 2 -->
+                  <tr data-category="pouring">
+                    <td><code>#AARA-9042</code></td>
+                    <td>
+                      <div class="order-artwork-cell">
+                        <img src="assets/images/service-river-table.jpg" alt="Thyroid and Hormone Panel"
+                          class="order-thumb">
+                        <div>
+                          <strong>Advanced Thyroid &amp; Vitamin D3/B12 Panel</strong>
+                          <span class="order-subtext">CLIA Immunoassay &bull; Cold-Chain 4°C</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Endocrinology</td>
+                    <td>Dr. S. Verma, MD</td>
+                    <td><span class="table-badge phase2">Stage 2: Cold-Chain Inwarded</span></td>
+                    <td>
+                      <div class="table-progress">
+                        <div class="table-progress-fill" style="width: 45%;"></div>
+                        <span>45%</span>
+                      </div>
+                    </td>
+                    <td>Today, 7:00 PM</td>
+                    <td><button class="table-action-btn view-order-btn">Track Sample</button></td>
+                  </tr>
+
+                  <!-- Sample 3 -->
+                  <tr data-category="formulation">
+                    <td><code>#AARA-9108</code></td>
+                    <td>
+                      <div class="order-artwork-cell">
+                        <img src="assets/images/gallery-ocean-clock.jpg" alt="HbA1c and Lipid Panel"
+                          class="order-thumb">
+                        <div>
+                          <strong>HbA1c &amp; Cardiac Lipid Risk Profile</strong>
+                          <span class="order-subtext">Home Visit &bull; 10-12 Hr Fasting Required</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Clinical Pathology</td>
+                    <td>Ramesh K. (Phlebotomist)</td>
+                    <td><span class="table-badge phase1">Stage 1: Home Draw Scheduled</span></td>
+                    <td>
+                      <div class="table-progress">
+                        <div class="table-progress-fill" style="width: 20%;"></div>
+                        <span>20%</span>
+                      </div>
+                    </td>
+                    <td>Tomorrow, 7:00 AM</td>
+                    <td><button class="table-action-btn view-order-btn">Reschedule</button></td>
+                  </tr>
+
+                  <!-- Sample 4 -->
+                  <tr data-category="archival">
+                    <td><code>#AARA-8819</code></td>
+                    <td>
+                      <div class="order-artwork-cell">
+                        <img src="assets/images/service-home-decor.jpg" alt="Liver and Kidney Panel"
+                          class="order-thumb">
+                        <div>
+                          <strong>Hepatic &amp; Renal Function Panel (LFT + KFT)</strong>
+                          <span class="order-subtext">22 Parameters &bull; QC Verified</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Biochemistry</td>
+                    <td>Dr. A. Reddy, MD</td>
+                    <td><span class="table-badge phase4">Stage 4: Pathologist Review</span></td>
+                    <td>
+                      <div class="table-progress">
+                        <div class="table-progress-fill" style="width: 90%;"></div>
+                        <span>90%</span>
+                      </div>
+                    </td>
+                    <td>Today, 3:15 PM</td>
+                    <td><button class="table-action-btn view-order-btn">Track Sample</button></td>
+                  </tr>
+
+                  <!-- Sample 5 -->
+                  <tr data-category="delivered">
+                    <td><code>#AARA-8041</code></td>
+                    <td>
+                      <div class="order-artwork-cell">
+                        <img src="assets/images/h2-coaster-set.jpg" alt="Complete Blood Count" class="order-thumb">
+                        <div>
+                          <strong>Complete Blood Count (CBC) with 5-Part Diff</strong>
+                          <span class="order-subtext">Signed Digital Report &bull; #RPT-2026-804</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Hematology</td>
+                    <td>Dr. R. Nair, MD</td>
+                    <td><span class="table-badge delivered">Signed Report Ready ✓</span></td>
+                    <td>
+                      <div class="table-progress">
+                        <div class="table-progress-fill" style="width: 100%;"></div>
+                        <span>100%</span>
+                      </div>
+                    </td>
+                    <td>Completed</td>
+                    <td><button class="table-action-btn download-report-btn" data-report="#RPT-2026-804">Download
+                        PDF</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- =====================================================================
+             TAB 5: REPORT ARCHIVE & FAMILY PROFILES / LAB QC
+             ===================================================================== -->
+        <section class="dash-tab-pane" id="tab-vault">
+
+          <div class="tab-header-toolbar">
+            <div>
+              <h2 class="section-title" style="font-size: 1.8rem; margin:0;">Report Archive &amp; Laboratory Quality
+                Status</h2>
+              <p class="section-subtitle" style="margin: 4px 0 0;">Downloadable signed digital reports archive, linked
+                family profiles, and analyzer calibration status</p>
+            </div>
+          </div>
+
+          <!-- Lab Analyzer & Cold-Chain Monitor -->
+          <div class="kpi-grid" style="margin-top: 24px;">
+            <div class="sensor-card">
+              <div class="sensor-header">
+                <span class="sensor-title">Biochemistry Suite A (Jubilee Hills)</span>
+                <span class="patron-dot" style="background:#2ECC71;"></span>
+              </div>
+              <div class="sensor-value">21.4°C &bull; 44% RH</div>
+              <span class="sensor-sub">ISO-certified sterile analyzer environment</span>
+            </div>
+
+            <div class="sensor-card">
+              <div class="sensor-header">
+                <span class="sensor-title">5-Part Hematology Analyzer</span>
+                <span class="patron-dot" style="background:#008F95;"></span>
+              </div>
+              <div class="sensor-value">Level-3 QC Passed</div>
+              <span class="sensor-sub">Daily optical laser scatter calibration active</span>
+            </div>
+
+            <div class="sensor-card">
+              <div class="sensor-header">
+                <span class="sensor-title">Sample Cold-Chain Vault</span>
+                <span class="patron-dot" style="background:#2ECC71;"></span>
+              </div>
+              <div class="sensor-value">3.8°C Constant</div>
+              <span class="sensor-sub">Serum &amp; plasma stability preserved for 7 days</span>
+            </div>
+
+            <div class="sensor-card">
+              <div class="sensor-header">
+                <span class="sensor-title">Linked Family Member Profiles</span>
+                <span class="patron-dot" style="background:#C62835;"></span>
+              </div>
+              <div class="sensor-value">4 Family Members</div>
+              <span class="sensor-sub">Consolidated digital health records &amp; history</span>
+            </div>
+          </div>
+
+          <!-- Downloadable Signed Digital Reports Archive Table -->
+          <div class="dash-card" style="margin-top: 24px;">
+            <div class="dash-card-header">
+              <div>
+                <h3 class="dash-card-title">Signed Digital Reports &amp; Family Health Archive</h3>
+                <p class="dash-card-subtitle">Lifetime cloud storage of verified diagnostic reports with QR authenticity
+                  codes</p>
+              </div>
+              <button class="btn-secondary-outline" id="scanBarcodeBtn" style="font-size:0.82rem; padding:8px 14px;">
+                <i data-lucide="qr-code" style="width:14px; height:14px; margin-right:4px;"></i>
+                <span>Verify Report QR</span>
+              </button>
+            </div>
+
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Report ID</th>
+                    <th>Patient / Family Member</th>
+                    <th>Diagnostic Panel</th>
+                    <th>Test Date &amp; Lab</th>
+                    <th>Key Biomarker</th>
+                    <th>Verification</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>#RPT-2026-804</code></td>
+                    <td>Dr. Eleanor Vance (Self)</td>
+                    <td>Complete Blood Count (CBC) &amp; ESR</td>
+                    <td>Sep 14, 2026 &bull; Jubilee Hills</td>
+                    <td>Hb: 13.8 g/dL</td>
+                    <td><span class="table-badge available">Pathologist Signed ✓</span></td>
+                    <td><button class="table-action-btn download-report-btn" data-report="#RPT-2026-804">Download
+                        PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>#RPT-2026-791</code></td>
+                    <td>Dr. Eleanor Vance (Self)</td>
+                    <td>Comprehensive Lipid &amp; Cardiac Risk</td>
+                    <td>Aug 28, 2026 &bull; Jubilee Hills</td>
+                    <td>LDL: 94 mg/dL</td>
+                    <td><span class="table-badge available">Pathologist Signed ✓</span></td>
+                    <td><button class="table-action-btn download-report-btn" data-report="#RPT-2026-791">Download
+                        PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>#RPT-2026-755</code></td>
+                    <td>Arthur Vance (Spouse)</td>
+                    <td>Senior Citizen Full Body Checkup</td>
+                    <td>Aug 15, 2026 &bull; Home Draw</td>
+                    <td>HbA1c: 5.5%</td>
+                    <td><span class="table-badge available">Pathologist Signed ✓</span></td>
+                    <td><button class="table-action-btn download-report-btn" data-report="#RPT-2026-755">Download
+                        PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><code>#RPT-2026-710</code></td>
+                    <td>Clara Vance (Parent)</td>
+                    <td>Thyroid Profile (TSH, Free T3, Free T4)</td>
+                    <td>Jul 22, 2026 &bull; Home Draw</td>
+                    <td>TSH: 2.14 mIU/L</td>
+                    <td><span class="table-badge reserved">Doctor Shared</span></td>
+                    <td><button class="table-action-btn download-report-btn" data-report="#RPT-2026-710">Download
+                        PDF</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Laboratory Analyzer & Reagent Quality Status -->
+          <div class="dash-grid-two-col" style="margin-top: 24px;">
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Analyzer Calibration &amp; QC Status</h3>
+                <span class="badge-tag">ISO 15189 Standard</span>
+              </div>
+              <div class="distribution-list">
+                <div class="dist-row">
+                  <div class="dist-info"><span>Hematology Controls (3-Level Blood Control)</span><strong>99.8%
+                      Precision</strong></div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill gold" style="width: 99%;"></div>
+                  </div>
+                </div>
+                <div class="dist-row">
+                  <div class="dist-info"><span>Biochemistry Calibrators (Serum Multi-Cal)</span><strong>99.5%
+                      Accuracy</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill blue" style="width: 98%;"></div>
+                  </div>
+                </div>
+                <div class="dist-row">
+                  <div class="dist-info"><span>Immunoassay CLIA Reagent Lot Stability</span><strong>98.9%
+                      Verified</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill purple" style="width: 96%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Sterile Consumables &amp; Vacutainer Stock</h3>
+                <span class="badge-tag">Batch Verified</span>
+              </div>
+              <div class="distribution-list">
+                <div class="dist-row">
+                  <div class="dist-info"><span>Sterile K2-EDTA &amp; SST Gel Vacutainers</span><strong>4,800 / 5,000
+                      Tubes</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill green" style="width: 96%;"></div>
+                  </div>
+                </div>
+                <div class="dist-row">
+                  <div class="dist-info"><span>Single-Use Safety Butterfly Needles (23G)</span><strong>3,650 / 4,000
+                      Units</strong>
+                  </div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill green" style="width: 91%;"></div>
+                  </div>
+                </div>
+                <div class="dist-row">
+                  <div class="dist-info"><span>Cold-Chain Gel Packs &amp; Barcoded Seal Kits</span><strong>460 / 500
+                      Kits</strong></div>
+                  <div class="dist-progress-bar">
+                    <div class="dist-fill amber" style="width: 92%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- =====================================================================
+             TAB 6: PATIENT PROFILE & PREFERENCES
+             ===================================================================== -->
+        <section class="dash-tab-pane" id="tab-settings">
+
+          <div class="tab-header-toolbar">
+            <div>
+              <h2 class="section-title" style="font-size: 1.8rem; margin:0;">Patient Profile &amp; Preferences</h2>
+              <p class="section-subtitle" style="margin: 4px 0 0;">Manage your verified patient identity, home sample
+                collection address, and SMS/email report alerts</p>
+            </div>
+          </div>
+
+          <div class="dash-grid-two-col" style="margin-top: 24px;">
+
+            <!-- Left: Patient Identity Form -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Patient Identity</h3>
+                <span class="badge-tag">Patient ID #AARA-PAT-0428</span>
+              </div>
+
+              <form id="settingsForm" class="settings-form">
+                <div class="settings-avatar-row">
+                  <img src="assets/images/team-elena-vance.jpg" alt="Patient Avatar" class="settings-avatar-preview"
+                    id="avatarPreview">
+                  <div>
+                    <button type="button" class="btn-secondary-outline" style="font-size:0.78rem; padding:6px 12px;"
+                      id="changeAvatarBtn">
+                      <span>Update Photo</span>
+                    </button>
+                    <p class="settings-avatar-help">JPG, PNG up to 5MB. Used for patient ID verification.</p>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 18px;">
+                  <label class="form-label" for="settingsName">Patient Full Name</label>
+                  <input type="text" id="settingsName" class="form-input" value="Dr. Eleanor Vance" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="settingsEmail">Email Address for Digital Reports</label>
+                  <input type="email" id="settingsEmail" class="form-input" value="eleanor.vance@clinicalhealth.org"
+                    required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="settingsPhone">Mobile / WhatsApp for Report Alerts</label>
+                  <input type="tel" id="settingsPhone" class="form-input" value="+91 98490 24000">
+                </div>
+
+                <div class="form-grid-two">
+                  <div class="form-group">
+                    <label class="form-label" for="settingsCurrency">Blood Group &amp; Rh Factor</label>
+                    <select id="settingsCurrency" class="form-select">
+                      <option value="O+" selected>O Positive (O+)</option>
+                      <option value="A+">A Positive (A+)</option>
+                      <option value="B+">B Positive (B+)</option>
+                      <option value="AB+">AB Positive (AB+)</option>
+                      <option value="O-">O Negative (O-)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="settingsTimezone">Preferred Collection Window</label>
+                    <select id="settingsTimezone" class="form-select">
+                      <option value="FASTING_EARLY" selected>6:30 AM – 8:00 AM (Fasting)</option>
+                      <option value="FASTING_LATE">8:00 AM – 10:00 AM (Fasting)</option>
+                      <option value="AFTERNOON">12:00 PM – 4:00 PM (Routine)</option>
+                      <option value="EVENING">4:00 PM – 7:30 PM (Post-Prandial)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-primary-cta" style="margin-top: 10px;">
+                  <span>Save Patient Profile</span>
+                  <i data-lucide="check" class="btn-arrow-icon"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- Right: Home Sample Collection Address & Notification Toggles -->
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+
+              <!-- Home Collection Address Card -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">Home Sample Collection Address</h3>
+                  <span class="badge-tag">Primary Residence</span>
+                </div>
+                <p style="font-size:0.92rem; line-height:1.6; color:var(--text-body); margin-bottom:14px;">
+                  <strong>Vance Residence &bull; Jubilee Hills</strong><br>
+                  Plot 412, Road No. 36, Jubilee Hills<br>
+                  Hyderabad, Telangana 500033, India<br>
+                  <em>Phlebotomist Note: Gate Security Intercom #412, Ground Floor Clinic Room</em>
+                </p>
+                <button class="btn-secondary-outline" id="editAddressBtn" style="font-size:0.82rem; padding:8px 14px;">
+                  <i data-lucide="edit-3" style="width:14px; height:14px; margin-right:4px;"></i>
+                  <span>Edit Collection Address</span>
+                </button>
+              </div>
+
+              <!-- Notifications Preferences Card -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">SMS &amp; Email Report Notification Toggles</h3>
+                </div>
+
+                <div class="settings-toggle-list">
+                  <label class="toggle-row">
+                    <div>
+                      <strong>Sample Collection &amp; Phlebotomist Alerts</strong>
+                      <p>Receive live SMS updates when your phlebotomist is dispatched and when vacutainers reach the
+                        lab.</p>
+                    </div>
+                    <input type="checkbox" checked class="switch-input">
+                    <span class="custom-switch"></span>
+                  </label>
+
+                  <label class="toggle-row">
+                    <div>
+                      <strong>Critical Value &amp; Signed Report SMS Alerts</strong>
+                      <p>Instant WhatsApp &amp; SMS link as soon as your digital report is verified by our Chief
+                        Pathologist.</p>
+                    </div>
+                    <input type="checkbox" checked class="switch-input">
+                    <span class="custom-switch"></span>
+                  </label>
+
+                  <label class="toggle-row">
+                    <div>
+                      <strong>Annual &amp; Biannual Checkup Reminders</strong>
+                      <p>Preventive reminders for 6-month HbA1c, Thyroid, and Lipid Profile follow-up screenings.</p>
+                    </div>
+                    <input type="checkbox" checked class="switch-input">
+                    <span class="custom-switch"></span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Toast Notification Message Element -->
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite">
+    <span class="toast-icon"><i data-lucide="check-circle-2"></i></span>
+    <span class="toast-text" id="toastText">Welcome to AARA Patient Diagnostic Portal.</span>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

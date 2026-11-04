@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Laboratory &amp; Book Home Sample Collection | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="Schedule a sterile doorstep home blood sample collection in Hyderabad or visit AARA Clinical Laboratories in Jubilee Hills. Same-day digital reports, corporate wellness camps, and direct pathologist support.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="contact-page">
+
+  <!-- =========================================================================
+       NAVIGATION HEADER (100% Consistent with Home 1 / index.html)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+
+      <!-- Left: Brand Logo & Wordmark matching medical laboratory identity -->
+      <a href="index.html" class="brand-wrapper" id="brandLogoLink">
+        <div class="brand-logo-leaf">
+          <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+        </div>
+        <div class="brand-name-group">
+          <span class="brand-title">AARA</span>
+          <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+        </div>
+      </a>
+
+      <!-- Middle: Desktop Navigation Links -->
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-item has-dropdown">
+          <a href="./index.html" class="nav-link" id="navHome">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="nav-chevron-icon"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="./index.html" class="dropdown-item">
+              <span>Home 1 (Diagnostic Hub)</span>
+              <span class="badge-tag">Active</span>
+            </a>
+            <a href="./home2.html" class="dropdown-item" id="btnOpenHome2">
+              <span>Home 2 (Preventive Care)</span>
+              <span class="badge-tag">New</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" id="navAbout">About Us</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="service.html" class="nav-link" id="navServices">Services</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="pricing.html" class="nav-link" id="navPricing">Pricing</a>
+        </div>
+        <div class="nav-item">
+          <a href="Journal.html" class="nav-link" id="navJournal">Journal</a>
+        </div>
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link active" id="navContact">Contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link" id="navDashboard">
+            <span>Dashboard</span>
+            <span class="nav-status-dot" aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right: Action Buttons (RTL, Theme Toggle, Login Button, Mobile Hamburger) -->
+      <div class="header-actions">
+        <!-- RTL Switcher -->
+        <button class="icon-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR" title="Toggle RTL / LTR">
+          <span class="rtl-label" id="rtlLabel">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="themeToggleBtn" aria-label="Toggle light/dark theme"
+          title="Toggle Light / Dark Mode">
+          <span id="themeIcon"><i data-lucide="moon"></i></span>
+        </button>
+
+        <!-- Primary CTA Login Button -->
+        <a href="login.html" class="btn-primary-cta" id="loginBtn">
+          <span>Login</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home 1 (Diagnostic Hub)</a></li>
+      <li><a href="home2.html" class="mobile-nav-link" id="mobileHome2Btn">Home 2 (Preventive Care)</a></li>
+      <li><a href="service.html" class="mobile-nav-link">Diagnostic Test Catalog</a></li>
+      <li><a href="#commission-inquiry" class="mobile-nav-link" data-close-drawer>Book Home Collection</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="Journal.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" style="color:var(--color-accent-primary); font-weight:600;"
+          data-close-drawer>Contact &bull; Active</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link" id="mobileDashboardBtn">Dashboard</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn-primary-cta" id="mobileLoginBtn"
+        style="width: 100%; justify-content: center; text-decoration: none;">
+        <span>Patient Portal &bull; Login</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+      <p style="text-align: center; font-size: 0.76rem; color: var(--text-muted);">
+        AARA Clinical Laboratories • Accurate Diagnostics &amp; Patient Care
+      </p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: CLINICAL HERO BANNER WITH TWO-IMAGE DIAGNOSTIC SHOWCASE
+         ========================================================================= -->
+    <section class="cnt-hero" id="contact-hero">
+      <div class="container cnt-hero-container">
+
+        <!-- Left: Hero Textual Content -->
+        <div class="cnt-hero-content">
+          <div class="section-eyebrow-wrapper">
+            <span class="eyebrow-gem"></span>
+            <span class="section-eyebrow">CENTRAL DIAGNOSTIC LAB &bull; JUBILEE HILLS</span>
+          </div>
+
+          <h1 class="cnt-hero-title">
+            Book Home Sample Collection or <span class="gold-gradient-text">Contact Our Lab</span>
+          </h1>
+
+          <p class="cnt-hero-desc">
+            Schedule a punctual morning blood draw at your doorstep anywhere in Hyderabad, walk into our Jubilee Hills
+            Central Diagnostic Hub, or coordinate a preventive health screening camp for your organization.
+          </p>
+
+          <!-- Trust Badges Strip -->
+          <div class="cnt-hero-metrics">
+            <div class="cnt-metric-item">
+              <span class="cnt-metric-val">60m</span>
+              <span class="cnt-metric-lbl">Doorstep Phlebotomy</span>
+            </div>
+            <div class="cnt-metric-separator"></div>
+            <div class="cnt-metric-item">
+              <span class="cnt-metric-val">2–8°C</span>
+              <span class="cnt-metric-lbl">Monitored Cold Chain</span>
+            </div>
+            <div class="cnt-metric-separator"></div>
+            <div class="cnt-metric-item">
+              <span class="cnt-metric-val">Same-Day</span>
+              <span class="cnt-metric-lbl">Verified Digital Reports</span>
+            </div>
+          </div>
+
+          <!-- Hero CTAs -->
+          <div class="cnt-hero-actions">
+            <a href="#commission-inquiry" class="btn-primary-cta">
+              <span>Book Home Sample Collection</span>
+              <i data-lucide="calendar-check" class="btn-arrow-icon"></i>
+            </a>
+            <a href="#hyderabad-map" class="btn-secondary-outline">
+              <i data-lucide="map-pin" style="width: 16px; height: 16px; margin-right: 6px;"></i>
+              <span>Locate Jubilee Hills Lab</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Unique Asymmetrical Two-Image Showcase -->
+        <div class="cnt-hero-visual-wrapper">
+          <div class="cnt-visual-ambient-glow"></div>
+
+          <div class="cnt-hero-visual">
+            <!-- Primary Background Image (Central Diagnostic Lab) -->
+            <div class="cnt-img-primary-frame">
+              <img src="assets/images/hero-banner.jpg"
+                alt="AARA Clinical Laboratories Central Diagnostic Facility in Jubilee Hills Hyderabad"
+                class="cnt-img-primary" loading="eager">
+              <div class="cnt-primary-glass-tag">
+                <span class="pulse-dot"></span>
+                <span>Jubilee Hills Central Lab</span>
+              </div>
+            </div>
+
+            <!-- Secondary Overlapping Image (Certified Phlebotomist & Analyzer) -->
+            <div class="cnt-img-secondary-frame">
+              <img src="assets/images/h2-materials.jpg"
+                alt="Certified Phlebotomist Preparing Barcoded Vacutainer Samples" class="cnt-img-secondary"
+                loading="lazy">
+              <div class="cnt-secondary-caption">
+                <i data-lucide="shield-check"></i>
+                <span>Sterile Home Phlebotomy Fleet</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: HOME SAMPLE COLLECTION BOOKING FORM & LAB ADDRESS CARDS
+         ========================================================================= -->
+    <section class="cnt-form-section" id="commission-inquiry">
+      <div class="container">
+
+        <div class="section-header text-center">
+          <span class="section-eyebrow">DOORSTEP PHLEBOTOMY &amp; LAB APPOINTMENTS</span>
+          <h2 class="section-title">Schedule Your <span class="gold-gradient-text">Diagnostic Blood Test</span></h2>
+          <p class="section-subtitle">
+            Complete the booking form below to schedule a sterile morning home sample collection or an express walk-in
+            appointment. Our phlebotomy dispatch desk confirms all slots within 15 minutes.
+          </p>
+        </div>
+
+        <div class="cnt-form-layout">
+
+          <!-- Left: Home Sample Collection Booking Form Box -->
+          <div class="cnt-form-card">
+            <div class="cnt-form-header">
+              <div class="cnt-form-badge">
+                <i data-lucide="stethoscope"></i>
+                <span>Home Sample Collection &amp; Lab Requisition</span>
+              </div>
+              <p class="cnt-form-subtext">Fields marked with an asterisk (<span class="required-star">*</span>) are
+                required for patient registration and barcode generation.</p>
+            </div>
+
+            <form id="contactForm" class="bespoke-commission-form" novalidate>
+              <div class="form-grid-two">
+                <!-- Patient Full Name -->
+                <div class="form-group">
+                  <label for="clientName" class="form-label">Patient Full Name <span
+                      class="required-star">*</span></label>
+                  <div class="input-icon-wrapper">
+                    <i data-lucide="user" class="input-icon"></i>
+                    <input type="text" id="clientName" class="form-input"
+                      placeholder="e.g. Mr. Rajesh Sharma / Ms. Ananya Reddy" required>
+                  </div>
+                  <span class="input-error-msg" id="nameError">Please enter the patient's full name.</span>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                  <label for="clientEmail" class="form-label">Email for Digital Report <span
+                      class="required-star">*</span></label>
+                  <div class="input-icon-wrapper">
+                    <i data-lucide="mail" class="input-icon"></i>
+                    <input type="email" id="clientEmail" class="form-input" placeholder="e.g. patient@domain.com"
+                      required>
+                  </div>
+                  <span class="input-error-msg" id="emailError">Please enter a valid email address for report
+                    delivery.</span>
+                </div>
+              </div>
+
+              <div class="form-grid-two">
+                <!-- Telephone / WhatsApp -->
+                <div class="form-group">
+                  <label for="clientPhone" class="form-label">Mobile / WhatsApp Number <span
+                      class="required-star">*</span></label>
+                  <div class="input-icon-wrapper">
+                    <i data-lucide="phone" class="input-icon"></i>
+                    <input type="tel" id="clientPhone" class="form-input" placeholder="+91 98490 24000" required>
+                  </div>
+                  <span class="input-error-msg" id="phoneError">Please provide a valid mobile number for phlebotomist
+                    coordination.</span>
+                </div>
+
+                <!-- Test / Package Selection -->
+                <div class="form-group">
+                  <label for="commissionDiscipline" class="form-label">Select Test or Health Package <span
+                      class="required-star">*</span></label>
+                  <div class="select-wrapper">
+                    <select id="commissionDiscipline" class="form-select" required>
+                      <option value="" disabled selected>Choose Diagnostic Test / Package</option>
+                      <option value="comprehensive-checkup">Comprehensive Full Body Checkup (68 Parameters - $85)
+                      </option>
+                      <option value="cbc-panel">Complete Blood Count (CBC) with ESR (24 Parameters - $25)</option>
+                      <option value="lipid-profile">Complete Lipid &amp; Cardiac Risk Profile ($35)</option>
+                      <option value="thyroid-profile">Thyroid Function Profile: Total/Free T3, T4 &amp; TSH ($40)
+                      </option>
+                      <option value="diabetes-panel">HbA1c &amp; Fasting Blood Glucose Diabetes Panel ($30)</option>
+                      <option value="vitamin-panel">Vitamin D (25-OH) &amp; Vitamin B12 Vitality Panel ($45)</option>
+                      <option value="corporate-camp">Corporate Wellness Screening Camp Inquiry</option>
+                      <option value="custom-prescription">Doctor's Prescription / Custom Blood Panel</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid-two">
+                <!-- Preferred Morning Time Slot -->
+                <div class="form-group">
+                  <label for="dimensionScope" class="form-label">Preferred Collection Time Slot</label>
+                  <div class="select-wrapper">
+                    <select id="dimensionScope" class="form-select">
+                      <option value="" disabled selected>Select Morning / Daytime Slot</option>
+                      <option value="slot-0630-0800">Early Morning Fasting: 6:30 AM – 8:00 AM (Recommended)</option>
+                      <option value="slot-0800-0930">Morning Fasting: 8:00 AM – 9:30 AM</option>
+                      <option value="slot-0930-1100">Late Morning: 9:30 AM – 11:00 AM</option>
+                      <option value="slot-1100-1400">Midday Non-Fasting: 11:00 AM – 2:00 PM</option>
+                      <option value="slot-1400-1800">Afternoon / Evening Walk-In: 2:00 PM – 6:00 PM</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Patient Fasting Status -->
+                <div class="form-group">
+                  <label for="budgetTier" class="form-label">Patient Fasting Status</label>
+                  <div class="select-wrapper">
+                    <select id="budgetTier" class="form-select">
+                      <option value="" disabled selected>Select Fasting Preparation Status</option>
+                      <option value="fasting-10-12h">Overnight Fasting (10–12 Hours — Water Only)</option>
+                      <option value="non-fasting-random">Non-Fasting / Random Sample</option>
+                      <option value="fasting-plus-ppbs">Dual Visit: Fasting + 2-Hour Post-Meal (PPBS)</option>
+                      <option value="unsure-advise">Not Sure — Please Advise on Fasting Rules</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collection Mode -->
+              <div class="form-group">
+                <label for="projectTimeline" class="form-label">Collection Mode &amp; Urgency</label>
+                <div class="select-wrapper">
+                  <select id="projectTimeline" class="form-select">
+                    <option value="" disabled selected>Select Collection Preference</option>
+                    <option value="home-collection-tomorrow">Doorstep Home Sample Collection (Tomorrow Morning)</option>
+                    <option value="home-collection-today">Urgent Same-Day Home Collection (Within 90 Mins)</option>
+                    <option value="walk-in-jubilee-hills">Walk-In at Jubilee Hills Main Diagnostic Center</option>
+                    <option value="family-weekend">Weekend Family Preventive Screening (2+ Members)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Home Address & Clinical Notes -->
+              <div class="form-group">
+                <label for="projectDetails" class="form-label">Complete Home Address (with Landmark) &amp; Clinical
+                  Notes <span class="required-star">*</span></label>
+                <textarea id="projectDetails" class="form-textarea" rows="4"
+                  placeholder="Enter your complete flat/house number, street, locality in Hyderabad, nearest landmark, patient age/gender, and any specific tests or symptoms mentioned by your doctor..."
+                  required></textarea>
+                <span class="input-error-msg" id="detailsError">Please provide your collection address or clinical
+                  inquiry details.</span>
+              </div>
+
+              <!-- File Attachment / Doctor's Prescription Upload Simulator -->
+              <div class="form-group">
+                <label class="form-label">Upload Doctor's Prescription or Previous Blood Report (Optional)</label>
+                <div class="upload-dropzone" id="uploadDropzone">
+                  <input type="file" id="fileAttachment" class="file-input-hidden" accept="image/*,.pdf" multiple>
+                  <div class="upload-icon-circle">
+                    <i data-lucide="upload-cloud"></i>
+                  </div>
+                  <div class="upload-text">
+                    <strong>Click or drag prescription photos or PDF lab reports</strong>
+                    <span>Supports JPG, PNG, PDF up to 25MB • Encrypted HIPAA-grade upload</span>
+                  </div>
+                  <div class="selected-files-list" id="selectedFilesList"></div>
+                </div>
+              </div>
+
+              <!-- Consent Checkbox -->
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="clientConsent" required checked>
+                  <span class="custom-checkbox"></span>
+                  <span class="checkbox-text">
+                    I consent to sample collection by a certified AARA phlebotomist and authorize delivery of my
+                    verified digital diagnostic reports via WhatsApp, SMS, and email.
+                  </span>
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-primary-cta btn-submit-commission" id="submitCommissionBtn">
+                <span>Confirm Home Collection Booking</span>
+                <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+              </button>
+
+              <p class="form-privacy-guarantee">
+                <i data-lucide="shield-check"
+                  style="width: 14px; height: 14px; margin-right: 4px; color: var(--color-accent-primary);"></i>
+                100% Patient Data Privacy. All diagnostic records and medical prescriptions are strictly confidential
+                and encrypted.
+              </p>
+            </form>
+          </div>
+
+          <!-- Right: Laboratory Address & Direct Helpline Cards -->
+          <div class="cnt-info-sidebar">
+
+            <!-- Card 1: Physical Central Laboratory Location -->
+            <div class="cnt-card">
+              <div class="cnt-card-header">
+                <div class="cnt-card-icon">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <h3 class="cnt-card-title">Jubilee Hills Central Lab</h3>
+                  <span class="cnt-card-tag">Automated Reference Laboratory</span>
+                </div>
+              </div>
+              <div class="cnt-card-body">
+                <p class="cnt-address-text">
+                  <strong>AARA Clinical Laboratories</strong><br>
+                  Plot 428, Road No. 36, Jubilee Hills<br>
+                  Hyderabad, Telangana 500033<br>
+                  India
+                </p>
+                <div class="cnt-card-timings">
+                  <div class="timing-row">
+                    <span class="timing-day">Monday – Saturday:</span>
+                    <span class="timing-hours">6:30 AM – 8:00 PM IST</span>
+                  </div>
+                  <div class="timing-row">
+                    <span class="timing-day">Sundays &amp; Holidays:</span>
+                    <span class="timing-hours gold-text">7:00 AM – 2:00 PM IST</span>
+                  </div>
+                </div>
+                <div class="cnt-valet-note">
+                  <i data-lucide="accessibility"></i>
+                  <span>Wheelchair-accessible ground floor phlebotomy suites &amp; dedicated patient parking.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Direct Helpline & Report Inquiries -->
+            <div class="cnt-card">
+              <div class="cnt-card-header">
+                <div class="cnt-card-icon">
+                  <i data-lucide="phone-call"></i>
+                </div>
+                <div>
+                  <h3 class="cnt-card-title">Direct Lab Helpline</h3>
+                  <span class="cnt-card-tag">Home Collection &amp; Report Desk</span>
+                </div>
+              </div>
+              <div class="cnt-card-body">
+                <ul class="cnt-contact-list">
+                  <li class="cnt-contact-item">
+                    <span class="contact-lbl">Home Visit Helpline:</span>
+                    <a href="tel:+919849024000" class="contact-val">+91 98490 24000</a>
+                  </li>
+                  <li class="cnt-contact-item">
+                    <span class="contact-lbl">WhatsApp Booking &amp; Reports:</span>
+                    <a href="https://wa.me/919849024000?text=Hello%20AARA%20Clinical%20Laboratories,%20I%20would%20like%20to%20book%20a%20home%20blood%20sample%20collection."
+                      target="_blank" rel="noopener" class="contact-val highlight-whatsapp">
+                      <i data-lucide="message-circle" style="width:14px; height:14px; margin-right:4px;"></i>
+                      +91 98490 24000
+                    </a>
+                  </li>
+                  <li class="cnt-contact-item">
+                    <span class="contact-lbl">Report Inquiries &amp; Pathology:</span>
+                    <a href="mailto:reports@aara-diagnostics.com" class="contact-val">reports@aara-diagnostics.com</a>
+                  </li>
+                  <li class="cnt-contact-item">
+                    <span class="contact-lbl">Corporate Wellness Camps:</span>
+                    <a href="mailto:corporate@aara-diagnostics.com"
+                      class="contact-val">corporate@aara-diagnostics.com</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Card 3: Home Sample Collection Hygiene Protocol -->
+            <div class="cnt-card">
+              <div class="cnt-card-header">
+                <div class="cnt-card-icon">
+                  <i data-lucide="shield-check"></i>
+                </div>
+                <div>
+                  <h3 class="cnt-card-title">Home Phlebotomy Standards</h3>
+                  <span class="cnt-card-tag">Sterile &amp; Cold-Chain Verified</span>
+                </div>
+              </div>
+              <div class="cnt-card-body">
+                <p class="cnt-protocol-text">
+                  Every doorstep blood draw is performed by a DMLT-certified phlebotomist trained in pediatric, adult.
+                </p>
+                <div class="cnt-perks-list">
+                  <div class="perk-item">
+                    <i data-lucide="check"></i>
+                    <span>Single-use sterile vacutainer needles opened.</span>
+                  </div>
+                  <div class="perk-item">
+                    <i data-lucide="check"></i>
+                    <span>Immediate bedside 2D barcode labeling on every tube</span>
+                  </div>
+                  <div class="perk-item">
+                    <i data-lucide="check"></i>
+                    <span>2°C–8°C digital temperature-logged cold-chain box</span>
+                  </div>
+                </div>
+                <a href="#contactForm" class="btn-secondary-outline"
+                  style="width:100%; text-align:center; justify-content:center; margin-top:14px;">
+                  <span>Schedule Morning Slot</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: INTERACTIVE HYDERABAD DIAGNOSTIC CENTER MAP SECTION
+         ========================================================================= -->
+    <section class="cnt-map-section" id="hyderabad-map">
+      <div class="container">
+
+        <div class="section-header text-center">
+          <span class="section-eyebrow">HYDERABAD DIAGNOSTIC NETWORK</span>
+          <h2 class="section-title">Visit Our Central Lab in <span class="gold-gradient-text">Jubilee Hills</span></h2>
+          <p class="section-subtitle">
+            Conveniently located on Road No. 36 in Jubilee Hills, serving walk-in patients and dispatching home sample
+            collection phlebotomists across Banjara Hills, HITEC City, Gachibowli, Madhapur, and Secunderabad.
+          </p>
+        </div>
+
+        <!-- Transit & Accessibility High-Yield Badges -->
+        <div class="cnt-transit-grid">
+          <div class="transit-card">
+            <div class="transit-icon">
+              <i data-lucide="clock"></i>
+            </div>
+            <div class="transit-info">
+              <h4 class="transit-title">6:30 AM Fasting Opens</h4>
+              <p class="transit-desc">Early morning walk-in phlebotomy bays for zero-wait fasting blood draws</p>
+            </div>
+          </div>
+
+          <div class="transit-card">
+            <div class="transit-icon">
+              <i data-lucide="building-2"></i>
+            </div>
+            <div class="transit-info">
+              <h4 class="transit-title">HITEC City &amp; Gachibowli</h4>
+              <p class="transit-desc">10–15 min via Durgam Cheruvu Bridge; rapid home collection coverage</p>
+            </div>
+          </div>
+
+          <div class="transit-card">
+            <div class="transit-icon">
+              <i data-lucide="train"></i>
+            </div>
+            <div class="transit-info">
+              <h4 class="transit-title">Blue Line Metro</h4>
+              <p class="transit-desc">3 min from Jubilee Hills Check Post &amp; Peddamma Gudi Metro Stations</p>
+            </div>
+          </div>
+
+          <div class="transit-card">
+            <div class="transit-icon">
+              <i data-lucide="heart-pulse"></i>
+            </div>
+            <div class="transit-info">
+              <h4 class="transit-title">Senior Citizen Lounge</h4>
+              <p class="transit-desc">Priority ground-floor seating, wheelchair ramp &amp; post-fasting refreshments</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Frame Container -->
+        <div class="cnt-map-frame-wrapper">
+          <div class="cnt-map-top-bar">
+            <div class="map-top-left">
+              <span class="map-pin-indicator"></span>
+              <span class="map-label">AARA Central Lab Coordinates: 17.4326° N, 78.4015° E</span>
+            </div>
+            <div class="map-top-right">
+              <a href="https://maps.google.com/?q=Road+No+36+Jubilee+Hills+Hyderabad+Telangana" target="_blank"
+                rel="noopener" class="map-direct-link">
+                <span>Open in Google Maps</span>
+                <i data-lucide="external-link" style="width:14px; height:14px; margin-left:4px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="cnt-map-embed-container">
+            <iframe title="AARA Clinical Laboratories Location Jubilee Hills Hyderabad"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6668729519183!2d78.4014902!3d17.4325983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb913402774e79%3A0x6a05e26c61f26a11!2sRoad%20No.%2036%2C%20Jubilee%20Hills%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%" height="460" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="cnt-map-bottom-strip">
+            <div class="strip-item">
+              <i data-lucide="compass" class="strip-icon"></i>
+              <span>Landmark: Plot 428, Road No. 36, Near Peddamma Gudi Metro Station, Jubilee Hills</span>
+            </div>
+            <div class="strip-item">
+              <i data-lucide="clock" class="strip-icon"></i>
+              <span>Sample Collection Hours: Mon–Sat 6:30 AM – 8:00 PM | Sun 7:00 AM – 2:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: HOME SAMPLE COLLECTION & LAB TESTING FAQ ACCORDION
+         ========================================================================= -->
+    <section class="cnt-faq-section" id="concierge-faq">
+      <div class="container">
+
+        <div class="section-header text-center">
+          <span class="section-eyebrow">PATIENT SUPPORT &amp; CLARITY</span>
+          <h2 class="section-title">Home Collection &amp; <span class="gold-gradient-text">Laboratory FAQs</span></h2>
+          <p class="section-subtitle">
+            Answers to common patient questions regarding doorstep blood sample collection, fasting preparation, payment
+            options, and corporate health checkups.
+          </p>
+        </div>
+
+        <div class="cnt-faq-wrapper">
+
+          <!-- FAQ Item 1 -->
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              <span class="faq-q-text">How does the doorstep home blood sample collection process work?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Once you submit your booking online or via WhatsApp (+91 98490 24000), our dispatch team assigns a
+                certified phlebotomist for your chosen morning time slot. You receive an SMS with the phlebotomist's
+                name
+                and live tracking link. The phlebotomist arrives with a single-use sterile collection kit, labels your
+                vacutainer tubes with a 2D barcode in front of you, and transports the specimens in a 2°C–8°C cold-chain
+                box to our Jubilee Hills laboratory.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-text">Is there an extra charge for morning home sample collection in Hyderabad?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Home sample collection is completely complimentary for all Comprehensive Health Checkup Packages and
+                orders above $50 (or 2+ family members booked together). For single routine blood tests, a nominal
+                convenience fee of $15 covers sterile single-use consumables and temperature-monitored logistics.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-text">Which areas of Hyderabad are covered by AARA's home phlebotomy fleet?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Our 6:30 AM to 8:00 PM home collection fleet covers all major residential and IT corridors across
+                Greater
+                Hyderabad—including Jubilee Hills, Banjara Hills, Madhapur, HITEC City, Gachibowli, Kondapur, Kokapet,
+                Financial District, Manikonda, Begumpet, Somajiguda, Kukatpally, and Secunderabad.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-text">How and when will I receive my verified laboratory reports?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Routine hematology, diabetes, thyroid, liver, kidney, and lipid panels are released within 6 to 12 hours
+                on
+                the same day. As soon as our senior MD pathologist verifies and digitally signs your report, you receive
+                an
+                instant PDF download link on WhatsApp and email, and your results are archived in your online Patient
+                Portal
+                with historical biomarker graphs.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-text">Do you organize on-site corporate wellness camps and annual employee
+                checkups?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. AARA partners with IT enterprises, financial institutions, and corporate offices across Hyderabad
+                to
+                conduct on-site preventive health camps and executive checkups. We provide dedicated phlebotomy booths,
+                customized corporate health packages, individual employee portal logins, and anonymized organizational
+                wellness analytics. Contact <a
+                  href="mailto:corporate@aara-diagnostics.com">corporate@aara-diagnostics.com</a>
+                for a tailored proposal.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: PREVENTIVE HEALTH & HOME COLLECTION CTA CARD
+         ========================================================================= -->
+    <section class="cnt-cta-section" id="contact-cta">
+      <div class="container">
+        <div class="cnt-cta-card">
+          <div class="cnt-cta-ambient-glow"></div>
+
+          <div class="cnt-cta-content">
+            <span class="section-eyebrow">PRIORITIZE PREVENTIVE HEALTH</span>
+            <h2 class="cnt-cta-title">
+              Book Your <span class="gold-gradient-text">Home Blood Collection</span> in Under 60 Seconds
+            </h2>
+            <p class="cnt-cta-desc">
+              Whether scheduling an annual full-body checkup for your parents, monitoring thyroid or diabetes
+              biomarkers,
+              or uploading a doctor's prescription, our clinical team is ready to assist you.
+            </p>
+
+            <div class="cnt-cta-actions">
+              <a href="#commission-inquiry" class="btn-primary-cta">
+                <span>Book Morning Slot Online</span>
+                <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+              </a>
+              <a href="https://wa.me/919849024000?text=Hello%20AARA%20Clinical%20Laboratories,%20I%20would%20like%20to%20book%20a%20home%20sample%20collection."
+                target="_blank" rel="noopener" class="btn-secondary-outline whatsapp-btn">
+                <i data-lucide="message-circle" style="width: 16px; height: 16px; margin-right: 6px;"></i>
+                <span>WhatsApp Helpline: +91 98490 24000</span>
+              </a>
+            </div>
+
+            <!-- Trust Badges Under CTA -->
+            <div class="cnt-cta-guarantees">
+              <div class="guarantee-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>MD Pathologist Verified Reports</span>
+              </div>
+              <div class="guarantee-item">
+                <i data-lucide="shield-check"></i>
+                <span>2D Barcoded Single-Use Vacutainers</span>
+              </div>
+              <div class="guarantee-item">
+                <i data-lucide="clock"></i>
+                <span>Same-Day Digital Report Delivery</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SITE FOOTER (100% Consistent with Home 1 / index.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+
+      <!-- Top Section: Brand + Navigation + Social -->
+      <div class="footer-top-grid">
+
+        <!-- Col 1: Brand & Laboratory Mission -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-wrapper" title="AARA Clinical Laboratories">
+            <div class="brand-logo-leaf">
+              <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+            </div>
+            <div class="brand-name-group">
+              <span class="brand-title">AARA</span>
+              <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            AARA Clinical Laboratories provides reliable blood testing, comprehensive preventive health checkups, and
+            sterile home sample collection with verified same-day digital reports.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"
+              title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"
+              title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link" aria-label="YouTube"
+              title="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Diagnostic Services -->
+        <div class="footer-col">
+          <h4>Diagnostic Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="servicedetail.html?service=complete-blood-count">Complete Blood Count (CBC)</a></li>
+            <li><a href="servicedetail.html?service=lipid-profile">Comprehensive Lipid Profile</a></li>
+            <li><a href="servicedetail.html?service=thyroid-profile">Thyroid Function Profile</a></li>
+            <li><a href="servicedetail.html?service=diabetes-monitoring">HbA1c &amp; Diabetes Panel</a></li>
+            <li><a href="servicedetail.html?service=home-sample-collection">Home Sample Collection</a></li>
+            <li><a href="servicedetail.html?service=full-body-health-checkup">Full Body Health Checkup</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Additional Links -->
+        <div class="footer-col">
+          <h4>Additional Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="comingsoon.html">Coming Soon</a></li>
+            <li><a href="contact.html">Book Home Collection</a></li>
+            <li><a href="pricing.html#estimator-widget">Health Package Estimator</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact -->
+        <div class="footer-col footer-col-contact">
+          <h4>Laboratory Contact</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Main Diagnostic Lab</span>
+                <span class="footer-contact-value">Plot 428, Road No. 36, Jubilee Hills, Hyderabad</span>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="phone"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Home Visit Helpline</span>
+                <a href="tel:+919849024000" class="footer-contact-value footer-contact-link">+91 98490 24000</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="mail"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Report Inquiries</span>
+                <a href="mailto:reports@aara-diagnostics.com"
+                  class="footer-contact-value footer-contact-link">reports@aara-diagnostics.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="clock"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Collection Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Sat: 6:30 AM &ndash; 8:00 PM<br>Sun: 7:00 AM &ndash; 2:00
+                  PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright-text">
+          &copy; 2026 AARA Clinical Laboratories. All Rights Reserved. Diagnostic &amp; Preventive Health Services.
+        </div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Diagnostics</a>
+          <a href="#">Quality Assurance Standards</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: PATIENT PORTAL LOGIN & ACCOUNT REGISTRATION
+       ========================================================================= -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" id="tabBtnLogin">Patient Login</button>
+        <button class="modal-tab-btn" id="tabBtnRegister">New Registration</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Registered Mobile or Email</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password / Portal Access Code</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Access Patient Portal</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display: none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Patient Name</label>
+          <input type="text" id="regName" class="form-input" placeholder="Dr. / Mr. / Ms. Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPass">Create Secure Password</label>
+          <input type="password" id="regPass" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Register Patient Account</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: PATIENT PORTAL & LIVE SAMPLE TRACKER
+       ========================================================================= -->
+  <div class="modal-overlay" id="dashboardModal">
+    <div class="modal-window" style="max-width: 620px;">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div style="margin-bottom: 24px;">
+        <span class="section-eyebrow">PATIENT DIAGNOSTIC PORTAL</span>
+        <h3 style="font-size: 1.6rem; color: var(--text-heading);">Live Sample Status &amp; Reports</h3>
+        <p style="font-size: 0.86rem; color: var(--text-muted);">Patient Record #AARA-MED-8921</p>
+      </div>
+
+      <!-- Live Order Tracker -->
+      <div class="dashboard-order-status">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-size: 0.92rem; color: var(--text-heading);">Order #AARA-8921 • Comprehensive Health
+            Checkup</strong>
+          <span class="badge-tag">Phase 3 • Testing &amp; Analysis</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+          68 Parameters • CBC, Lipid Profile, LFT, KFT, Thyroid &amp; HbA1c
+        </p>
+
+        <div class="order-progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div
+          style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); margin-top: 10px;">
+          <span>Stage 1: Sample Collected ✓</span>
+          <span>Stage 2: Barcode Inwarded ✓</span>
+          <span style="color: var(--color-accent-primary); font-weight: 700;">Stage 3: Testing &amp; Analysis
+            (Active)</span>
+          <span>Stage 4: Verified Report</span>
+        </div>
+      </div>
+
+      <!-- Verified Reports -->
+      <h4 style="font-size: 1rem; margin: 20px 0 12px; color: var(--text-heading);">Recent Verified Diagnostic Reports
+      </h4>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background-color: var(--bg-primary);">
+          <div>
+            <strong style="font-size: 0.86rem; color: var(--text-heading);">Complete Blood Count (CBC) with ESR</strong>
+            <p style="font-size: 0.76rem; color: var(--text-muted);">Signed by Pathologist • Report #REP-804 (PDF)</p>
+          </div>
+          <span class="badge-tag"
+            style="background-color: rgba(0, 143, 149, 0.15); color: var(--color-accent-secondary);">Report Ready</span>
+        </div>
+      </div>
+
+      <button class="btn-primary-cta" id="btnRequestNewBespoke"
+        style="width: 100%; justify-content: center; margin-top: 24px;">
+        <span>Book Another Diagnostic Test</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Message Element -->
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite">
+    <span class="toast-icon"><i data-lucide="activity"></i></span>
+    <span class="toast-text" id="toastText">Welcome to AARA Clinical Laboratories Booking Desk.</span>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="contact.js"></script>
+</body>
+
+</html>

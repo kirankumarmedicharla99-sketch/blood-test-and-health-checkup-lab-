@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page or Diagnostic Report Not Found | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="The requested page, diagnostic test panel, or lab report link cannot be located at AARA Clinical Laboratories. Return to our Diagnostic Hub or Test Catalog.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="404.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="error-page">
+
+  <!-- =========================================================================
+       TOP-RIGHT FLOATING CONTROLS (RTL Switcher & Dark/Light Theme Toggle)
+       ========================================================================= -->
+  <aside class="err-top-controls" aria-label="Theme and Direction Controls">
+    <!-- RTL / LTR Direction Switcher -->
+    <button class="err-control-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR"
+      title="Toggle RTL / LTR">
+      <span id="rtlLabel">RTL</span>
+    </button>
+
+    <!-- Dark / Light Theme Toggle -->
+    <button class="err-control-btn" id="themeToggleBtn" aria-label="Toggle Light / Dark Theme"
+      title="Toggle Light / Dark Mode">
+      <span id="themeIcon"><i data-lucide="moon"></i></span>
+    </button>
+  </aside>
+
+  <!-- =========================================================================
+       CENTERED 404 CONTENT (Clinical Diagnostic Aesthetic)
+       ========================================================================= -->
+  <main class="err-wrapper">
+    <!-- Ambient Clinical Glow Orbs -->
+    <div class="err-glow-orb err-glow-1"></div>
+    <div class="err-glow-orb err-glow-2"></div>
+
+    <div class="err-content">
+      <!-- Clinical Brand Crest & Wordmark -->
+      <a href="index.html" class="err-brand-wrapper" title="AARA Clinical Laboratories">
+        <div class="brand-logo-leaf">
+          <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+        </div>
+        <div class="brand-name-group">
+          <span class="brand-title">AARA</span>
+          <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+        </div>
+      </a>
+
+      <!-- 404 Clinical Numeral -->
+      <div class="err-numeral" aria-label="Error 404">404</div>
+
+      <!-- Headline -->
+      <h1 class="err-title">Page or Diagnostic Report Not Found</h1>
+
+      <!-- Descriptive Paragraph -->
+      <p class="err-desc">
+        The clinical test page, sample tracking link, or digital lab report you are looking for cannot be located in our reference system.
+        Please verify your report barcode URL or navigate directly to our diagnostic services below.
+      </p>
+
+      <!-- Quick Links Back to Diagnostic Hub, Test Catalog, and Contact -->
+      <div class="err-action">
+        <a href="index.html" class="btn-primary-cta" id="btnReturnHome">
+          <span>Diagnostic Hub</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </a>
+        <a href="service.html" class="err-secondary-link">
+          <i data-lucide="microscope" style="width:16px; height:16px;"></i>
+          <span>Test Catalog</span>
+        </a>
+        <a href="contact.html" class="err-secondary-link">
+          <i data-lucide="phone-call" style="width:16px; height:16px;"></i>
+          <span>Contact &amp; Home Visit</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="404.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic Test Detail &amp; Clinical Specifications | AARA Clinical Laboratories</title>
+  <meta name="description"
+    content="Explore detailed clinical specifications, biomarkers tested, fasting preparation guidelines, specimen collection workflows, and report turnaround times at AARA Clinical Laboratories.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="servicedetail.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="service-detail-page">
+
+  <!-- =========================================================================
+       NAVIGATION HEADER (100% Consistent with Home 1 / index.html)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+
+      <!-- Left: Brand Logo & Wordmark matching medical laboratory identity -->
+      <a href="index.html" class="brand-wrapper" id="brandLogoLink">
+        <div class="brand-logo-leaf">
+          <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+        </div>
+        <div class="brand-name-group">
+          <span class="brand-title">AARA</span>
+          <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+        </div>
+      </a>
+
+      <!-- Middle: Desktop Navigation Links -->
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-item has-dropdown">
+          <a href="./index.html" class="nav-link" id="navHome">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="nav-chevron-icon"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="./index.html" class="dropdown-item">
+              <span>Home 1 (Diagnostic Hub)</span>
+            </a>
+            <a href="./home2.html" class="dropdown-item" id="btnOpenHome2">
+              <span>Home 2 (Preventive Care)</span>
+              <span class="badge-tag">New</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" id="navAbout">About Us</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="service.html" class="nav-link active" id="navServices">Services</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="pricing.html" class="nav-link" id="navPricing">Pricing</a>
+        </div>
+        <div class="nav-item">
+          <a href="Journal.html" class="nav-link" id="navJournal">Journal</a>
+        </div>
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link" id="navContact">Contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link" id="navDashboard">
+            <span>Dashboard</span>
+            <span class="nav-status-dot" aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right: Action Buttons (RTL, Theme Toggle, Login Button, Mobile Hamburger) -->
+      <div class="header-actions">
+        <!-- RTL Switcher -->
+        <button class="icon-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR" title="Toggle RTL / LTR">
+          <span class="rtl-label" id="rtlLabel">RTL</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="themeToggleBtn" aria-label="Toggle light/dark theme"
+          title="Toggle Light / Dark Mode">
+          <span id="themeIcon"><i data-lucide="moon"></i></span>
+        </button>
+
+        <!-- Primary CTA Login Button -->
+        <a href="login.html" class="btn-primary-cta" id="loginBtn">
+          <span>Login</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home 1 (Diagnostic Hub)</a></li>
+      <li><a href="home2.html" class="mobile-nav-link" id="mobileHome2Btn">Home 2 (Preventive Care)</a></li>
+      <li><a href="service.html" class="mobile-nav-link"
+          style="color:var(--color-accent-primary); font-weight:600;">Diagnostic Test Catalog</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Book Home Collection</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="Journal.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link" id="mobileDashboardBtn">Dashboard</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn-primary-cta" id="mobileLoginBtn"
+        style="width: 100%; justify-content: center; text-decoration: none;">
+        <span>Patient Portal &bull; Login</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+      <p style="text-align: center; font-size: 0.76rem; color: var(--text-muted);">
+        AARA Clinical Laboratories • Accurate Diagnostics &amp; Patient Care
+      </p>
+    </div>
+  </aside>
+
+
+  <main>
+    <!-- =========================================================================
+         STICKY DIAGNOSTIC TEST SWITCHER BAR
+         ========================================================================= -->
+    <div class="svc-switcher-bar" aria-label="Switch Diagnostic Test Panel">
+      <div class="container">
+        <div class="svc-tabs-track">
+          <button type="button" class="svc-tab-btn active" data-service-slug="complete-blood-count">
+            <i data-lucide="droplet" style="width:14px; height:14px;"></i>
+            <span>Complete Blood Count (CBC)</span>
+          </button>
+          <button type="button" class="svc-tab-btn" data-service-slug="lipid-profile">
+            <i data-lucide="heart-pulse" style="width:14px; height:14px;"></i>
+            <span>Comprehensive Lipid Profile</span>
+          </button>
+          <button type="button" class="svc-tab-btn" data-service-slug="thyroid-profile">
+            <i data-lucide="activity" style="width:14px; height:14px;"></i>
+            <span>Thyroid Function (T3, T4, TSH)</span>
+          </button>
+          <button type="button" class="svc-tab-btn" data-service-slug="diabetes-monitoring">
+            <i data-lucide="bar-chart-2" style="width:14px; height:14px;"></i>
+            <span>HbA1c &amp; Diabetes Monitoring</span>
+          </button>
+          <button type="button" class="svc-tab-btn" data-service-slug="home-sample-collection">
+            <i data-lucide="home" style="width:14px; height:14px;"></i>
+            <span>Home Sample Collection</span>
+          </button>
+          <button type="button" class="svc-tab-btn" data-service-slug="full-body-health-checkup">
+            <i data-lucide="shield-check" style="width:14px; height:14px;"></i>
+            <span>Full Body Health Checkup</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         SECTION 1: DYNAMIC DIAGNOSTIC TEST HERO BANNER
+         ========================================================================= -->
+    <section class="dtl-hero" id="dtlHero">
+      <div class="container dtl-hero-container">
+
+        <!-- Left: Test Overview & Clinical Specifications -->
+        <div class="dtl-hero-content">
+          <!-- Breadcrumbs -->
+          <div class="dtl-breadcrumbs">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="service.html">Diagnostic Tests</a>
+            <span>/</span>
+            <span class="active-crumb" id="crumbActive">Complete Blood Count (CBC)</span>
+          </div>
+
+          <!-- Eyebrow Badge -->
+          <div class="dtl-hero-badge" id="dtlHeroBadge">
+            <i data-lucide="activity" style="width:14px; height:14px;"></i>
+            <span>Clinical Hematology Panel • 01</span>
+          </div>
+
+          <!-- Dynamic Headline -->
+          <h1 class="dtl-hero-title" id="dtlHeroTitle">
+            Complete Blood Count (CBC) <span class="gold-accent">&amp; Hematology</span>
+          </h1>
+
+          <!-- Rich Paragraph Text Content -->
+          <div class="dtl-hero-pera" id="dtlHeroPera">
+            <p>
+              Our Complete Blood Count (CBC) with ESR is an essential 24-parameter hematological evaluation that
+              provides a comprehensive overview of your circulating blood cells. Utilizing automated 5-part differential
+              flow cytometry, our laboratory accurately quantifies red blood cells, hemoglobin concentrations, white
+              blood cell subpopulations, and platelet indices.
+            </p>
+            <p>
+              Whether ordered for an annual preventive health checkup, fatigue evaluation, infection screening, or
+              chronic hematological monitoring, every specimen is verified under 3-level internal quality control and
+              reviewed by our clinical pathology team.
+            </p>
+          </div>
+
+          <!-- 4 Spec Highlight Pills -->
+          <div class="dtl-spec-pills">
+            <div class="dtl-pill-item">
+              <div class="dtl-pill-icon"><i data-lucide="clock"></i></div>
+              <div class="dtl-pill-content">
+                <span class="dtl-pill-label">Report Turnaround</span>
+                <span class="dtl-pill-val" id="dtlPillLead">Same-Day (6 – 12 Hours)</span>
+              </div>
+            </div>
+
+            <div class="dtl-pill-item">
+              <div class="dtl-pill-icon"><i data-lucide="tag"></i></div>
+              <div class="dtl-pill-content">
+                <span class="dtl-pill-label">Standard Test Fee</span>
+                <span class="dtl-pill-val" id="dtlPillInvest">$25 USD</span>
+              </div>
+            </div>
+
+            <div class="dtl-pill-item">
+              <div class="dtl-pill-icon"><i data-lucide="droplet"></i></div>
+              <div class="dtl-pill-content">
+                <span class="dtl-pill-label">Biomarkers Tested</span>
+                <span class="dtl-pill-val" id="dtlPillScale">24 Cellular Parameters</span>
+              </div>
+            </div>
+
+            <div class="dtl-pill-item">
+              <div class="dtl-pill-icon"><i data-lucide="shield-check"></i></div>
+              <div class="dtl-pill-content">
+                <span class="dtl-pill-label">Fasting &amp; Prep</span>
+                <span class="dtl-pill-val" id="dtlPillArchival">Non-Fasting (Anytime)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Actions -->
+          <div class="dtl-hero-actions">
+            <button class="btn-primary-cta" id="btnInquireDiscipline">
+              <span>Book This Diagnostic Test</span>
+              <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+            </button>
+            <a href="#specs-matrix" class="btn-secondary-clinical">
+              <i data-lucide="file-text" style="width:14px; height:14px;"></i>
+              <span>Biomarkers &amp; Prep Guide</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Clinical Diagnostic Image Frame -->
+        <div class="dtl-hero-visual">
+          <div class="dtl-hero-img-frame">
+            <img id="dtlHeroImage" src="assets/images/service-wall-art.jpg"
+              alt="Complete Blood Count (CBC) & Hematology" width="600" height="480">
+          </div>
+          <div class="dtl-floating-badge">
+            <div class="badge-title">Verified Clinical Assay</div>
+            <div class="badge-desc" id="dtlFloatingSub">Automated 5-Part Differential • EDTA Whole Blood</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: BIOMARKERS & CLINICAL HIGHLIGHTS
+         ========================================================================= -->
+    <section class="dtl-benefits-section" id="service-benefits">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">CLINICAL DIAGNOSTIC VALUE</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Key Biomarkers &amp; Clinical Highlights
+          </h2>
+          <p class="section-subtitle-text">
+            Understand what this diagnostic test measures, how our automated instrumentation ensures analytical
+            precision, and why physicians rely on these biomarkers.
+          </p>
+        </div>
+
+        <!-- Dynamic 4 Benefits Grid -->
+        <div class="dtl-benefits-grid" id="dtlBenefitsGrid">
+          <!-- Populated by servicedetail.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: SAMPLE COLLECTION & LABORATORY WORKFLOW TIMELINE
+         ========================================================================= -->
+    <section class="dtl-process-section" id="creation-process">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">SPECIMEN TO DIGITAL REPORT</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Four-Stage Sample Collection &amp; Analysis Workflow
+          </h2>
+          <p class="section-subtitle-text">
+            From patient preparation and sterile blood draw to automated multi-channel assay and pathologist
+            verification.
+          </p>
+        </div>
+
+        <!-- Dynamic 4-Step Timeline Grid -->
+        <div class="dtl-timeline-grid" id="dtlTimelineGrid">
+          <!-- Populated by servicedetail.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: FASTING, SPECIMEN & TECHNICAL SPECIFICATIONS MATRIX
+         ========================================================================= -->
+    <section class="dtl-specs-section" id="specs-matrix">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">LABORATORY SPECIFICATIONS &amp; PREPARATION</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Biomarkers, Fasting &amp; Specimen Matrix
+          </h2>
+          <p class="section-subtitle-text">
+            Standardized pre-analytical preparation guidelines, specimen tube types, assay methodology, and turnaround
+            times.
+          </p>
+        </div>
+
+        <!-- Dynamic 6 Specs Grid -->
+        <div class="dtl-specs-grid" id="dtlSpecsGrid">
+          <!-- Populated by servicedetail.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: TEST-SPECIFIC CLINICAL FAQS (Interactive Accordion)
+         ========================================================================= -->
+    <section class="dtl-faq-section" id="service-faqs">
+      <div class="container faq-container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">CLINICAL PREPARATION QUESTIONS</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Patient FAQs &amp; Preparation Guidelines
+          </h2>
+          <p class="section-subtitle-text">
+            Common questions regarding fasting duration, medication precautions, reference ranges, and doorstep sample
+            collection.
+          </p>
+        </div>
+
+        <!-- Dynamic FAQ Accordion Container -->
+        <div class="faq-accordion" id="dtlFaqAccordion">
+          <!-- Populated by servicedetail.js with working expand/collapse -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: EXPLORE RELATED DIAGNOSTIC TESTS
+         ========================================================================= -->
+    <section class="dtl-related-section" id="related-services">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow">COMPLEMENTARY HEALTH SCREENINGS</span>
+          <h2 class="serif-font" style="font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 12px;">
+            Related Diagnostic Tests &amp; Panels
+          </h2>
+          <p class="section-subtitle-text">
+            Combine your blood test with complementary metabolic, endocrine, or preventive panels during a single blood
+            draw.
+          </p>
+        </div>
+
+        <!-- Dynamic 3 Related Services Grid -->
+        <div class="dtl-related-grid" id="dtlRelatedGrid">
+          <!-- Populated by servicedetail.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 7: CLINICAL BOOKING CTA CARD
+         ========================================================================= -->
+    <section class="svc-cta-section" id="service-detail-cta">
+      <div class="container">
+        <div class="svc-cta-box">
+          <div class="svc-cta-content">
+            <span class="svc-cta-badge">
+              <i data-lucide="calendar-check" style="width:12px; height:12px;"></i> Walk-In &amp; Home Sample Collection
+            </span>
+            <h2 class="serif-font svc-cta-title">
+              Ready to Schedule Your Blood Test?
+            </h2>
+            <p class="svc-cta-text">
+              Book a convenient morning doorstep phlebotomy visit or walk into our main diagnostic laboratory. Receive
+              pathologist-verified digital reports on the same day.
+            </p>
+          </div>
+
+          <div class="svc-cta-actions">
+            <button class="btn-primary-cta" id="btnDetailCta">
+              <span>Book Test Appointment</span>
+              <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+            </button>
+            <div class="svc-cta-phone">
+              Laboratory Helpline: <a href="mailto:reports@aara-diagnostics.com">reports@aara-diagnostics.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION 8: PREMIUM FOOTER (Exact Match with Home 1 / index.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Col 1: Brand & Laboratory Mission -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-wrapper" title="AARA Clinical Laboratories">
+            <div class="brand-logo-leaf">
+              <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+            </div>
+            <div class="brand-name-group">
+              <span class="brand-title">AARA</span>
+              <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            AARA Clinical Laboratories provides reliable blood testing, comprehensive preventive health checkups, and
+            sterile home sample collection with verified same-day digital reports.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"
+              title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"
+              title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link" aria-label="YouTube"
+              title="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Diagnostic Services -->
+        <div class="footer-col">
+          <h4>Diagnostic Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="servicedetail.html?service=complete-blood-count">Complete Blood Count (CBC)</a></li>
+            <li><a href="servicedetail.html?service=lipid-profile">Comprehensive Lipid Profile</a></li>
+            <li><a href="servicedetail.html?service=thyroid-profile">Thyroid Function Profile</a></li>
+            <li><a href="servicedetail.html?service=diabetes-monitoring">HbA1c &amp; Diabetes Panel</a></li>
+            <li><a href="servicedetail.html?service=home-sample-collection">Home Sample Collection</a></li>
+            <li><a href="servicedetail.html?service=full-body-health-checkup">Full Body Health Checkup</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Additional Links -->
+        <div class="footer-col">
+          <h4>Additional Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="comingsoon.html">Coming Soon</a></li>
+            <li><a href="contact.html">Book Home Collection</a></li>
+            <li><a href="pricing.html#estimator-widget">Health Package Estimator</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact -->
+        <div class="footer-col footer-col-contact">
+          <h4>Laboratory Contact</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Main Diagnostic Lab</span>
+                <span class="footer-contact-value">Plot 428, Road No. 36, Jubilee Hills, Hyderabad</span>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="phone"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Home Visit Helpline</span>
+                <a href="tel:+919849024000" class="footer-contact-value footer-contact-link">+91 98490 24000</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="mail"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Report Inquiries</span>
+                <a href="mailto:reports@aara-diagnostics.com"
+                  class="footer-contact-value footer-contact-link">reports@aara-diagnostics.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="clock"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Collection Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Sat: 6:30 AM &ndash; 8:00 PM<br>Sun: 7:00 AM &ndash; 2:00
+                  PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright-text">
+          &copy; 2026 AARA Clinical Laboratories. All Rights Reserved. Diagnostic &amp; Preventive Health Services.
+        </div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Diagnostics</a>
+          <a href="#">Quality Assurance Standards</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: PATIENT PORTAL LOGIN & ACCOUNT REGISTRATION
+       ========================================================================= -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" id="tabBtnLogin">Patient Login</button>
+        <button class="modal-tab-btn" id="tabBtnRegister">New Registration</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Registered Mobile or Email</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password / Portal Access Code</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Access Patient Portal</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display: none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Patient Name</label>
+          <input type="text" id="regName" class="form-input" placeholder="Dr. / Mr. / Ms. Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPass">Create Secure Password</label>
+          <input type="password" id="regPass" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Register Patient Account</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: DIAGNOSTIC TEST BOOKING & LIVE SAMPLE TRACKER
+       ========================================================================= -->
+  <div class="modal-overlay" id="dashboardModal">
+    <div class="modal-window" style="max-width: 620px;">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div style="margin-bottom: 20px;">
+        <span class="section-eyebrow">DIAGNOSTIC APPOINTMENT DESK</span>
+        <h3 style="font-size: 1.5rem; color: var(--text-heading);">Schedule Blood Test or Home Visit</h3>
+        <p style="font-size: 0.86rem; color: var(--text-muted);">Instant booking confirmation with barcode tracking</p>
+      </div>
+
+      <form id="quickBookingForm" style="margin-bottom: 20px;">
+        <div class="form-group">
+          <label class="form-label" for="bookPatientName">Patient Full Name</label>
+          <input type="text" id="bookPatientName" class="form-input" placeholder="Enter patient name" required>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label" for="bookPhone">Mobile Number</label>
+            <input type="tel" id="bookPhone" class="form-input" placeholder="+91 98490 00000" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookCollectionMode">Collection Mode</label>
+            <select id="bookCollectionMode" class="form-input">
+              <option value="home">Doorstep Home Collection (6:30 AM – 11 AM)</option>
+              <option value="lab">Walk-In at Main Lab (Jubilee Hills)</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary-cta" id="btnRequestNewBespoke"
+          style="width: 100%; justify-content: center; margin-top: 8px;">
+          <span>Confirm Diagnostic Booking</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+
+      <!-- Live Order Tracker -->
+      <div class="dashboard-order-status">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-size: 0.9rem; color: var(--text-heading);">Active Sample #AARA-8921</strong>
+          <span class="badge-tag">Phase 3 • Analyzer Assay</span>
+        </div>
+        <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">
+          68 Parameters • CBC, Lipid Profile, LFT, KFT, Thyroid &amp; HbA1c
+        </p>
+
+        <div class="order-progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div
+          style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted); margin-top: 10px;">
+          <span>Stage 1: Drawn ✓</span>
+          <span>Stage 2: Barcoded ✓</span>
+          <span style="color: var(--color-accent-primary); font-weight: 700;">Stage 3: Testing (Active)</span>
+          <span>Stage 4: Verified PDF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Message Element -->
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite">
+    <span class="toast-icon"><i data-lucide="activity"></i></span>
+    <span class="toast-text" id="toastText">Welcome to AARA Clinical Laboratories.</span>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="servicedetail.js"></script>
+</body>
+
+</html>

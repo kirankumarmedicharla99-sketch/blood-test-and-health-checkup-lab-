@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About AARA Clinical Laboratories &mdash; Clinical Pathology &amp; Diagnostic Excellence</title>
+  <meta name="description"
+    content="Discover the clinical heritage of AARA Clinical Laboratories &mdash; our pathology leadership team, ISO 15189 &amp; NABL-aligned quality assurance standards, automated diagnostic analyzers, and patient-first mission.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <script src="lucide.js"></script>
+</head>
+
+<body class="about-page">
+
+  <!-- =========================================================================
+       NAVIGATION HEADER (100% Consistent with index.html and home2.html)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper" id="brandLogoLink">
+        <div class="brand-logo-leaf">
+          <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+        </div>
+        <div class="brand-name-group">
+          <span class="brand-title">AARA</span>
+          <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-item has-dropdown">
+          <a href="./index.html" class="nav-link" id="navHome">
+            <span>Home</span>
+            <i data-lucide="chevron-down" class="nav-chevron-icon"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="./index.html" class="dropdown-item">
+              <span>Home 1 (Diagnostic Hub)</span>
+            </a>
+            <a href="./home2.html" class="dropdown-item" id="btnOpenHome2">
+              <span>Home 2 (Preventive Care)</span>
+              <span class="badge-tag">New</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="about.html" class="nav-link active" id="navAbout">About Us</a></div>
+        <div class="nav-item"><a href="service.html" class="nav-link" id="navServices">Services</a></div>
+        <div class="nav-item"><a href="pricing.html" class="nav-link" id="navPricing">Pricing</a></div>
+        <div class="nav-item"><a href="Journal.html" class="nav-link" id="navJournal">Journal</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link" id="navContact">Contact</a></div>
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link" id="navDashboard">
+            <span>Dashboard</span>
+            <span class="nav-status-dot" aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR" title="Toggle RTL / LTR">
+          <span class="rtl-label" id="rtlLabel">RTL</span>
+        </button>
+        <button class="icon-btn" id="themeToggleBtn" aria-label="Toggle light/dark theme"
+          title="Toggle Light / Dark Mode">
+          <span id="themeIcon"><i data-lucide="moon"></i></span>
+        </button>
+        <a href="login.html" class="btn-primary-cta" id="loginBtn">
+          <span>Login</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home 1 (Diagnostic Hub)</a></li>
+      <li><a href="home2.html" class="mobile-nav-link">Home 2 (Preventive Care)</a></li>
+      <li><a href="about.html" class="mobile-nav-link" style="color:var(--color-accent-primary);font-weight:600;">About
+          Us &bull;
+          Active</a></li>
+      <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="Journal.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" data-close-drawer>Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link" id="mobileDashboardBtn">Dashboard</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn-primary-cta" id="mobileLoginBtn"
+        style="width:100%;justify-content:center;margin-bottom:10px;text-decoration:none;">
+        <span>Patient Portal &bull; Login</span>
+        <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+      </a>
+      <p style="text-align: center; font-size: 0.76rem; color: var(--text-muted);">
+        AARA Clinical Laboratories &bull; Accurate Diagnostics &amp; Patient Care
+      </p>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       SECTION 1: HERO BANNER (Clinical Heritage & Diagnostic Standards)
+       ========================================================================= -->
+  <section class="about-hero" id="about-hero">
+    <div class="container about-hero-container">
+      <div class="about-hero-content">
+        <div class="eyebrow-badge">
+          <i data-lucide="shield-check" style="width:13px;height:13px;"></i>
+          <span>CLINICAL PATHOLOGY &bull; EST. 2018</span>
+        </div>
+
+        <h1 class="about-hero-title">
+          Advancing Clinical Pathology with <span class="gold-accent">Analytical Precision</span>
+        </h1>
+
+        <p class="about-hero-sub">
+          Founded by senior pathologists and clinical biochemists, AARA Clinical Laboratories combines automated
+          diagnostic analyzers, rigorous multi-level quality control, and compassionate home phlebotomy to deliver
+          dependable medical insights.
+        </p>
+
+        <div class="about-hero-actions">
+          <a href="#about-vision" class="btn-hero-pill about-btn-primary">
+            <span>Our Clinical Mission</span>
+            <i data-lucide="arrow-down" class="btn-arrow-icon"></i>
+          </a>
+          <a href="#about-team" class="about-btn-ghost">
+            <i data-lucide="users" style="width:15px;height:15px;"></i>
+            <span>Meet Pathology Leadership</span>
+          </a>
+        </div>
+
+        <!-- Clinical Key Metrics -->
+        <div class="about-hero-stats">
+          <div class="about-stat-item">
+            <span class="about-stat-num">2018</span>
+            <span class="about-stat-label">Lab Established</span>
+          </div>
+          <div class="about-stat-divider"></div>
+          <div class="about-stat-item">
+            <span class="about-stat-num">250K+</span>
+            <span class="about-stat-label">Samples Processed</span>
+          </div>
+          <div class="about-stat-divider"></div>
+          <div class="about-stat-item">
+            <span class="about-stat-num">99.8%</span>
+            <span class="about-stat-label">EQAS Concordance</span>
+          </div>
+          <div class="about-stat-divider"></div>
+          <div class="about-stat-item">
+            <span class="about-stat-num">6-Hr</span>
+            <span class="about-stat-label">Same-Day Reports</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Two Images with Asymmetrical Clinical Showcase -->
+      <div class="about-hero-visual-wrapper" aria-label="AARA Clinical Laboratories Diagnostic Showcase">
+        <div class="about-visual-ambient-glow"></div>
+
+        <div class="about-hero-visual">
+          <!-- Image 1: Primary Upper-Left Frame -->
+          <div class="about-img-frame about-img-frame-primary">
+            <img src="assets/images/about-artisan.jpg" alt="Clinical Pathologist Reviewing Automated Analyzer Results"
+              loading="eager">
+            <div class="about-img-tag about-tag-primary">
+              <i data-lucide="microscope" style="width:13px;height:13px;"></i>
+              <span>Clinical Pathology Review</span>
+            </div>
+          </div>
+
+          <!-- Image 2: Secondary Lower-Right Overlapping Frame -->
+          <div class="about-img-frame about-img-frame-secondary">
+            <img src="assets/images/service-wall-art.jpg"
+              alt="Automated High-Throughput Hematology and Biochemistry Lab" loading="eager">
+            <div class="about-img-tag about-tag-secondary">
+              <i data-lucide="activity" style="width:13px;height:13px;"></i>
+              <span>ISO 15189 Aligned Lab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2: OUR VISION, MISSION & QUALITY ACCREDITATION PILLARS
+       ========================================================================= -->
+  <section class="about-vision-section" id="about-vision">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">CLINICAL GOVERNANCE &amp; ETHICS</span>
+        <h2>Diagnostic Accuracy &amp; <span class="gold-accent">Patient-First Care</span></h2>
+        <div class="gold-divider-line"></div>
+        <p class="section-sub-center">
+          Every clinical decision relies on accurate laboratory data. Our diagnostic center is built on two core
+          commitments: uncompromising analytical reproducibility and stress-free, sterile specimen collection.
+        </p>
+      </div>
+
+      <!-- Split Cards: Vision vs Mission -->
+      <div class="about-vm-grid">
+
+        <!-- Card A: Vision -->
+        <div class="about-vm-card about-vm-card--vision h2-reveal">
+          <div class="about-vm-header">
+            <div class="about-vm-icon"><i data-lucide="eye"></i></div>
+            <div>
+              <span class="about-vm-badge">CLINICAL ASPIRATION</span>
+              <h3 class="about-vm-title">Our Vision</h3>
+            </div>
+          </div>
+          <blockquote class="about-vm-quote">
+            &ldquo;To set the regional benchmark for preventive healthcare and clinical pathology &mdash; where every
+            household has seamless access to hospital-grade diagnostics.&rdquo;
+          </blockquote>
+          <p class="about-vm-desc">
+            We envision a healthcare ecosystem shifted from reactive treatment to proactive early detection. By pairing
+            high-sensitivity hematology, biochemistry, and immunoassay platforms with intuitive smart reports, we
+            empower
+            patients and physicians to detect metabolic.
+          </p>
+          <div class="about-vm-points">
+            <div class="about-vm-point">
+              <i data-lucide="check-circle-2"></i>
+              <span>Standardized reference intervals calibrated for age, gender, and clinical context</span>
+            </div>
+            <div class="about-vm-point">
+              <i data-lucide="check-circle-2"></i>
+              <span>Same-day digital reporting with longitudinal biomarker trend visualization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card B: Mission -->
+        <div class="about-vm-card about-vm-card--mission h2-reveal">
+          <div class="about-vm-header">
+            <div class="about-vm-icon"><i data-lucide="shield-check"></i></div>
+            <div>
+              <span class="about-vm-badge">DAILY COMMITMENT</span>
+              <h3 class="about-vm-title">Our Mission</h3>
+            </div>
+          </div>
+          <blockquote class="about-vm-quote">
+            &ldquo;To uphold zero-error pre-analytical, analytical, and post-analytical laboratory protocols while
+            treating every patient with dignity, comfort, and transparency.&rdquo;
+          </blockquote>
+          <p class="about-vm-desc">
+            Every vacutainer tube is barcoded at the point of draw, transported in temperature-logged
+            2&deg;C&ndash;8&deg;C
+            cold-chain carriers, and analyzed on closed-system instruments verified with daily bi-level Internal Quality
+            Control (IQC) and External Quality Assurance (EQAS) audits.
+          </p>
+          <div class="about-vm-points">
+            <div class="about-vm-point">
+              <i data-lucide="check-circle-2"></i>
+              <span>100% single-use sterile vacuum blood collection needles and CLSI order-of-draw compliance</span>
+            </div>
+            <div class="about-vm-point">
+              <i data-lucide="check-circle-2"></i>
+              <span>Mandatory MD Pathologist review and immediate critical-value alerts to physicians</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4 Foundational Quality & Instrumentation Pillars -->
+      <div class="about-pillars-grid">
+        <div class="about-pillar-item h2-reveal">
+          <span class="about-pillar-num">01</span>
+          <h4>ISO 15189 &amp; NABL</h4>
+          <p>Strict adherence to international medical laboratory quality management, Westgard multi-rule QC, and
+            external proficiency testing.</p>
+        </div>
+        <div class="about-pillar-item h2-reveal">
+          <span class="about-pillar-num">02</span>
+          <h4>Closed-System Analyzers</h4>
+          <p>Automated 5-part hematology, spectrophotometric biochemistry, NGSP HPLC, and CLIA immunoassay platforms
+            using barcoded original reagents.</p>
+        </div>
+        <div class="about-pillar-item h2-reveal">
+          <span class="about-pillar-num">03</span>
+          <h4>Cold-Chain Logistics</h4>
+          <p>Digital temperature-monitored specimen carriers preserving sample integrity between 2&deg;C and 8&deg;C
+            from doorstep collection to centrifuge.</p>
+        </div>
+        <div class="about-pillar-item h2-reveal">
+          <span class="about-pillar-num">04</span>
+          <h4>MD Pathologist Sign-Off</h4>
+          <p>Every abnormal differential, peripheral blood smear, and critical biochemical value is personally verified
+            by board-certified pathologists.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3: LABORATORY MILESTONES TIMELINE
+       ========================================================================= -->
+  <section class="about-timeline-section" id="about-timeline">
+    <div class="about-timeline-glow" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="section-header-center section-header--light">
+        <span class="section-eyebrow">CLINICAL EVOLUTION</span>
+        <h2>Milestones in <span class="gold-accent">Diagnostic Excellence</span></h2>
+        <div class="gold-divider-line"></div>
+        <p class="section-sub-center">
+          Trace our growth from a specialized clinical pathology center in Hyderabad to a comprehensive diagnostic and
+          preventive healthcare laboratory network.
+        </p>
+      </div>
+
+      <div class="about-timeline-track">
+
+        <!-- Milestone 1: 2018 -->
+        <div class="timeline-entry timeline-entry--left h2-reveal">
+          <div class="tentry-node">
+            <span>2018</span>
+          </div>
+          <div class="tentry-card">
+            <span class="tentry-tag">FOUNDATION</span>
+            <h3>Central Clinical Laboratory Established</h3>
+            <p>Founded in Jubilee Hills, Hyderabad by Chief Clinical Pathologist Dr. Elena Vance and a team of
+              diagnostic
+              specialists, launching core automated hematology and clinical biochemistry departments.
+            </p>
+            <div class="tentry-badge">
+              <i data-lucide="microscope" style="width:13px;height:13px;"></i>
+              <span>First 10,000 Patient Samples Analyzed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 2: 2020 -->
+        <div class="timeline-entry timeline-entry--right h2-reveal">
+          <div class="tentry-node">
+            <span>2020</span>
+          </div>
+          <div class="tentry-card">
+            <span class="tentry-tag">PATIENT ACCESSIBILITY</span>
+            <h3>Sterile Doorstep Home Phlebotomy Fleet</h3>
+            <p>AARA launches its dedicated mobile phlebotomy division equipped with single-use vacutainer kits, bedside
+              barcode printers, and GPS-tracked 2&deg;C&ndash;8&deg;C cold-chain specimen transport boxes.
+            </p>
+            <div class="tentry-badge">
+              <i data-lucide="syringe" style="width:13px;height:13px;"></i>
+              <span>6:30 AM Morning Fasting Collection Network</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 3: 2022 -->
+        <div class="timeline-entry timeline-entry--left h2-reveal">
+          <div class="tentry-node">
+            <span>2022</span>
+          </div>
+          <div class="tentry-card">
+            <span class="tentry-tag">ANALYTICAL EXPANSION</span>
+            <h3>CLIA Immunoassay &amp; HPLC Endocrine Suite</h3>
+            <p>Installation of high-throughput Electro-Chemiluminescence Immunoassay (CLIA) and NGSP-certified HPLC
+              analyzers for ultrasensitive thyroid, reproductive hormone, vitamin, and HbA1c testing.</p>
+            <div class="tentry-badge">
+              <i data-lucide="activity" style="width:13px;height:13px;"></i>
+              <span>4-to-6 Hour Same-Day Turnaround Achieved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 4: 2024 -->
+        <div class="timeline-entry timeline-entry--right h2-reveal">
+          <div class="tentry-node">
+            <span>2024</span>
+          </div>
+          <div class="tentry-card">
+            <span class="tentry-tag">QUALITY ACCREDITATION</span>
+            <h3>ISO 15189 Quality &amp; Global EQAS Distinction</h3>
+            <p>Our central reference laboratory achieves 99.8% concordance across international External Quality
+              Assurance (EQAS) programs and expands corporate preventive wellness partnerships across 120+
+              organizations.</p>
+            <div class="tentry-badge">
+              <i data-lucide="award" style="width:13px;height:13px;"></i>
+              <span>250,000+ Verified Diagnostic Reports Delivered</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 5: 2026 -->
+        <div class="timeline-entry timeline-entry--left h2-reveal">
+          <div class="tentry-node tentry-node--active">
+            <span>2026</span>
+          </div>
+          <div class="tentry-card tentry-card--current">
+            <span class="tentry-tag tentry-tag--gold">CURRENT HORIZON</span>
+            <h3>Next-Gen Smart Reports &amp; Patient Portal 2.0</h3>
+            <p>Launch of our interactive digital Patient Portal featuring real-time sample stage tracking, historical
+              biomarker trend graphs, and clinician-verified preventive health summaries.</p>
+            <div class="tentry-badge">
+              <i data-lucide="shield-check" style="width:13px;height:13px;"></i>
+              <span>100% Digital Barcoded LIS Integration</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: CLINICAL PATHOLOGY LEADERSHIP TEAM
+       ========================================================================= -->
+  <section class="about-team-section" id="about-team">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">MEDICAL &amp; SCIENTIFIC LEADERSHIP</span>
+        <h2>The Specialists Behind <span class="gold-accent">Every Verified Report</span></h2>
+        <div class="gold-divider-line"></div>
+        <p class="section-sub-center">
+          Every diagnostic test at AARA Clinical Laboratories is overseen by board-certified pathologists, clinical
+          biochemists, hematology specialists, and quality assurance directors.
+        </p>
+      </div>
+
+      <div class="about-team-grid">
+
+        <!-- Team Member 1 -->
+        <article class="about-team-card h2-reveal">
+          <div class="team-card-media">
+            <img src="assets/images/team-elena-vance.jpg" alt="Dr. Elena Vance, MD — Chief Clinical Pathologist"
+              loading="lazy">
+            <div class="team-card-media-overlay"></div>
+            <div class="team-card-monogram">EV</div>
+            <span class="team-card-badge">CHIEF PATHOLOGIST &bull; MD</span>
+          </div>
+          <div class="team-card-body">
+            <h3 class="team-member-name">Dr. Elena Vance, MD</h3>
+            <span class="team-member-role">Founder &amp; Chief- Clinical Pathologist service</span>
+            <p class="team-member-bio">
+              With 16+ years in clinical pathology and laboratory quality management, Dr. Vance directs diagnostic
+              verification, cytopathology reviews, and ISO 15189 quality governance across all laboratory departments.
+            </p>
+            <div class="team-member-skills">
+              <span>Clinical Pathology</span><span>ISO 15189 QC</span><span>Cytopathology</span>
+            </div>
+            <div class="team-member-quote">
+              &ldquo;Behind every vacutainer tube is a patient and a physician waiting for an accurate, timely
+              answer.&rdquo;
+            </div>
+          </div>
+        </article>
+
+        <!-- Team Member 2 -->
+        <article class="about-team-card h2-reveal">
+          <div class="team-card-media">
+            <img src="assets/images/team-marcus-sterling.jpg"
+              alt="Dr. Marcus Sterling, PhD — Director of Clinical Biochemistry" loading="lazy">
+            <div class="team-card-media-overlay"></div>
+            <div class="team-card-monogram">MS</div>
+            <span class="team-card-badge">BIOCHEMISTRY DIRECTOR</span>
+          </div>
+          <div class="team-card-body">
+            <h3 class="team-member-name">Dr. Marcus Sterling, PhD</h3>
+            <span class="team-member-role">Director of Clinical Biochemistry &amp; Immunoassays</span>
+            <p class="team-member-bio">
+              A specialist in enzymatic spectrophotometry and chemiluminescence immunoassays, Dr. Sterling oversees
+              metabolic, cardiac lipid, liver, renal, thyroid, and NGSP HPLC HbA1c assay calibration.
+            </p>
+            <div class="team-member-skills">
+              <span>CLIA Immunoassay</span><span>HPLC HbA1c</span><span>Westgard IQC</span>
+            </div>
+            <div class="team-member-quote">
+              &ldquo;Precision calibration and bi-level quality controls ensure our biochemical assays
+              rock-solid.&rdquo;
+            </div>
+          </div>
+        </article>
+
+        <!-- Team Member 3 -->
+        <article class="about-team-card h2-reveal">
+          <div class="team-card-media">
+            <img src="assets/images/team-soraya-al-mansoor.jpg"
+              alt="Dr. Soraya Al-Mansoor, MD — Head of Hematology &amp; Coagulation" loading="lazy">
+            <div class="team-card-media-overlay"></div>
+            <div class="team-card-monogram">SM</div>
+            <span class="team-card-badge">HEAD OF HEMATOLOGY</span>
+          </div>
+          <div class="team-card-body">
+            <h3 class="team-member-name">Dr. Soraya kavi, MD</h3>
+            <span class="team-member-role">Head of Hematology &amp; Coagulation Studies</span>
+            <p class="team-member-bio">
+              Trained in hematopathology and flow cytometry, Dr. Al-Mansoor leads 5-part differential cell counter
+              validation, peripheral blood smear morphology, anemia profiling, and coagulation studies.
+            </p>
+            <div class="team-member-skills">
+              <span>5-Part Hematology</span><span>Blood Smears</span><span>Coagulation</span>
+            </div>
+            <div class="team-member-quote">
+              &ldquo;Combining laser flow cell counting with expert microscopic smear review catches
+              hematologic.&rdquo;
+            </div>
+          </div>
+        </article>
+
+        <!-- Team Member 4 -->
+        <article class="about-team-card h2-reveal">
+          <div class="team-card-media">
+            <img src="assets/images/team-julian-thorne.jpg"
+              alt="Julian Thorne — Lead Phlebotomy &amp; Pre-Analytical Coordinator" loading="lazy">
+            <div class="team-card-media-overlay"></div>
+            <div class="team-card-monogram">JT</div>
+            <span class="team-card-badge">PHLEBOTOMY LEAD</span>
+          </div>
+          <div class="team-card-body">
+            <h3 class="team-member-name">Julian Thorne, MSc</h3>
+            <span class="team-member-role">Lead Phlebotomy &amp; Pre-Analytical Coordinator</span>
+            <p class="team-member-bio">
+              Julian manages our certified home phlebotomy team, enforcing CLSI order-of-draw vacutainer standards,
+              painless pediatric and geriatric venipuncture, and 2&deg;C&ndash;8&deg;C cold-chain transit logistics.
+            </p>
+            <div class="team-member-skills">
+              <span>CLSI Phlebotomy</span><span>Cold-Chain Transit</span><span>Barcode Triage</span>
+            </div>
+            <div class="team-member-quote">
+              &ldquo;Pre-analytical excellence starts at the patient's bedside with a gentle, sterile draw and instant
+              barcoding.&rdquo;
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: PREVENTIVE HEALTH CHECKUP & HOME COLLECTION CTA CARD
+       ========================================================================= -->
+  <section class="about-cta-section" id="about-cta">
+    <div class="container">
+      <div class="about-cta-card h2-reveal">
+        <!-- Ambient Decorative Glow -->
+        <div class="about-cta-bg-glow" aria-hidden="true"></div>
+        <div class="about-cta-bg-pattern" aria-hidden="true">
+          <svg viewBox="0 0 600 600" fill="none">
+            <circle cx="300" cy="300" r="280" stroke="currentColor" stroke-width="1" stroke-dasharray="6 12" />
+            <circle cx="300" cy="300" r="200" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 8" />
+            <circle cx="300" cy="300" r="120" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 6" />
+          </svg>
+        </div>
+
+        <div class="about-cta-grid">
+          <!-- Left Column: Compelling Pitch & Action -->
+          <div class="about-cta-content">
+            <div class="about-cta-eyebrow">
+              <i data-lucide="calendar-check" style="width:14px;height:14px;"></i>
+              <span>ACCREDITED DIAGNOSTICS &bull; HOME SAMPLE COLLECTION</span>
+            </div>
+
+            <h2 class="about-cta-heading">
+              Experience Dependable <span class="gold-accent">Clinical Diagnostics</span>
+            </h2>
+
+            <p class="about-cta-desc">
+              Whether you need a routine Complete Blood Count, quarterly diabetes and thyroid monitoring, or a
+              comprehensive 75-parameter Full Body Health Checkup &mdash; our clinical team ensures accurate results
+              with same-day digital delivery.
+            </p>
+
+            <div class="about-cta-perks">
+              <div class="about-cta-perk">
+                <div class="about-cperk-icon"><i data-lucide="check"></i></div>
+                <span>Reports reviewed and signed by Dr. Elena Vance &amp; senior MD pathologists</span>
+              </div>
+              <div class="about-cta-perk">
+                <div class="about-cperk-icon"><i data-lucide="check"></i></div>
+                <span>Sterile single-use vacutainer blood draws at our lab or your home</span>
+              </div>
+              <div class="about-cta-perk">
+                <div class="about-cperk-icon"><i data-lucide="check"></i></div>
+                <span>Smart PDF reports with age-specific reference ranges and historical trends</span>
+              </div>
+            </div>
+
+            <div class="about-cta-actions">
+              <a href="contact.html" class="btn-hero-pill about-btn-primary">
+                <span>Book Home Collection</span>
+                <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+              </a>
+              <a href="home2.html" class="about-btn-ghost">
+                <i data-lucide="activity" style="width:15px;height:15px;"></i>
+                <span>Explore Preventive Hub</span>
+              </a>
+            </div>
+
+            <div class="about-cta-concierge">
+              <span class="about-cconcierge-dot"></span>
+              <span>Patient Report Helpline Online: <a
+                  href="mailto:reports@aara-diagnostics.com">reports@aara-diagnostics.com</a></span>
+            </div>
+          </div>
+
+          <!-- Right Column: Showcase Card -->
+          <div class="about-cta-visual">
+            <div class="about-cta-preview-card">
+              <div class="about-cpc-img-wrap">
+                <img src="assets/images/about-hero-atelier.jpg" alt="AARA Central Clinical Diagnostic Laboratory"
+                  loading="lazy">
+                <div class="about-cpc-overlay"></div>
+                <div class="about-cpc-seal">
+                  <i data-lucide="award" style="width:13px;height:13px;"></i>
+                  <span>ISO 15189 Aligned</span>
+                </div>
+              </div>
+
+              <div class="about-cpc-details">
+                <div class="about-cpc-status-row">
+                  <span class="about-cpc-live-badge">
+                    <span class="about-live-pulse"></span>
+                    Walk-In &amp; Home Visits Open
+                  </span>
+                  <span class="about-cpc-slots">6:30 AM &ndash; 8:00 PM</span>
+                </div>
+
+                <h4 class="about-cpc-title">Central Diagnostic Reference Lab</h4>
+                <p class="about-cpc-sub">Equipped with automated 5-part hematology, spectrophotometric biochemistry, and
+                  CLIA hormone analyzers.</p>
+
+                <div class="about-cpc-metrics">
+                  <div class="about-cpc-metric">
+                    <strong>100%</strong>
+                    <span>Sterile Vacutainers</span>
+                  </div>
+                  <div class="about-cpc-metric">
+                    <strong>99.8%</strong>
+                    <span>EQAS Accuracy</span>
+                  </div>
+                  <div class="about-cpc-metric">
+                    <strong>4&ndash;6 Hr</strong>
+                    <span>Report Turnaround</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER (100% Consistent with index.html and home2.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Col 1: Brand & Laboratory Overview -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-wrapper" title="AARA Clinical Laboratories">
+            <div class="brand-logo-leaf">
+              <img src="assets/images/aara-logo.jpg" alt="AARA Clinical Laboratories Logo" class="brand-official-logo">
+            </div>
+            <div class="brand-name-group">
+              <span class="brand-title">AARA</span>
+              <span class="brand-tagline">DIAGNOSTICS &amp; LAB</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            AARA Clinical Laboratories provides reliable blood testing, comprehensive preventive health checkups, and
+            sterile home sample collection with verified same-day digital reports.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"
+              title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"
+              title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link" aria-label="YouTube"
+              title="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" class="social-icon-svg">
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Diagnostic Services -->
+        <div class="footer-col">
+          <h4>Diagnostic Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="servicedetail.html?service=complete-blood-count">Complete Blood Count (CBC)</a></li>
+            <li><a href="servicedetail.html?service=lipid-profile">Comprehensive Lipid Profile</a></li>
+            <li><a href="servicedetail.html?service=thyroid-profile">Thyroid Function Profile</a></li>
+            <li><a href="servicedetail.html?service=diabetes-monitoring">HbA1c &amp; Diabetes Panel</a></li>
+            <li><a href="servicedetail.html?service=home-sample-collection">Home Sample Collection</a></li>
+            <li><a href="servicedetail.html?service=full-body-health-checkup">Full Body Health Checkup</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Additional Links -->
+        <div class="footer-col">
+          <h4>Additional Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="comingsoon.html">Coming Soon</a></li>
+            <li><a href="contact.html">Book Home Collection</a></li>
+            <li><a href="pricing.html#estimator-widget">Health Package Estimator</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact -->
+        <div class="footer-col footer-col-contact">
+          <h4>Laboratory Contact</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Main Diagnostic Lab</span>
+                <span class="footer-contact-value">Plot 428, Road No. 36, Jubilee Hills, Hyderabad</span>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="phone"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Home Visit Helpline</span>
+                <a href="tel:+919849024000" class="footer-contact-value footer-contact-link">+91 98490 24000</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="mail"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Report Inquiries</span>
+                <a href="mailto:reports@aara-diagnostics.com"
+                  class="footer-contact-value footer-contact-link">reports@aara-diagnostics.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-icon-badge">
+                <i data-lucide="clock"></i>
+              </span>
+              <div class="footer-contact-text">
+                <span class="footer-contact-label">Collection Hours</span>
+                <span class="footer-contact-value">Mon &ndash; Sat: 6:30 AM &ndash; 8:00 PM<br>Sun: 7:00 AM &ndash; 2:00
+                  PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright-text">
+          &copy; 2026 AARA Clinical Laboratories. All Rights Reserved. Diagnostic &amp; Preventive Health Services.
+        </div>
+        <div class="legal-links">
+          <a href="javascript:void(0)">Privacy Policy</a>
+          <a href="javascript:void(0)">Terms of Diagnostics</a>
+          <a href="javascript:void(0)">Quality Assurance Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: PATIENT PORTAL / LOGIN & REGISTER
+       ========================================================================= -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" id="tabBtnLogin">Patient Login</button>
+        <button class="modal-tab-btn" id="tabBtnRegister">New Registration</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Registered Mobile or Email</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password / Portal Access Code</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="********" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width:100%;justify-content:center;margin-top:10px;">
+          <span>Access Patient Portal</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display:none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Patient Name</label>
+          <input type="text" id="regName" class="form-input" placeholder="Dr. / Mr. / Ms. Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-input" placeholder="patient@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Create Secure Password</label>
+          <input type="password" id="regPassword" class="form-input" placeholder="********" required>
+        </div>
+        <button type="submit" class="btn-primary-cta" style="width:100%;justify-content:center;margin-top:10px;">
+          <span>Register Patient Account</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: PATIENT DIAGNOSTIC PORTAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="dashboardModal">
+    <div class="modal-window modal-window--wide">
+      <button class="modal-close-btn" data-close-modal aria-label="Close modal"><i data-lucide="x"></i></button>
+
+      <div class="dashboard-header">
+        <div class="dashboard-avatar">
+          <i data-lucide="activity" style="width:24px;height:24px;color:var(--color-accent-primary);"></i>
+        </div>
+        <div>
+          <h3 style="font-family:var(--font-sans);font-size:1.4rem;color:var(--text-heading);margin-bottom:2px;">Patient
+            Diagnostic Portal</h3>
+          <span style="font-size:0.8rem;color:var(--text-muted);">Patient ID #AARA-MED-0428 &bull; Verified
+            Account</span>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="dash-card">
+          <div class="dash-card-icon"><i data-lucide="test-tube-2"></i></div>
+          <div class="dash-card-num">02</div>
+          <div class="dash-card-label">Active Lab Tests</div>
+          <span class="dash-card-badge">Stage 3: Analysis</span>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-icon"><i data-lucide="file-check-2"></i></div>
+          <div class="dash-card-num">08</div>
+          <div class="dash-card-label">Verified PDF Reports</div>
+          <span class="dash-card-badge">MD Signed</span>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-icon"><i data-lucide="calendar-check"></i></div>
+          <div class="dash-card-num">01</div>
+          <div class="dash-card-label">Home Visit Scheduled</div>
+          <span class="dash-card-badge"
+            style="background:rgba(0,143,149,0.15);color:var(--color-accent-secondary);">7:30 AM Slot</span>
+        </div>
+      </div>
+
+      <div style="margin-top:24px;display:flex;justify-content:flex-end;gap:12px;">
+        <button class="btn-secondary-clinical" data-close-modal>Close Portal</button>
+        <button class="btn-primary-cta" id="btnRequestNewBespoke">
+          <span>Book New Lab Test</span>
+          <i data-lucide="arrow-right" class="btn-arrow-icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Element -->
+  <div class="h2-toast" id="aboutToast" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" style="color:var(--color-accent-primary);width:18px;height:18px;flex-shrink:0;"></i>
+    <span id="aboutToastText">Welcome to AARA Clinical Laboratories.</span>
+  </div>
+
+  <script src="about.js"></script>
+</body>
+
+</html>

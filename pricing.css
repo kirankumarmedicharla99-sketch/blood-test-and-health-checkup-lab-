@@ -1,0 +1,1150 @@
+/* ==========================================================================
+   AARA CLINICAL LABORATORIES — HEALTH PACKAGES & PRICING (pricing.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PRICING HERO SECTION (Streamlined to fit screen size cleanly)
+   -------------------------------------------------------------------------- */
+.prc-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 80% 20%, rgba(198, 40, 53, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at 15% 85%, rgba(0, 143, 149, 0.08) 0%, transparent 55%),
+    var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-smooth);
+}
+
+/* Desktop Viewport Containment: fits 100vh screen size cleanly */
+@media (min-width: 1025px) and (min-height: 600px) {
+  .prc-hero {
+    height: 100vh;
+    min-height: 600px;
+    max-height: 100vh;
+    padding-top: clamp(66px, 9vh, 88px);
+    padding-bottom: clamp(14px, 2.8vh, 28px);
+  }
+
+  .prc-hero-container {
+    height: 100%;
+  }
+
+  .prc-hero-title {
+    margin-bottom: clamp(8px, 1.6vh, 14px);
+  }
+
+  .prc-hero-desc {
+    margin-bottom: clamp(12px, 2vh, 18px);
+  }
+
+  .prc-hero-actions {
+    margin-bottom: clamp(14px, 2.2vh, 22px);
+  }
+
+  .prc-3d-blood-img {
+    height: clamp(260px, 38vh, 370px);
+  }
+}
+
+@media (max-width: 1024px) or (max-height: 599px) {
+  .prc-hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 0 50px;
+  }
+}
+
+body.dark-theme .prc-hero {
+  background: radial-gradient(circle at 80% 20%, rgba(239, 83, 80, 0.14) 0%, transparent 60%),
+    radial-gradient(circle at 15% 85%, rgba(16, 18, 20, 0.7) 0%, transparent 55%),
+    var(--bg-primary);
+}
+
+.prc-hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.prc-hero-content {
+  max-width: 600px;
+}
+
+.prc-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background-color: var(--champagne-gold-light);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  color: var(--color-accent-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.prc-hero-title {
+  font-size: clamp(1.75rem, 2.9vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+
+.prc-hero-title .gold-accent {
+  font-family: var(--font-sans);
+  color: var(--color-accent-primary);
+}
+
+.prc-hero-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  max-width: 540px;
+}
+
+.prc-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.prc-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.prc-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.prc-trust-item i {
+  color: var(--color-accent-secondary);
+  width: 15px;
+  height: 15px;
+}
+
+/* 3D Blood Symbol Hero Visual */
+.prc-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prc-3d-blood-container {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(198, 40, 53, 0.2), 0 8px 24px rgba(23, 25, 29, 0.08);
+  border: 1.5px solid rgba(198, 40, 53, 0.25);
+  background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #F5F7F8 100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prc-3d-blood-container:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 32px 70px rgba(198, 40, 53, 0.3), 0 12px 30px rgba(23, 25, 29, 0.12);
+}
+
+body.dark-theme .prc-3d-blood-container {
+  background: radial-gradient(circle at 50% 50%, #171A1F 0%, #0D0F12 100%);
+  border-color: rgba(239, 83, 80, 0.38);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(239, 83, 80, 0.25);
+}
+
+.prc-3d-blood-img {
+  width: 100%;
+  height: clamp(310px, 45vh, 410px);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prc-3d-blood-container:hover .prc-3d-blood-img {
+  transform: scale(1.04);
+}
+
+.prc-3d-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(198, 40, 53, 0.25);
+  color: var(--color-accent-primary);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+body.dark-theme .prc-3d-badge {
+  background: rgba(16, 18, 20, 0.88);
+  border-color: rgba(239, 83, 80, 0.45);
+  color: #EF5350;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+[dir="rtl"] .prc-3d-badge {
+  left: auto;
+  right: 16px;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 52px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: 10px;
+}
+
+.section-subtitle-text {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   2. INTERACTIVE SCOPE SWITCHER & PRICING GRID
+   -------------------------------------------------------------------------- */
+.pricing-section {
+  padding: 100px 0 85px;
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.pricing-switcher-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.pricing-switcher {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  gap: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pricing-scope-btn {
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pricing-scope-btn.active {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  box-shadow: 0 4px 14px rgba(198, 40, 53, 0.22);
+}
+
+body.dark-theme .pricing-scope-btn.active {
+  background-color: var(--color-accent-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px var(--champagne-gold-light);
+}
+
+/* 3 Pricing Cards Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Highlighted / Most Recommended Card */
+.pricing-card.featured {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-md), 0 0 24px rgba(198, 40, 53, 0.16);
+  z-index: 2;
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(198, 40, 53, 0.03) 100%);
+}
+
+.pricing-card.featured:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), 0 0 32px rgba(198, 40, 53, 0.24);
+}
+
+.pricing-badge-featured {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-primary-hover));
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(198, 40, 53, 0.35);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pricing-card-header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pricing-tier-name {
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.25;
+  min-height: 2.5em;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.pricing-tier-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  min-height: 4.65em;
+}
+
+.pricing-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.pricing-currency {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-accent-primary);
+}
+
+.pricing-amount {
+  font-family: var(--font-sans);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1;
+}
+
+.pricing-period {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pricing-deposit-note {
+  font-size: 0.74rem;
+  color: var(--color-accent-secondary);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Feature Checkmarks List */
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.pricing-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: var(--text-body);
+  line-height: 1.48;
+}
+
+.pricing-feature-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: rgba(0, 143, 149, 0.12);
+  color: var(--color-accent-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-feature-icon i {
+  width: 11px;
+  height: 11px;
+  stroke-width: 2.5;
+}
+
+.pricing-card-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. INDIVIDUAL BLOOD TEST PRICE TABLE
+   -------------------------------------------------------------------------- */
+.individual-tests-section {
+  padding: 0 0 95px;
+  background-color: var(--bg-primary);
+}
+
+.test-price-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.test-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 780px;
+}
+
+[dir="rtl"] .test-price-table {
+  text-align: right;
+}
+
+.test-price-table thead th {
+  background-color: var(--bg-secondary);
+  color: var(--text-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.test-price-table tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-fast);
+}
+
+.test-price-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.test-price-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.test-price-table td {
+  padding: 16px 20px;
+  font-size: 0.86rem;
+  color: var(--text-body);
+  vertical-align: middle;
+}
+
+.test-price-table td strong {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--text-heading);
+  margin-bottom: 2px;
+}
+
+.table-sub-text {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.prep-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.prep-badge.fasting {
+  background-color: rgba(198, 40, 53, 0.12);
+  color: var(--color-accent-primary);
+}
+
+.prep-badge.non-fasting {
+  background-color: rgba(0, 143, 149, 0.14);
+  color: var(--color-accent-secondary);
+}
+
+.table-price-cell {
+  font-weight: 700;
+  font-size: 0.98rem !important;
+  color: var(--color-accent-primary) !important;
+  white-space: nowrap;
+}
+
+.table-action-link {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.table-action-link:hover {
+  color: var(--color-accent-primary);
+}
+
+/* --------------------------------------------------------------------------
+   4. DIAGNOSTIC PACKAGE ESTIMATOR WIDGET
+   -------------------------------------------------------------------------- */
+.estimator-section {
+  padding: 85px 0;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.estimator-box {
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 38px 34px;
+  box-shadow: var(--shadow-md);
+  box-sizing: border-box;
+}
+
+.estimator-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.estimator-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.estimator-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-bottom: 2px;
+}
+
+.estimator-select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 12px 34px 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-primary);
+  color: var(--text-heading);
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23C62835' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 12px) center;
+  background-size: 13px 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+[dir="rtl"] .estimator-select {
+  padding: 12px 14px 12px 34px;
+  background-position: 12px center;
+}
+
+.estimator-select:hover {
+  border-color: var(--border-gold);
+}
+
+.estimator-select:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 3px var(--champagne-gold-light);
+}
+
+.estimator-select option {
+  background-color: var(--bg-card);
+  color: var(--text-heading);
+  padding: 10px;
+  font-size: 0.88rem;
+}
+
+.estimator-result-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, rgba(198, 40, 53, 0.09), rgba(0, 143, 149, 0.06));
+  border: 1px dashed var(--color-accent-primary);
+  border-radius: var(--radius-sm);
+  padding: 22px;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.estimator-result-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.estimator-result-price {
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.estimator-result-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.estimator-submit-btn {
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+  padding: 13px 24px;
+}
+
+/* --------------------------------------------------------------------------
+   5. CLINICAL QUALITY GUARANTEES (4 CORE PILLARS)
+   -------------------------------------------------------------------------- */
+.guarantees-section {
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+}
+
+.guarantees-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.guarantee-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 30px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.guarantee-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.guarantee-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-xs);
+  background-color: var(--champagne-gold-light);
+  border: 1px solid var(--border-gold);
+  color: var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.guarantee-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  min-height: 2.6em;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.guarantee-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   6. ORGAN-SYSTEM BIOMARKER COVERAGE & BILLING STRIP
+   -------------------------------------------------------------------------- */
+.prc-coverage-section {
+  padding: 90px 0 95px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-smooth);
+}
+
+.prc-coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+
+.prc-coverage-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.prc-coverage-card.featured {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-md), 0 0 22px rgba(198, 40, 53, 0.14);
+}
+
+.prc-coverage-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.prc-cov-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.prc-cov-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  background: linear-gradient(135deg, rgba(198, 40, 53, 0.16), rgba(0, 143, 149, 0.08));
+  border: 1px solid var(--border-gold);
+  color: var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prc-cov-icon i,
+.prc-cov-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.prc-cov-tag {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-secondary);
+  background-color: rgba(0, 143, 149, 0.1);
+  border: 1px solid rgba(0, 143, 149, 0.25);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.prc-cov-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.3;
+  min-height: 2.6em;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.prc-cov-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  min-height: 4.8em;
+  margin-bottom: 18px;
+}
+
+.prc-cov-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.prc-cov-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+.prc-cov-list li i,
+.prc-cov-list li svg {
+  width: 15px;
+  height: 15px;
+  color: var(--color-accent-secondary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.prc-cov-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.prc-cov-count {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+}
+
+.prc-cov-freq {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.prc-cov-freq i,
+.prc-cov-freq svg {
+  width: 13px;
+  height: 13px;
+  color: var(--color-accent-secondary);
+}
+
+.prc-billing-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.prc-billing-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.prc-billing-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--champagne-gold-light);
+  border: 1px solid var(--border-gold);
+  color: var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.prc-billing-icon i,
+.prc-billing-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.prc-billing-item h4 {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.prc-billing-item p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. RESPONSIVE MEDIA QUERIES (360px TO 1024px)
+   -------------------------------------------------------------------------- */
+
+/* Tablet Landscape / Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .prc-coverage-grid,
+  .prc-billing-strip {
+    grid-template-columns: 1fr;
+  }
+  .prc-hero {
+    height: auto;
+    max-height: none;
+    padding: 110px 0 60px;
+  }
+
+  .prc-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .prc-3d-blood-container {
+    max-width: 380px;
+  }
+
+  .prc-3d-blood-img {
+    height: 320px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  .pricing-card.featured:hover {
+    transform: translateY(-8px);
+  }
+
+  .estimator-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .guarantees-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .prc-hero {
+    padding: 120px 0 60px;
+    min-height: auto;
+  }
+
+  .prc-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .prc-hero-desc {
+    font-size: 0.98rem;
+    margin-bottom: 26px;
+  }
+
+  .prc-trust-badges {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .prc-3d-blood-container {
+    max-width: 100%;
+  }
+
+  .prc-3d-blood-img {
+    height: 280px;
+  }
+
+  .pricing-section,
+  .estimator-section,
+  .guarantees-section {
+    padding: 75px 0;
+  }
+
+  .individual-tests-section {
+    padding: 0 0 70px;
+  }
+
+  .estimator-box {
+    padding: 30px 20px;
+  }
+
+  .guarantees-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  .prc-hero-title {
+    font-size: 1.95rem;
+  }
+
+  .prc-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .prc-hero-actions .btn-primary-cta,
+  .prc-hero-actions .btn-secondary-clinical {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-card {
+    padding: 32px 20px;
+  }
+
+  .estimator-box {
+    padding: 22px 14px;
+  }
+
+  .pricing-amount {
+    font-size: 2.3rem;
+  }
+
+  .estimator-result-price {
+    font-size: 2.1rem;
+  }
+}
+
+/* Very Compact Mobile (360px) */
+@media (max-width: 360px) {
+  .prc-hero-title {
+    font-size: 1.68rem;
+  }
+
+  .prc-hero-desc {
+    font-size: 0.88rem;
+  }
+
+  .estimator-box {
+    padding: 18px 12px;
+  }
+
+  .pricing-scope-btn {
+    padding: 8px 16px;
+    font-size: 0.76rem;
+  }
+
+  .pricing-amount {
+    font-size: 2.1rem;
+  }
+
+  .estimator-result-price {
+    font-size: 1.9rem;
+  }
+}

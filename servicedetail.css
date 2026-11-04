@@ -1,0 +1,762 @@
+/* ==========================================================================
+   AARA CLINICAL LABORATORIES — DIAGNOSTIC TEST DETAIL PAGE (servicedetail.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SERVICE SWITCHER TAB BAR
+   -------------------------------------------------------------------------- */
+.svc-switcher-bar {
+  position: sticky;
+  top: 86px;
+  z-index: 100;
+  background-color: var(--bg-header);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 14px 0;
+  transition: all var(--transition-base);
+}
+
+.svc-tabs-track {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 2px;
+}
+
+.svc-tabs-track::-webkit-scrollbar {
+  display: none;
+}
+
+.svc-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.svc-tab-btn:hover {
+  border-color: var(--border-gold);
+  color: var(--text-heading);
+}
+
+.svc-tab-btn.active {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 4px 14px var(--champagne-gold-light);
+}
+
+.svc-tab-btn.active i {
+  color: #FFFFFF;
+}
+
+body.dark-theme .svc-tab-btn.active {
+  background-color: var(--color-accent-primary);
+  color: #FFFFFF;
+}
+
+body.dark-theme .svc-tab-btn.active i {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   2. DETAIL HERO SECTION
+   -------------------------------------------------------------------------- */
+.dtl-hero {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 75% 25%, rgba(198, 40, 53, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(0, 143, 149, 0.08) 0%, transparent 55%),
+              var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-smooth);
+}
+
+/* Desktop Viewport Containment: fits 100vh screen size cleanly */
+@media (min-width: 1025px) and (min-height: 600px) {
+  .dtl-hero {
+    height: 100vh;
+    min-height: 600px;
+    max-height: 100vh;
+    padding-top: clamp(66px, 9vh, 88px);
+    padding-bottom: clamp(14px, 2.8vh, 28px);
+  }
+
+  .dtl-hero-container {
+    height: 100%;
+  }
+
+  .dtl-breadcrumbs {
+    margin-bottom: clamp(6px, 1.2vh, 12px);
+  }
+
+  .dtl-hero-badge {
+    margin-bottom: clamp(8px, 1.4vh, 14px);
+  }
+
+  .dtl-hero-title {
+    font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+    margin-bottom: clamp(10px, 1.8vh, 16px);
+  }
+
+  .dtl-hero-pera {
+    font-size: 0.94rem;
+    margin-bottom: clamp(12px, 2vh, 18px);
+  }
+
+  .dtl-spec-pills {
+    margin-bottom: clamp(14px, 2.2vh, 22px);
+    padding: clamp(10px, 1.6vh, 14px) 16px;
+  }
+
+  .dtl-hero-img-frame img {
+    height: clamp(280px, 42vh, 400px);
+  }
+}
+
+@media (max-width: 1024px) or (max-height: 599px) {
+  .dtl-hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 110px 0 50px;
+  }
+}
+
+body.dark-theme .dtl-hero {
+  background: radial-gradient(circle at 75% 25%, rgba(239, 83, 80, 0.14) 0%, transparent 60%),
+              var(--bg-primary);
+}
+
+.dtl-hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.dtl-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.dtl-breadcrumbs a {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.dtl-breadcrumbs a:hover {
+  color: var(--color-accent-primary);
+}
+
+.dtl-breadcrumbs .active-crumb {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+.dtl-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background-color: var(--champagne-gold-light);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  color: var(--color-accent-primary);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.dtl-hero-title {
+  font-size: clamp(2.1rem, 4.0vw, 3.3rem);
+  font-weight: 700;
+  line-height: 1.14;
+  color: var(--text-heading);
+  margin-bottom: 22px;
+  letter-spacing: -0.02em;
+}
+
+.dtl-hero-title .gold-accent {
+  font-family: var(--font-sans);
+  color: var(--color-accent-primary);
+}
+
+.dtl-hero-pera {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  line-height: 1.72;
+  margin-bottom: 28px;
+}
+
+.dtl-hero-pera p {
+  margin-bottom: 14px;
+}
+
+.dtl-spec-pills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 34px;
+  padding: 18px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.dtl-pill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dtl-pill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-xs);
+  background-color: var(--champagne-gold-light);
+  color: var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dtl-pill-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dtl-pill-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.dtl-pill-val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.dtl-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Detail Hero Visual */
+.dtl-hero-visual {
+  position: relative;
+}
+
+.dtl-hero-img-frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-gold);
+  background-color: var(--bg-secondary);
+}
+
+.dtl-hero-img-frame img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dtl-hero-img-frame:hover img {
+  transform: scale(1.04);
+}
+
+.dtl-floating-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(16, 18, 20, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  padding: 14px 20px;
+  color: #FFFFFF;
+  box-shadow: var(--shadow-md);
+}
+
+.dtl-floating-badge .badge-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #43C9C2;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.dtl-floating-badge .badge-desc {
+  font-size: 0.88rem;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   3. WHY CHOOSE THIS SERVICE (BENEFITS)
+   -------------------------------------------------------------------------- */
+.dtl-benefits-section {
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+}
+
+.dtl-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.dtl-benefit-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.dtl-benefit-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.dtl-benefit-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  background: var(--champagne-gold-light);
+  border: 1px solid var(--border-gold);
+  color: var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dtl-benefit-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.dtl-benefit-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   4. CLINICAL SAMPLE & ANALYSIS WORKFLOW TIMELINE
+   -------------------------------------------------------------------------- */
+.dtl-process-section {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dtl-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.dtl-step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.dtl-step-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.dtl-step-num {
+  font-family: var(--font-sans);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dtl-step-num span {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.dtl-step-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.dtl-step-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   5. SPECIFICATIONS MATRIX SECTION
+   -------------------------------------------------------------------------- */
+.dtl-specs-section {
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+}
+
+.dtl-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.dtl-spec-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.dtl-spec-item:hover {
+  border-color: var(--border-gold);
+}
+
+.dtl-spec-key {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent-secondary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.dtl-spec-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+}
+
+.dtl-spec-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   6. SERVICE-SPECIFIC FAQS
+   -------------------------------------------------------------------------- */
+.dtl-faq-section {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   7. RELATED SERVICES SECTION
+   -------------------------------------------------------------------------- */
+.dtl-related-section {
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+}
+
+.dtl-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.dtl-related-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.dtl-related-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.dtl-related-media {
+  height: 200px;
+  overflow: hidden;
+}
+
+.dtl-related-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dtl-related-card:hover .dtl-related-media img {
+  transform: scale(1.08);
+}
+
+.dtl-related-body {
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dtl-related-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.dtl-related-text {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.dtl-related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+}
+
+.dtl-related-link:hover {
+  color: var(--color-accent-primary-hover);
+}
+
+.dtl-related-link i {
+  transition: transform var(--transition-fast);
+}
+
+.dtl-related-link:hover i {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   8. MEDIA QUERIES & RESPONSIVE DESIGN (360px TO 1024px)
+   -------------------------------------------------------------------------- */
+
+/* Tablet Landscape / Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .dtl-hero {
+    height: auto;
+    min-height: auto;
+    padding: 105px 0 45px;
+  }
+
+  .dtl-hero-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .dtl-hero-img-frame img {
+    height: 380px;
+  }
+
+  .dtl-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .dtl-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .dtl-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .dtl-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .svc-switcher-bar {
+    display: none;
+  }
+
+  .dtl-hero {
+    padding: 110px 0 55px;
+  }
+
+  .dtl-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .dtl-hero-pera {
+    font-size: 0.96rem;
+  }
+
+  .dtl-spec-pills {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .dtl-hero-img-frame img {
+    height: 300px;
+  }
+
+  .dtl-benefits-section,
+  .dtl-process-section,
+  .dtl-specs-section,
+  .dtl-faq-section,
+  .dtl-related-section {
+    padding: 70px 0;
+  }
+
+  .dtl-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dtl-timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .dtl-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .dtl-related-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dtl-floating-badge {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 14px;
+  }
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  .dtl-hero {
+    padding: 100px 0 40px;
+  }
+
+  .dtl-hero-title {
+    font-size: 1.9rem;
+  }
+
+  .dtl-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .dtl-hero-actions .btn-primary-cta,
+  .dtl-hero-actions .btn-secondary-clinical {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dtl-hero-img-frame img {
+    height: 250px;
+  }
+
+  .dtl-benefit-card,
+  .dtl-step-card {
+    padding: 24px 18px;
+  }
+
+  .dtl-spec-item {
+    padding: 18px 16px;
+  }
+}
+
+/* Very Compact Mobile (360px) */
+@media (max-width: 360px) {
+  .dtl-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .dtl-hero-pera {
+    font-size: 0.88rem;
+  }
+
+  .dtl-benefit-card h3,
+  .dtl-step-title {
+    font-size: 1.05rem;
+  }
+
+  .dtl-benefit-card p,
+  .dtl-step-desc {
+    font-size: 0.84rem;
+  }
+}
