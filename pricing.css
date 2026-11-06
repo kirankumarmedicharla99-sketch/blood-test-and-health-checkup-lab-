@@ -19,10 +19,10 @@
 }
 
 /* Desktop Viewport Containment: fits 100vh screen size cleanly */
-@media (min-width: 1025px) and (min-height: 600px) {
+@media (min-width: 1024px) and (min-height: 580px) {
   .prc-hero {
     height: 100vh;
-    min-height: 600px;
+    min-height: 580px;
     max-height: 100vh;
     padding-top: clamp(66px, 9vh, 88px);
     padding-bottom: clamp(14px, 2.8vh, 28px);
@@ -49,11 +49,34 @@
   }
 }
 
-@media (max-width: 1024px) or (max-height: 599px) {
+@media (max-width: 1023px) or (max-height: 579px) {
   .prc-hero {
     height: auto;
     min-height: 100vh;
     padding: 100px 0 50px;
+  }
+}
+
+/* Ultra-Wide Display Scaling */
+@media (min-width: 1920px) {
+  .prc-hero .container,
+  .pricing-section .container,
+  .estimator-section .container,
+  .individual-tests-section .container,
+  .guarantees-section .container {
+    max-width: 1380px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 2560px) {
+  .prc-hero .container,
+  .pricing-section .container,
+  .estimator-section .container,
+  .individual-tests-section .container,
+  .guarantees-section .container {
+    max-width: 1520px;
+    margin: 0 auto;
   }
 }
 
@@ -986,8 +1009,29 @@ body.dark-theme .pricing-scope-btn.active {
    7. RESPONSIVE MEDIA QUERIES (360px TO 1024px)
    -------------------------------------------------------------------------- */
 
-/* Tablet Landscape / Small Laptops (<= 1024px) */
-@media (max-width: 1024px) {
+/* Laptop Screen Fit & Proportions: 1024px to 1240px */
+@media (min-width: 1024px) and (max-width: 1240px) {
+  .prc-hero-container {
+    gap: clamp(20px, 2.5vw, 32px);
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(14px, 1.8vw, 20px);
+  }
+
+  .pricing-card {
+    padding: clamp(24px, 2.5vw, 32px) clamp(16px, 1.8vw, 22px);
+  }
+
+  .estimator-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 20px;
+  }
+}
+
+/* Tablet Landscape & Below (<= 1023px) */
+@media (max-width: 1023px) {
   .prc-coverage-grid,
   .prc-billing-strip {
     grid-template-columns: 1fr;

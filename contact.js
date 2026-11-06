@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerBackdrop.classList.add('open');
     if (hamburgerBtn) hamburgerBtn.classList.add('active');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('mobile-drawer-open');
   };
 
   const closeDrawer = () => {
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerBackdrop.classList.remove('open');
     if (hamburgerBtn) hamburgerBtn.classList.remove('active');
     document.body.style.overflow = '';
+    document.body.classList.remove('mobile-drawer-open');
   };
 
   if (hamburgerBtn) {

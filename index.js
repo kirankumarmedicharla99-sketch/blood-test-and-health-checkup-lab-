@@ -98,12 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburgerBtn.classList.add('active');
       mobileNavDrawer.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('mobile-drawer-open');
     } else {
       mobileNavDrawer.classList.remove('open');
       drawerBackdrop.classList.remove('active');
       hamburgerBtn.classList.remove('active');
       mobileNavDrawer.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      document.body.classList.remove('mobile-drawer-open');
     }
   }
 

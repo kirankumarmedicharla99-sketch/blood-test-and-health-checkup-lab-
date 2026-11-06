@@ -90,10 +90,10 @@ body.dark-theme .svc-tab-btn.active i {
 }
 
 /* Desktop Viewport Containment: fits 100vh screen size cleanly */
-@media (min-width: 1025px) and (min-height: 600px) {
+@media (min-width: 1024px) and (min-height: 580px) {
   .dtl-hero {
     height: 100vh;
-    min-height: 600px;
+    min-height: 580px;
     max-height: 100vh;
     padding-top: clamp(66px, 9vh, 88px);
     padding-bottom: clamp(14px, 2.8vh, 28px);
@@ -131,11 +131,36 @@ body.dark-theme .svc-tab-btn.active i {
   }
 }
 
-@media (max-width: 1024px) or (max-height: 599px) {
+@media (max-width: 1023px) or (max-height: 579px) {
   .dtl-hero {
     height: auto;
     min-height: 100vh;
     padding: 110px 0 50px;
+  }
+}
+
+/* Ultra-Wide Display Scaling */
+@media (min-width: 1920px) {
+  .dtl-hero .container,
+  .dtl-main-section .container,
+  .dtl-benefits-section .container,
+  .dtl-specs-section .container,
+  .dtl-timeline-section .container,
+  .dtl-related-section .container {
+    max-width: 1380px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 2560px) {
+  .dtl-hero .container,
+  .dtl-main-section .container,
+  .dtl-benefits-section .container,
+  .dtl-specs-section .container,
+  .dtl-timeline-section .container,
+  .dtl-related-section .container {
+    max-width: 1520px;
+    margin: 0 auto;
   }
 }
 
@@ -603,8 +628,22 @@ body.dark-theme .dtl-hero {
    8. MEDIA QUERIES & RESPONSIVE DESIGN (360px TO 1024px)
    -------------------------------------------------------------------------- */
 
-/* Tablet Landscape / Small Laptops (<= 1024px) */
-@media (max-width: 1024px) {
+/* Laptop Screen Fit & Proportions: 1024px to 1240px */
+@media (min-width: 1024px) and (max-width: 1240px) {
+  .dtl-hero-container {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(24px, 3vw, 40px);
+  }
+
+  .dtl-benefits-grid,
+  .dtl-specs-grid,
+  .dtl-related-grid {
+    gap: 20px;
+  }
+}
+
+/* Tablet Landscape & Below (<= 1023px) */
+@media (max-width: 1023px) {
   .dtl-hero {
     height: auto;
     min-height: auto;

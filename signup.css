@@ -113,6 +113,20 @@ body.dark-theme.auth-page {
   box-sizing: border-box;
 }
 
+@media (max-height: 640px) and (min-width: 861px) {
+  html, body {
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+    overflow-y: auto;
+  }
+  .auth-card {
+    height: auto;
+    min-height: 560px;
+    margin: 40px auto;
+  }
+}
+
 body.dark-theme .auth-card {
   border-color: rgba(198, 40, 53, 0.45);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 32px rgba(198, 40, 53, 0.18);

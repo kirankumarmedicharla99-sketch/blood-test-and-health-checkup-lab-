@@ -644,12 +644,44 @@ body.dark-theme .art-hero {
   gap: 28px;
 }
 
+/* Ultra-Wide Display Scaling */
+@media (min-width: 1920px) {
+  .art-hero .container,
+  .art-body-section .container,
+  .art-related-section .container {
+    max-width: 1380px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 2560px) {
+  .art-hero .container,
+  .art-body-section .container,
+  .art-related-section .container {
+    max-width: 1520px;
+    margin: 0 auto;
+  }
+}
+
 /* --------------------------------------------------------------------------
    6. RESPONSIVE MEDIA QUERIES (360px TO 1024px)
    -------------------------------------------------------------------------- */
 
-/* Tablet Landscape / Small Laptops (<= 1024px) */
-@media (max-width: 1024px) {
+/* Laptop Screen Fit & Proportions: 1024px to 1240px */
+@media (min-width: 1024px) and (max-width: 1240px) {
+  .art-body-container {
+    grid-template-columns: 240px 1fr;
+    gap: clamp(24px, 3vw, 40px);
+  }
+
+  .art-related-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Tablet Landscape & Below (<= 1023px) */
+@media (max-width: 1023px) {
   .art-body-container {
     grid-template-columns: 1fr;
     gap: 40px;

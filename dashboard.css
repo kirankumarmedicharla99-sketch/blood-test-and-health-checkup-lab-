@@ -1507,12 +1507,55 @@ body.dark-theme {
   transform: translateX(20px);
 }
 
+/* Ultra-Wide Display Scaling */
+@media (min-width: 1920px) {
+  .dash-content-body {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 48px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .dash-content-body {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 48px 60px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    11. RESPONSIVE MEDIA QUERIES (360px TO 1024px+)
    -------------------------------------------------------------------------- */
 
-/* Tablet Landscape & Laptops (1024px and below) */
-@media (max-width: 1024px) {
+/* Laptop Screen Fit & Proportions: 1024px to 1240px */
+@media (min-width: 1024px) and (max-width: 1240px) {
+  .dash-sidebar {
+    width: 240px;
+    min-width: 240px;
+  }
+
+  .dash-top-header {
+    padding: 14px clamp(20px, 2.5vw, 32px);
+  }
+
+  .dash-content-body {
+    padding: clamp(20px, 2.5vw, 32px);
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .dash-grid-two-col {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Tablet Landscape & Below (<= 1023px) */
+@media (max-width: 1023px) {
   .dash-sidebar {
     position: fixed;
     top: 0;

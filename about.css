@@ -37,7 +37,7 @@ body.dark-theme.about-page {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: var(--z-header, 100);
+  z-index: var(--z-header, 1050);
   transition: all var(--transition-base);
   background-color: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
@@ -221,10 +221,10 @@ body.dark-theme .btn-secondary-clinical {
 }
 
 /* Desktop Viewport Containment: fits 100vh screen size cleanly */
-@media (min-width: 1025px) and (min-height: 600px) {
+@media (min-width: 1024px) and (min-height: 580px) {
   .about-hero {
     height: 100vh;
-    min-height: 600px;
+    min-height: 580px;
     max-height: 100vh;
     padding-top: clamp(66px, 9vh, 88px);
     padding-bottom: clamp(14px, 2.8vh, 28px);
@@ -247,17 +247,31 @@ body.dark-theme .btn-secondary-clinical {
   }
 
   .about-hero-visual {
-    height: clamp(300px, 44vh, 390px);
+    height: clamp(280px, 42vh, 390px);
   }
 }
 
-@media (max-width: 1024px) or (max-height: 599px) {
+@media (max-width: 1023px) or (max-height: 579px) {
   .about-hero {
     height: auto;
     min-height: 100vh;
     max-height: none;
     padding-top: calc(var(--header-height, 86px) + 20px);
     padding-bottom: 40px;
+  }
+}
+
+/* Ultra-wide Screen Layout & Centering */
+@media (min-width: 1920px) {
+  .about-hero-container {
+    max-width: 1380px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 2560px) {
+  .about-hero-container {
+    max-width: 1520px;
   }
 }
 
@@ -1752,7 +1766,21 @@ body.dark-theme .about-cpc-metric strong {
 /* ==========================================================================
    11. RESPONSIVE BREAKPOINTS
    ========================================================================== */
-@media (max-width: 1024px) {
+/* Laptop Screen Fit & Proportions: 1024px to 1200px */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .about-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+/* Tablet & Mobile View: max-width 1023px */
+@media (max-width: 1023px) {
   .about-hero {
     height: auto;
     min-height: auto;

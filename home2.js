@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (drawerBackdrop) drawerBackdrop.classList.toggle('active', open);
     if (hamburgerBtn) hamburgerBtn.classList.toggle('active', open);
     document.body.style.overflow = open ? 'hidden' : '';
+    document.body.classList.toggle('mobile-drawer-open', open);
   };
 
   if (hamburgerBtn) {

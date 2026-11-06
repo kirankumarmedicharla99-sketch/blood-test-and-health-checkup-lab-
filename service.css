@@ -19,10 +19,10 @@
 }
 
 /* Desktop Viewport Containment: fits 100vh screen size cleanly */
-@media (min-width: 1025px) and (min-height: 600px) {
+@media (min-width: 1024px) and (min-height: 580px) {
   .svc-hero {
     height: 100vh;
-    min-height: 600px;
+    min-height: 580px;
     max-height: 100vh;
     padding-top: clamp(66px, 9vh, 88px);
     padding-bottom: clamp(14px, 2.8vh, 28px);
@@ -49,11 +49,25 @@
   }
 }
 
-@media (max-width: 1024px) or (max-height: 599px) {
+@media (max-width: 1023px) or (max-height: 579px) {
   .svc-hero {
     height: auto;
     min-height: 100vh;
     padding: 100px 0 45px;
+  }
+}
+
+/* Ultra-wide Screen Layout & Centering */
+@media (min-width: 1920px) {
+  .svc-hero-container {
+    max-width: 1380px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 2560px) {
+  .svc-hero-container {
+    max-width: 1520px;
   }
 }
 

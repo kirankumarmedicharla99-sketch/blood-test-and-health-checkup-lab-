@@ -52,12 +52,12 @@ body.h2-page .site-header:not(.scrolled) .icon-btn:hover {
   box-shadow: 0 3px 12px rgba(198, 40, 53, 0.12);
 }
 
-body.h2-page .site-header:not(.scrolled) .hamburger-btn {
+body.h2-page .site-header:not(.scrolled) .hamburger-btn:not(.active) {
   background-color: #FFFFFF;
   border-color: var(--border-subtle);
 }
 
-body.h2-page .site-header:not(.scrolled) .hamburger-btn span {
+body.h2-page .site-header:not(.scrolled) .hamburger-btn:not(.active) span {
   background-color: var(--text-heading);
 }
 
@@ -104,12 +104,12 @@ body.dark-theme.h2-page .site-header:not(.scrolled) .icon-btn:hover {
   color: var(--color-accent-primary);
 }
 
-body.dark-theme.h2-page .site-header:not(.scrolled) .hamburger-btn {
+body.dark-theme.h2-page .site-header:not(.scrolled) .hamburger-btn:not(.active) {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(198, 40, 53, 0.4);
 }
 
-body.dark-theme.h2-page .site-header:not(.scrolled) .hamburger-btn span {
+body.dark-theme.h2-page .site-header:not(.scrolled) .hamburger-btn:not(.active) span {
   background-color: var(--pearl-white);
 }
 
@@ -319,10 +319,10 @@ body.dark-theme .h2-btn-gold:hover {
 }
 
 /* Desktop Viewport Containment: total content visible on 100vh screen */
-@media (min-width: 1025px) and (min-height: 620px) {
+@media (min-width: 1024px) and (min-height: 580px) {
   .h2-hero {
     height: 100vh;
-    min-height: 620px;
+    min-height: 580px;
     max-height: 100vh;
     padding-top: clamp(66px, 9vh, 84px);
     padding-bottom: clamp(14px, 2.8vh, 28px);
@@ -330,11 +330,26 @@ body.dark-theme .h2-btn-gold:hover {
   }
 }
 
-@media (max-width: 1024px) or (max-height: 619px) {
+@media (max-width: 1023px) or (max-height: 579px) {
   .h2-hero {
     min-height: 100vh;
+    height: auto;
     padding-top: 96px;
     padding-bottom: 60px;
+  }
+}
+
+/* Ultra-wide Screen Layout & Centering */
+@media (min-width: 1920px) {
+  .h2-hero-inner {
+    max-width: 1380px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 2560px) {
+  .h2-hero-inner {
+    max-width: 1520px;
   }
 }
 
@@ -361,20 +376,53 @@ body.dark-theme .h2-hero {
 }
 
 body.dark-theme .h2-hero-bg img {
-  opacity: 0.32;
-  filter: brightness(0.65) contrast(1.1);
+  opacity: 0.85;
+  filter: brightness(0.92) contrast(1.05);
 }
 
 .h2-hero-overlay {
-  display: none;
-}
-
-body.dark-theme .h2-hero-overlay {
   display: block;
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(11, 13, 14, 0.94) 0%, rgba(16, 18, 20, 0.82) 55%, rgba(23, 27, 31, 0.6) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.94) 42%,
+    rgba(255, 255, 255, 0.72) 65%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+  pointer-events: none;
   transition: background var(--transition-smooth);
+}
+
+[dir="rtl"] .h2-hero-overlay {
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.94) 42%,
+    rgba(255, 255, 255, 0.72) 65%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+}
+
+body.dark-theme .h2-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(11, 13, 14, 0.96) 0%,
+    rgba(11, 13, 14, 0.88) 38%,
+    rgba(11, 13, 14, 0.48) 64%,
+    rgba(11, 13, 14, 0.12) 100%
+  );
+}
+
+[dir="rtl"] body.dark-theme .h2-hero-overlay {
+  background: linear-gradient(
+    270deg,
+    rgba(11, 13, 14, 0.96) 0%,
+    rgba(11, 13, 14, 0.88) 38%,
+    rgba(11, 13, 14, 0.48) 64%,
+    rgba(11, 13, 14, 0.12) 100%
+  );
 }
 
 .h2-hero-inner {
@@ -451,15 +499,15 @@ body.dark-theme .h2-gold-word {
 .h2-hero-sub {
   font-size: clamp(0.92rem, 1.05vw, 1.02rem);
   line-height: 1.68;
-  color: #475569;
-  font-weight: 400;
+  color: #1E293B;
+  font-weight: 450;
   max-width: 490px;
   margin-bottom: clamp(18px, 2.8vh, 28px);
 }
 
 .h2-hero-sub strong {
-  font-weight: 600;
-  color: #0F1E2E;
+  font-weight: 700;
+  color: #0F172A;
 }
 
 body.dark-theme .h2-hero-sub {
@@ -505,7 +553,7 @@ body.dark-theme .h2-stat-icon {
   font-family: var(--font-sans);
   font-size: clamp(1.35rem, 1.8vw, 1.6rem);
   font-weight: 800;
-  color: #0F1E2E;
+  color: #0F172A;
   line-height: 1.1;
 }
 
@@ -514,16 +562,16 @@ body.dark-theme .h2-stat-n {
 }
 
 .h2-stat-l {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.02em;
-  color: #64748B;
-  font-weight: 500;
+  color: #334155;
+  font-weight: 600;
   line-height: 1.3;
   white-space: nowrap;
 }
 
 body.dark-theme .h2-stat-l {
-  color: rgba(245, 247, 248, 0.65);
+  color: rgba(245, 247, 248, 0.72);
 }
 
 .h2-hero-stat-sep {
@@ -2339,7 +2387,55 @@ body:not(.dark-theme) .h2-cta-card {
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
-@media (max-width: 1024px) {
+/* Laptop Screen Fit & Proportions: 1024px to 1240px */
+@media (min-width: 1024px) and (max-width: 1240px) {
+  .h2-hero-inner {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(18px, 2.5vw, 36px);
+  }
+
+  .h2-hero-headline {
+    font-size: clamp(2rem, 3.2vw, 3rem);
+  }
+
+  .h2-hero-sub {
+    font-size: 0.92rem;
+  }
+
+  .h2-art-types-grid {
+    gap: 16px;
+  }
+
+  .h2-palette-grid {
+    gap: 16px;
+  }
+
+  .h2-palette-trust {
+    padding: 18px 22px;
+    gap: 14px;
+  }
+}
+
+/* Tablet & Mobile View: max-width 1023px */
+@media (max-width: 1023px) {
+  .h2-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.90) 45%,
+      rgba(255, 255, 255, 0.96) 100%
+    );
+  }
+
+  body.dark-theme .h2-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(11, 13, 14, 0.90) 0%,
+      rgba(16, 18, 20, 0.74) 48%,
+      rgba(11, 13, 14, 0.88) 100%
+    );
+  }
+
   .h2-hero-inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -2419,7 +2515,8 @@ body:not(.dark-theme) .h2-cta-card {
   }
 
   .h2-hero-headline {
-    font-size: 2.2rem;
+    font-size: clamp(1.75rem, 6.5vw, 2.2rem);
+    line-height: 1.15;
   }
 
   .h2-hero-right {
@@ -2456,11 +2553,36 @@ body:not(.dark-theme) .h2-cta-card {
   .h2-hero-stats {
     flex-direction: column;
     gap: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    box-shadow: 0 8px 28px rgba(23, 25, 29, 0.08);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .h2-hero-stat {
+    width: 100%;
+    gap: 14px;
   }
 
   .h2-hero-stat-sep {
-    width: 40px;
+    width: 100%;
     height: 1px;
+    background-color: #E2E8F0;
+  }
+
+  body.dark-theme .h2-hero-stats {
+    background: rgba(16, 18, 20, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  }
+
+  body.dark-theme .h2-hero-stat-sep {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .h2-hero-cta-row {
